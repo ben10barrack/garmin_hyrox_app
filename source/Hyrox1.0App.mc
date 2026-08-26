@@ -1,5 +1,6 @@
 using Toybox.Application;
 using Toybox.ActivityRecording;
+using Toybox.Position;
 using Toybox.System;
 using Toybox.WatchUi;
 
@@ -12,6 +13,10 @@ class Hyrox1_0App extends Application.AppBase {
     var isRunningSegment = true;
     var stationNumber = 1;
     var activityStarted = false;
+    var indoorMode = false;
+    var waitingForGps = false;
+    var endMenuOpen = false;
+    var endMenuSelection = 0;
 
     // Timing
     var activityStartTime = 0;
@@ -25,8 +30,8 @@ class Hyrox1_0App extends Application.AppBase {
     }
 
     function getInitialView() {
-        var view = new Hyrox1_0View();
-        var delegate = new Hyrox1_0Delegate();
+        var view = new Hyrox1_0StartView();
+        var delegate = new Hyrox1_0StartDelegate();
 
         return [view, delegate];
     }
@@ -39,18 +44,141 @@ class Hyrox1_0App extends Application.AppBase {
         return session;
     }
 
-    function startActivity() {
+    function isIndoorMode() {
+        return indoorMode;
+    }
 
-        if (activityStarted) {
+    function isWaitingForGps() {
+        return waitingForGps;
+    }
+
+    function isEndMenuOpen() {
+        return endMenuOpen;
+    }
+
+    function getEndMenuSelection() {
+        return endMenuSelection;
+    }
+
+    function requestEndMenu() {
+        if (!activityStarted || session == null) {
             return;
         }
 
+        endMenuOpen = true;
+        endMenuSelection = 0;
+        WatchUi.pushView(
+            new Hyrox1_0EndView(),
+            new Hyrox1_0EndDelegate(),
+            WatchUi.SLIDE_UP
+        );
+        WatchUi.requestUpdate();
+    }
+
+    function moveEndMenuSelection(direction) {
+        if (!endMenuOpen) {
+            return;
+        }
+
+        endMenuSelection += direction;
+
+        if (endMenuSelection < 0) {
+            endMenuSelection = 2;
+        } else if (endMenuSelection > 2) {
+            endMenuSelection = 0;
+        }
+
+        WatchUi.requestUpdate();
+    }
+
+    function cancelEndMenu() {
+        if (!endMenuOpen) {
+            return;
+        }
+
+        endMenuOpen = false;
+        WatchUi.popView(WatchUi.SLIDE_DOWN);
+        WatchUi.requestUpdate();
+    }
+
+    function confirmEndMenu() {
+        if (!endMenuOpen) {
+            return;
+        }
+
+        endMenuOpen = false;
+
+        if (endMenuSelection == 0) {
+            stopActivity(true);
+        } else if (endMenuSelection == 1) {
+            stopActivity(false);
+        }
+
+        WatchUi.popView(WatchUi.SLIDE_DOWN);
+        if (endMenuSelection < 2) {
+            WatchUi.popView(WatchUi.SLIDE_DOWN);
+        }
+        WatchUi.requestUpdate();
+    }
+
+    function toggleIndoorMode() {
+        if (activityStarted || waitingForGps) {
+            return;
+        }
+
+        indoorMode = !indoorMode;
+        WatchUi.requestUpdate();
+    }
+
+    function showWorkoutView() {
+        WatchUi.pushView(
+            new Hyrox1_0View(),
+            new Hyrox1_0Delegate(),
+            WatchUi.SLIDE_UP
+        );
+    }
+
+    function startActivity() {
+
+        if (activityStarted || waitingForGps) {
+            return;
+        }
+
+        if (!indoorMode) {
+            waitingForGps = true;
+            Position.enableLocationEvents(Position.LOCATION_ONE_SHOT, method(:onPosition));
+            System.println("HYROX waiting for GPS");
+            WatchUi.requestUpdate();
+            return;
+        }
+
+        beginActivity();
+    }
+
+    function onPosition(info as Position.Info) as Void {
+        if (!waitingForGps || info == null || info.position == null) {
+            return;
+        }
+
+        waitingForGps = false;
+        System.println("HYROX GPS ready");
+        beginActivity();
+    }
+
+    function beginActivity() {
+
         try {
 
-            session = ActivityRecording.createSession({
+            var sessionOptions = {
                 :sport => ActivityRecording.SPORT_RUNNING,
                 :name => "HYROX"
-            });
+            };
+
+            if (indoorMode) {
+                sessionOptions[:subSport] = ActivityRecording.SUB_SPORT_TREADMILL;
+            }
+
+            session = ActivityRecording.createSession(sessionOptions);
 
             session.start();
 
@@ -66,6 +194,7 @@ class Hyrox1_0App extends Application.AppBase {
 
             System.println("HYROX activity started");
 
+            showWorkoutView();
             WatchUi.requestUpdate();
 
         } catch (e) {
@@ -74,10 +203,17 @@ class Hyrox1_0App extends Application.AppBase {
 
             session = null;
             activityStarted = false;
+            waitingForGps = false;
         }
     }
 
-    function stopActivity() {
+    function stopActivity(saveActivity) {
+
+        if (waitingForGps) {
+            waitingForGps = false;
+            WatchUi.requestUpdate();
+            return;
+        }
 
         if (!activityStarted || session == null) {
             return;
@@ -89,9 +225,12 @@ class Hyrox1_0App extends Application.AppBase {
                 session.stop();
             }
 
-            session.save();
-
-            System.println("HYROX activity saved");
+            if (saveActivity) {
+                session.save();
+                System.println("HYROX activity saved");
+            } else {
+                System.println("HYROX activity discarded");
+            }
 
         } catch (e) {
 
@@ -100,6 +239,7 @@ class Hyrox1_0App extends Application.AppBase {
 
         session = null;
         activityStarted = false;
+        endMenuOpen = false;
 
         WatchUi.requestUpdate();
     }
@@ -216,7 +356,7 @@ class Hyrox1_0App extends Application.AppBase {
                 "HYROX complete"
             );
 
-            stopActivity();
+            requestEndMenu();
 
             return;
         }

@@ -1,12 +1,12 @@
 using Toybox.WatchUi;
 using Toybox.System;
 
-class Hyrox1_0Delegate extends WatchUi.BehaviorDelegate {
+class Hyrox1_0Delegate extends WatchUi.InputDelegate {
 
     var app;
 
     function initialize() {
-        BehaviorDelegate.initialize();
+        InputDelegate.initialize();
         app = Application.getApp();
     }
 
@@ -25,6 +25,20 @@ class Hyrox1_0Delegate extends WatchUi.BehaviorDelegate {
         var key = keyEvent.getKey();
 
         System.println("HYROX onKey received: " + key);
+
+        if (app.isEndMenuOpen()) {
+            if (key == WatchUi.KEY_ENTER) {
+                app.confirmEndMenu();
+            } else if (key == WatchUi.KEY_ESC) {
+                app.cancelEndMenu();
+            } else if (key == WatchUi.KEY_DOWN) {
+                app.moveEndMenuSelection(1);
+            } else if (key == WatchUi.KEY_UP) {
+                app.moveEndMenuSelection(-1);
+            }
+
+            return true;
+        }
 
         if (key == WatchUi.KEY_LAP || key == WatchUi.KEY_ESC) {
 
@@ -46,7 +60,17 @@ class Hyrox1_0Delegate extends WatchUi.BehaviorDelegate {
             }
         }
 
-        return BehaviorDelegate.onKey(keyEvent);
+        if (key == WatchUi.KEY_ENTER) {
+            if (app.isWaitingForGps()) {
+                app.stopActivity(true);
+            } else if (!app.isActivityActive()) {
+                app.startActivity();
+            } else {
+                app.requestEndMenu();
+            }
+        }
+
+        return true;
     }
 
 
@@ -71,6 +95,11 @@ class Hyrox1_0Delegate extends WatchUi.BehaviorDelegate {
     function onBack() {
 
         System.println("HYROX onBack received");
+
+        if (app.isEndMenuOpen()) {
+            app.cancelEndMenu();
+            return true;
+        }
 
         if (app.isActivityActive()) {
 
@@ -101,12 +130,19 @@ class Hyrox1_0Delegate extends WatchUi.BehaviorDelegate {
 
     function onNextPage() {
 
+        if (app.isEndMenuOpen()) {
+            app.moveEndMenuSelection(1);
+            return true;
+        }
+
         if (app.isActivityActive()) {
 
             return true;
         }
 
-        return false;
+        app.toggleIndoorMode();
+
+        return true;
     }
 
 
@@ -116,47 +152,23 @@ class Hyrox1_0Delegate extends WatchUi.BehaviorDelegate {
 
     function onPreviousPage() {
 
+        if (app.isEndMenuOpen()) {
+            app.moveEndMenuSelection(-1);
+            return true;
+        }
+
         if (app.isActivityActive()) {
 
             return true;
         }
 
-        return false;
-    }
-
-
-    // ---------------------------------------------------------
-    // SELECT
-    // ---------------------------------------------------------
-
-    function onSelect() {
-
-        if (!app.isActivityActive()) {
-
-            System.println(
-                "START -> HYROX"
-            );
-
-            app.startActivity();
-
-        } else {
-
-            System.println(
-                "START/STOP -> Finish HYROX"
-            );
-
-            app.stopActivity();
-        }
+        app.toggleIndoorMode();
 
         return true;
     }
 
 
     // ---------------------------------------------------------
-    // MENU
+    // SELECT
     // ---------------------------------------------------------
-
-    function onMenu() {
-        return false;
-    }
 }

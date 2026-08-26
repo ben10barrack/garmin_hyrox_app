@@ -16,6 +16,7 @@
         <iq:permissions>
             <iq:uses-permission id="Fit"/>
             <iq:uses-permission id="SensorHistory"/>
+            <iq:uses-permission id="Positioning"/>
         </iq:permissions>
         
         <iq:languages>

@@ -9,6 +9,7 @@ class Hyrox1_0View extends WatchUi.View {
 
     var app;
     var updateTimer;
+    var displayedDistanceMeters = null;
 
     // ---------------------------------------------------------
     // COLOR PALETTE
@@ -82,6 +83,12 @@ class Hyrox1_0View extends WatchUi.View {
             hr         = info.currentHeartRate;
             distMeters = info.elapsedDistance;
             speedMps   = info.currentSpeed;
+        }
+
+        if (!active) {
+            displayedDistanceMeters = null;
+        } else if (running && distMeters != null) {
+            displayedDistanceMeters = distMeters;
         }
 
         // =====================================================
@@ -158,7 +165,7 @@ class Hyrox1_0View extends WatchUi.View {
         dc.setColor(COLOR_TEXT_PRIMARY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
             halfW * 0.5, y + hTiny + pad * 0.4,
-            fNumMed, totalStr,
+            fSmall, totalStr,
             Graphics.TEXT_JUSTIFY_CENTER
         );
 
@@ -212,8 +219,12 @@ class Hyrox1_0View extends WatchUi.View {
         // =====================================================
 
         var segmentTitle;
-        if (!active) {
-            segmentTitle = "HYROX";
+        if (app.isEndMenuOpen()) {
+            segmentTitle = "END WORKOUT";
+        } else if (app.isWaitingForGps()) {
+            segmentTitle = "WAITING FOR GPS";
+        } else if (!active) {
+            segmentTitle = app.isIndoorMode() ? "TREADMILL" : "GPS RUN";
         } else if (running) {
             segmentTitle = "RUN " + stationNum + " of " + totalStation;
         } else {
@@ -242,7 +253,9 @@ class Hyrox1_0View extends WatchUi.View {
 
         var segSecs  = app.getSegmentElapsedSeconds();
         var segStr   = formatTime(segSecs);
-        var distStr  = formatDistance(distMeters);
+        var distStr  = (running && displayedDistanceMeters != null)
+            ? formatDistance(displayedDistanceMeters)
+            : "--";
         var hrStr    = (hr != null) ? hr.format("%d") : "--";
 
         var col1X = W * 0.18;
@@ -305,6 +318,10 @@ class Hyrox1_0View extends WatchUi.View {
 
         var nextUp = getNextUpText(active, running, stationNum, totalStation);
 
+        if (app.isEndMenuOpen()) {
+            nextUp = getEndMenuText(app.getEndMenuSelection());
+        }
+
         dc.setColor(COLOR_READY_FILL, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
             cx, y,
@@ -348,6 +365,18 @@ class Hyrox1_0View extends WatchUi.View {
         }
 
         return "FINISH";
+    }
+
+    function getEndMenuText(selection) {
+        if (selection == 0) {
+            return "> SAVE <";
+        }
+
+        if (selection == 1) {
+            return "> DISCARD <";
+        }
+
+        return "> RESUME <";
     }
 
 
@@ -431,7 +460,7 @@ class Hyrox1_0View extends WatchUi.View {
         var m    = secs / 60;
         var r    = secs % 60;
 
-        return m.format("%d") + ":" + r.format("%02d") + getPaceLabel();
+        return m.format("%d") + ":" + r.format("%02d");
     }
 
     // Avg pace for this segment = segment elapsed / distance

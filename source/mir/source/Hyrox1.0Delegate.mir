@@ -1,0 +1,487 @@
+[ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [System,2,13,19]; ]
+using Toybox.System;
+[ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc"; @line = 4; @symbol_classdef = [Hyrox1_0Delegate,4,6,22]; @symbol_extends<0> = [WatchUi,4,31,38]; @symbol_extends<1> = [InputDelegate,4,39,52]; ]
+class Hyrox1_0Delegate extends WatchUi.InputDelegate {
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc"; @line = 6; @position = 8; @symbol_vardef = [app,6,8,11]; ]
+    var app;
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc"; @line = 8; @symbol_functiondef = [initialize,8,13,23]; ]
+    function initialize() as Void {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_8_26_11_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 9 8 ]
+        symbol [ InputDelegate %tmp.2 9 8 21 ];
+        %tmp.2 = getv ? :InputDelegate;
+        symbol [ initialize %tmp.3 9 22 32 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 10 8 ]
+        symbol [ Application %tmp.5 10 14 25 ];
+        %tmp.5 = getv ? :Application;
+        symbol [ getApp %tmp.6 10 26 32 ];
+        %tmp.6 = getv function %tmp.5 :getApp;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        symbol [ app ? 10 8 11 ];
+        putv self :app %tmp.7;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_8_26_11_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc"; @line = 23; @symbol_functiondef = [onKey,23,13,18]; @symbol_param<0> = [keyEvent,23,19,27]; ]
+    function onKey(keyEvent) {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_23_29_74_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 25 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_23_29_74_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_23_29_74_4_stop" ]
+        %key.1 = local;
+        symbol [ key %key.1 25 12 15 ];
+        %tmp.1 = lgetv %keyEvent;
+        symbol [ keyEvent %tmp.1 25 18 26 ];
+        symbol [ getKey %tmp.2 25 27 33 ];
+        %tmp.2 = getv function %tmp.1 :getKey;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %key.1 %tmp.3;
+        symbol [ key %key.1 25 12 15 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 27 8 ]
+        symbol [ System %tmp.4 27 8 14 ];
+        %tmp.4 = getm $.Toybox.System;
+        symbol [ println %tmp.5 27 15 22 ];
+        %tmp.5 = getv function %tmp.4 :println;
+        %tmp.6 = "HYROX onKey received: ";
+        %tmp.7 = lgetv %key.1;
+        symbol [ key %tmp.7 27 50 53 ];
+        %tmp.8 = add %tmp.6 %tmp.7;
+        invoke %tmp.4 %tmp.5(%tmp.8);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 29 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_29_8_41_8_if_stmt:
+        symbol [ app %tmp.10 29 12 15 ];
+        %tmp.10 = getv ? :app;
+        symbol [ isEndMenuOpen %tmp.11 29 16 29 ];
+        %tmp.11 = getv function %tmp.10 :isEndMenuOpen;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        bf %tmp.12 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_29_8_41_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_29_8_41_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_29_33_41_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 30 12 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_30_12_38_12_if_stmt:
+        %tmp.13 = lgetv %key.1;
+        symbol [ key %tmp.13 30 16 19 ];
+        symbol [ WatchUi %tmp.14 30 23 30 ];
+        %tmp.14 = getm $.Toybox.WatchUi;
+        symbol [ KEY_ENTER %tmp.15 30 31 40 ];
+        %tmp.15 = getv %tmp.14 :KEY_ENTER;
+        %tmp.16 = eq %tmp.13 %tmp.15;
+        bf %tmp.16 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_30_12_38_12_if_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_30_12_38_12_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_30_42_32_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 31 16 ]
+        symbol [ app %tmp.18 31 16 19 ];
+        %tmp.18 = getv ? :app;
+        symbol [ confirmEndMenu %tmp.19 31 20 34 ];
+        %tmp.19 = getv function %tmp.18 :confirmEndMenu;
+        invoke %tmp.18 %tmp.19();
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_30_42_32_12_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_30_12_38_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_30_12_38_12_if_false:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 32 19 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_32_19_38_12_if_stmt:
+        %tmp.20 = lgetv %key.1;
+        symbol [ key %tmp.20 32 23 26 ];
+        symbol [ WatchUi %tmp.21 32 30 37 ];
+        %tmp.21 = getm $.Toybox.WatchUi;
+        symbol [ KEY_ESC %tmp.22 32 38 45 ];
+        %tmp.22 = getv %tmp.21 :KEY_ESC;
+        %tmp.23 = eq %tmp.20 %tmp.22;
+        bf %tmp.23 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_32_19_38_12_if_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_32_19_38_12_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_32_47_34_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 33 16 ]
+        symbol [ app %tmp.25 33 16 19 ];
+        %tmp.25 = getv ? :app;
+        symbol [ cancelEndMenu %tmp.26 33 20 33 ];
+        %tmp.26 = getv function %tmp.25 :cancelEndMenu;
+        invoke %tmp.25 %tmp.26();
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_32_47_34_12_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_32_19_38_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_32_19_38_12_if_false:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 34 19 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_34_19_38_12_if_stmt:
+        %tmp.27 = lgetv %key.1;
+        symbol [ key %tmp.27 34 23 26 ];
+        symbol [ WatchUi %tmp.28 34 30 37 ];
+        %tmp.28 = getm $.Toybox.WatchUi;
+        symbol [ KEY_DOWN %tmp.29 34 38 46 ];
+        %tmp.29 = getv %tmp.28 :KEY_DOWN;
+        %tmp.30 = eq %tmp.27 %tmp.29;
+        bf %tmp.30 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_34_19_38_12_if_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_34_19_38_12_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_34_48_36_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 35 16 ]
+        symbol [ app %tmp.32 35 16 19 ];
+        %tmp.32 = getv ? :app;
+        symbol [ moveEndMenuSelection %tmp.33 35 20 40 ];
+        %tmp.33 = getv function %tmp.32 :moveEndMenuSelection;
+        %tmp.34 = 1;
+        invoke %tmp.32 %tmp.33(%tmp.34);
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_34_48_36_12_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_34_19_38_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_34_19_38_12_if_false:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 36 19 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_36_19_38_12_if_stmt:
+        %tmp.35 = lgetv %key.1;
+        symbol [ key %tmp.35 36 23 26 ];
+        symbol [ WatchUi %tmp.36 36 30 37 ];
+        %tmp.36 = getm $.Toybox.WatchUi;
+        symbol [ KEY_UP %tmp.37 36 38 44 ];
+        %tmp.37 = getv %tmp.36 :KEY_UP;
+        %tmp.38 = eq %tmp.35 %tmp.37;
+        bf %tmp.38 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_36_19_38_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_36_19_38_12_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_36_46_38_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 37 16 ]
+        symbol [ app %tmp.40 37 16 19 ];
+        %tmp.40 = getv ? :app;
+        symbol [ moveEndMenuSelection %tmp.41 37 20 40 ];
+        %tmp.41 = getv function %tmp.40 :moveEndMenuSelection;
+        %tmp.42 = -1;
+        invoke %tmp.40 %tmp.41(%tmp.42);
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_36_46_38_12_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_36_19_38_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_36_19_38_12_if_end:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_34_19_38_12_if_end:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_32_19_38_12_if_end:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_30_12_38_12_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 40 12 ]
+        %tmp.43 = true;
+        ret %tmp.43;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_29_33_41_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_29_8_41_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_29_8_41_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 43 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_43_8_61_8_if_stmt:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_43_12_43_53_begin:
+        %tmp.44 = lgetv %key.1;
+        symbol [ key %tmp.44 43 12 15 ];
+        symbol [ WatchUi %tmp.45 43 19 26 ];
+        %tmp.45 = getm $.Toybox.WatchUi;
+        symbol [ KEY_LAP %tmp.46 43 27 34 ];
+        %tmp.46 = getv %tmp.45 :KEY_LAP;
+        %tmp.47 = eq %tmp.44 %tmp.46;
+        bt %tmp.47 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_43_8_61_8_if_true;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_43_38_43_53_false:
+        %tmp.48 = lgetv %key.1;
+        symbol [ key %tmp.48 43 38 41 ];
+        symbol [ WatchUi %tmp.49 43 45 52 ];
+        %tmp.49 = getm $.Toybox.WatchUi;
+        symbol [ KEY_ESC %tmp.50 43 53 60 ];
+        %tmp.50 = getv %tmp.49 :KEY_ESC;
+        %tmp.51 = eq %tmp.48 %tmp.50;
+        push %tmp.51;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_43_38_43_53_end:
+        %tmp.52 = phi [%tmp.47 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_43_12_43_53_begin] [%tmp.51 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_43_38_43_53_false] [%tmp.52 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_43_38_43_53_end];
+        bf %tmp.52 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_43_8_61_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_43_8_61_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_43_62_61_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 45 12 ]
+        symbol [ System %tmp.53 45 12 18 ];
+        %tmp.53 = getm $.Toybox.System;
+        symbol [ println %tmp.54 45 19 26 ];
+        %tmp.54 = getv function %tmp.53 :println;
+        %tmp.55 = "HYROX recognized LAP/ESC key";
+        invoke %tmp.53 %tmp.54(%tmp.55);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 47 12 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_47_12_60_12_if_stmt:
+        symbol [ app %tmp.57 47 16 19 ];
+        %tmp.57 = getv ? :app;
+        symbol [ isActivityActive %tmp.58 47 20 36 ];
+        %tmp.58 = getv function %tmp.57 :isActivityActive;
+        %tmp.59 = invoke %tmp.57 %tmp.58();
+        bf %tmp.59 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_47_12_60_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_47_12_60_12_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_47_40_60_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 49 16 ]
+        symbol [ System %tmp.60 49 16 22 ];
+        %tmp.60 = getm $.Toybox.System;
+        symbol [ println %tmp.61 49 23 30 ];
+        %tmp.61 = getv function %tmp.60 :println;
+        %tmp.62 = "HYROX LAP key -> transition";
+        invoke %tmp.60 %tmp.61(%tmp.62);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 53 16 ]
+        symbol [ app %tmp.64 53 16 19 ];
+        %tmp.64 = getv ? :app;
+        symbol [ toggleSegment %tmp.65 53 20 33 ];
+        %tmp.65 = getv function %tmp.64 :toggleSegment;
+        invoke %tmp.64 %tmp.65();
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 55 16 ]
+        symbol [ System %tmp.66 55 16 22 ];
+        %tmp.66 = getm $.Toybox.System;
+        symbol [ println %tmp.67 55 23 30 ];
+        %tmp.67 = getv function %tmp.66 :println;
+        %tmp.68 = "HYROX onKey transition requested";
+        invoke %tmp.66 %tmp.67(%tmp.68);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 59 16 ]
+        %tmp.69 = true;
+        ret %tmp.69;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_47_40_60_12_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_47_12_60_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_47_12_60_12_if_end:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_43_62_61_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_43_8_61_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_43_8_61_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 63 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_63_8_71_8_if_stmt:
+        %tmp.70 = lgetv %key.1;
+        symbol [ key %tmp.70 63 12 15 ];
+        symbol [ WatchUi %tmp.71 63 19 26 ];
+        %tmp.71 = getm $.Toybox.WatchUi;
+        symbol [ KEY_ENTER %tmp.72 63 27 36 ];
+        %tmp.72 = getv %tmp.71 :KEY_ENTER;
+        %tmp.73 = eq %tmp.70 %tmp.72;
+        bf %tmp.73 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_63_8_71_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_63_8_71_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_63_38_71_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 64 12 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_64_12_70_12_if_stmt:
+        symbol [ app %tmp.75 64 16 19 ];
+        %tmp.75 = getv ? :app;
+        symbol [ isWaitingForGps %tmp.76 64 20 35 ];
+        %tmp.76 = getv function %tmp.75 :isWaitingForGps;
+        %tmp.77 = invoke %tmp.75 %tmp.76();
+        bf %tmp.77 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_64_12_70_12_if_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_64_12_70_12_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_64_39_66_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 65 16 ]
+        symbol [ app %tmp.79 65 16 19 ];
+        %tmp.79 = getv ? :app;
+        symbol [ stopActivity %tmp.80 65 20 32 ];
+        %tmp.80 = getv function %tmp.79 :stopActivity;
+        %tmp.81 = true;
+        invoke %tmp.79 %tmp.80(%tmp.81);
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_64_39_66_12_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_64_12_70_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_64_12_70_12_if_false:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 66 19 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_66_19_70_12_if_stmt:
+        symbol [ app %tmp.83 66 24 27 ];
+        %tmp.83 = getv ? :app;
+        symbol [ isActivityActive %tmp.84 66 28 44 ];
+        %tmp.84 = getv function %tmp.83 :isActivityActive;
+        %tmp.85 = invoke %tmp.83 %tmp.84();
+        %tmp.86 = not %tmp.85;
+        bf %tmp.86 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_66_19_70_12_if_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_66_19_70_12_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_66_48_68_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 67 16 ]
+        symbol [ app %tmp.88 67 16 19 ];
+        %tmp.88 = getv ? :app;
+        symbol [ startActivity %tmp.89 67 20 33 ];
+        %tmp.89 = getv function %tmp.88 :startActivity;
+        invoke %tmp.88 %tmp.89();
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_66_48_68_12_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_66_19_70_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_66_19_70_12_if_else_false:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_68_19_70_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 69 16 ]
+        symbol [ app %tmp.91 69 16 19 ];
+        %tmp.91 = getv ? :app;
+        symbol [ requestEndMenu %tmp.92 69 20 34 ];
+        %tmp.92 = getv function %tmp.91 :requestEndMenu;
+        invoke %tmp.91 %tmp.92();
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_68_19_70_12_stop:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_66_19_70_12_if_end:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_64_12_70_12_if_end:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_63_38_71_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_63_8_71_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_63_8_71_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 73 8 ]
+        %tmp.93 = true;
+        ret %tmp.93;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_23_29_74_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc"; @line = 95; @symbol_functiondef = [onBack,95,13,19]; ]
+    function onBack() {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_95_22_119_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 97 8 ]
+        symbol [ System %tmp.1 97 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 97 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "HYROX onBack received";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 99 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_99_8_102_8_if_stmt:
+        symbol [ app %tmp.5 99 12 15 ];
+        %tmp.5 = getv ? :app;
+        symbol [ isEndMenuOpen %tmp.6 99 16 29 ];
+        %tmp.6 = getv function %tmp.5 :isEndMenuOpen;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        bf %tmp.7 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_99_8_102_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_99_8_102_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_99_33_102_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 100 12 ]
+        symbol [ app %tmp.9 100 12 15 ];
+        %tmp.9 = getv ? :app;
+        symbol [ cancelEndMenu %tmp.10 100 16 29 ];
+        %tmp.10 = getv function %tmp.9 :cancelEndMenu;
+        invoke %tmp.9 %tmp.10();
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 101 12 ]
+        %tmp.11 = true;
+        ret %tmp.11;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_99_33_102_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_99_8_102_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_99_8_102_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 104 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_104_8_115_8_if_stmt:
+        symbol [ app %tmp.13 104 12 15 ];
+        %tmp.13 = getv ? :app;
+        symbol [ isActivityActive %tmp.14 104 16 32 ];
+        %tmp.14 = getv function %tmp.13 :isActivityActive;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        bf %tmp.15 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_104_8_115_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_104_8_115_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_104_36_115_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 106 12 ]
+        symbol [ System %tmp.16 106 12 18 ];
+        %tmp.16 = getm $.Toybox.System;
+        symbol [ println %tmp.17 106 19 26 ];
+        %tmp.17 = getv function %tmp.16 :println;
+        %tmp.18 = "HYROX BACK/LAP -> transition";
+        invoke %tmp.16 %tmp.17(%tmp.18);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 110 12 ]
+        symbol [ app %tmp.20 110 12 15 ];
+        %tmp.20 = getv ? :app;
+        symbol [ toggleSegment %tmp.21 110 16 29 ];
+        %tmp.21 = getv function %tmp.20 :toggleSegment;
+        invoke %tmp.20 %tmp.21();
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 112 12 ]
+        symbol [ System %tmp.22 112 12 18 ];
+        %tmp.22 = getm $.Toybox.System;
+        symbol [ println %tmp.23 112 19 26 ];
+        %tmp.23 = getv function %tmp.22 :println;
+        %tmp.24 = "HYROX onBack transition requested";
+        invoke %tmp.22 %tmp.23(%tmp.24);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 114 12 ]
+        %tmp.25 = true;
+        ret %tmp.25;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_104_36_115_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_104_8_115_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_104_8_115_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 118 8 ]
+        %tmp.26 = false;
+        ret %tmp.26;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_95_22_119_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc"; @line = 131; @symbol_functiondef = [onNextPage,131,13,23]; ]
+    function onNextPage() {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_131_26_146_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 133 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_133_8_136_8_if_stmt:
+        symbol [ app %tmp.2 133 12 15 ];
+        %tmp.2 = getv ? :app;
+        symbol [ isEndMenuOpen %tmp.3 133 16 29 ];
+        %tmp.3 = getv function %tmp.2 :isEndMenuOpen;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        bf %tmp.4 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_133_8_136_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_133_8_136_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_133_33_136_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 134 12 ]
+        symbol [ app %tmp.6 134 12 15 ];
+        %tmp.6 = getv ? :app;
+        symbol [ moveEndMenuSelection %tmp.7 134 16 36 ];
+        %tmp.7 = getv function %tmp.6 :moveEndMenuSelection;
+        %tmp.8 = 1;
+        invoke %tmp.6 %tmp.7(%tmp.8);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 135 12 ]
+        %tmp.9 = true;
+        ret %tmp.9;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_133_33_136_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_133_8_136_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_133_8_136_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 138 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_138_8_141_8_if_stmt:
+        symbol [ app %tmp.11 138 12 15 ];
+        %tmp.11 = getv ? :app;
+        symbol [ isActivityActive %tmp.12 138 16 32 ];
+        %tmp.12 = getv function %tmp.11 :isActivityActive;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        bf %tmp.13 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_138_8_141_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_138_8_141_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_138_36_141_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 140 12 ]
+        %tmp.14 = true;
+        ret %tmp.14;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_138_36_141_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_138_8_141_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_138_8_141_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 143 8 ]
+        symbol [ app %tmp.16 143 8 11 ];
+        %tmp.16 = getv ? :app;
+        symbol [ toggleIndoorMode %tmp.17 143 12 28 ];
+        %tmp.17 = getv function %tmp.16 :toggleIndoorMode;
+        invoke %tmp.16 %tmp.17();
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 145 8 ]
+        %tmp.18 = true;
+        ret %tmp.18;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_131_26_146_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc"; @line = 153; @symbol_functiondef = [onPreviousPage,153,13,27]; ]
+    function onPreviousPage() {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_153_30_168_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 155 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_155_8_158_8_if_stmt:
+        symbol [ app %tmp.2 155 12 15 ];
+        %tmp.2 = getv ? :app;
+        symbol [ isEndMenuOpen %tmp.3 155 16 29 ];
+        %tmp.3 = getv function %tmp.2 :isEndMenuOpen;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        bf %tmp.4 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_155_8_158_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_155_8_158_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_155_33_158_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 156 12 ]
+        symbol [ app %tmp.6 156 12 15 ];
+        %tmp.6 = getv ? :app;
+        symbol [ moveEndMenuSelection %tmp.7 156 16 36 ];
+        %tmp.7 = getv function %tmp.6 :moveEndMenuSelection;
+        %tmp.8 = -1;
+        invoke %tmp.6 %tmp.7(%tmp.8);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 157 12 ]
+        %tmp.9 = true;
+        ret %tmp.9;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_155_33_158_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_155_8_158_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_155_8_158_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 160 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_160_8_163_8_if_stmt:
+        symbol [ app %tmp.11 160 12 15 ];
+        %tmp.11 = getv ? :app;
+        symbol [ isActivityActive %tmp.12 160 16 32 ];
+        %tmp.12 = getv function %tmp.11 :isActivityActive;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        bf %tmp.13 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_160_8_163_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_160_8_163_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_160_36_163_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 162 12 ]
+        %tmp.14 = true;
+        ret %tmp.14;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_160_36_163_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_160_8_163_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_160_8_163_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 165 8 ]
+        symbol [ app %tmp.16 165 8 11 ];
+        %tmp.16 = getv ? :app;
+        symbol [ toggleIndoorMode %tmp.17 165 12 28 ];
+        %tmp.17 = getv function %tmp.16 :toggleIndoorMode;
+        invoke %tmp.16 %tmp.17();
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc" 167 8 ]
+        %tmp.18 = true;
+        ret %tmp.18;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0Delegate_mc_153_30_168_4_stop:
+    }
+}
+[ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0Delegate.mc"; @line = 1; ]
+<init> {
+}
