@@ -1,0 +1,15 @@
+# Ignore the build output folder
+/bin/
+
+# Ignore the release folder
+/releases/
+
+# **CRITICAL: Ignore your developer key file**
+# This file is generated when you use "Monkey C: Generate a Developer Key"
+*.key
+*.der
+*.p12
+
+# Ignore VS Code workspace settings (optional, but recommended)
+.vscode/
+*.code-workspace

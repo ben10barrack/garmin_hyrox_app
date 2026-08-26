@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iq:manifest version="3" xmlns:iq="http://www.garmin.com/xml/connectiq">
+    
+    <iq:application id="ca675bef-a06d-4c71-98a7-6656dc4b5db8" 
+                    type="watch-app" 
+                    name="@Strings.AppName" 
+                    entry="Hyrox1_0App" 
+                    launcherIcon="@Drawables.LauncherIcon" 
+                    minApiLevel="5.0.0">
+        
+        <iq:products>
+            <iq:product id="fr165m"/>
+        </iq:products>
+        
+        <!-- Use permissions wrapper with permission elements -->
+        <iq:permissions>
+            <iq:uses-permission id="Fit"/>
+            <iq:uses-permission id="SensorHistory"/>
+        </iq:permissions>
+        
+        <iq:languages>
+            <iq:language>eng</iq:language>
+        </iq:languages>
+        
+        <iq:barrels/>
+        
+    </iq:application>
+</iq:manifest>
+
