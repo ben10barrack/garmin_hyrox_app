@@ -83,6 +83,7 @@ class Hyrox1_0View extends WatchUi.View {
             hr         = info.currentHeartRate;
             distMeters = info.elapsedDistance;
             speedMps   = info.currentSpeed;
+            app.recordActivitySample(info);
         }
 
         if (!active) {

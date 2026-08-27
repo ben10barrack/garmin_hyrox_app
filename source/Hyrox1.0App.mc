@@ -1,5 +1,7 @@
 using Toybox.Application;
+using Toybox.Activity;
 using Toybox.ActivityRecording;
+using Toybox.Lang;
 using Toybox.Position;
 using Toybox.System;
 using Toybox.WatchUi;
@@ -17,10 +19,23 @@ class Hyrox1_0App extends Application.AppBase {
     var waitingForGps = false;
     var endMenuOpen = false;
     var endMenuSelection = 0;
+    var summaryPage = 0;
 
     // Timing
     var activityStartTime = 0;
     var segmentStartTime = 0;
+    var segmentDistanceStart = 0.0;
+    var stationHeartRateTotal = 0;
+    var stationHeartRateSamples = 0;
+    var runHeartRateTotal = 0;
+    var runHeartRateSamples = 0;
+    var currentSummaryRecorded = false;
+    var completedWorkoutSeconds = 0;
+    var completedWorkoutDistance = 0.0;
+
+    // Analysis data shown after the workout. FIT laps are also created below.
+    var runRecords = [];
+    var stationRecords = [];
 
     // HYROX has 8 stations
     const TOTAL_STATIONS = 8;
@@ -42,6 +57,30 @@ class Hyrox1_0App extends Application.AppBase {
 
     function getSession() {
         return session;
+    }
+
+    function getRunRecords() as Lang.Array<Lang.Dictionary> {
+        return runRecords;
+    }
+
+    function getStationRecords() as Lang.Array<Lang.Dictionary> {
+        return stationRecords;
+    }
+
+    function recordActivitySample(info) {
+        if (!isActivityActive() || info == null) {
+            return;
+        }
+
+        if (info.currentHeartRate != null) {
+            if (isRunningSegment) {
+                runHeartRateTotal += info.currentHeartRate;
+                runHeartRateSamples += 1;
+            } else {
+                stationHeartRateTotal += info.currentHeartRate;
+                stationHeartRateSamples += 1;
+            }
+        }
     }
 
     function isIndoorMode() {
@@ -106,18 +145,49 @@ class Hyrox1_0App extends Application.AppBase {
             return;
         }
 
+        var selection = endMenuSelection;
         endMenuOpen = false;
 
-        if (endMenuSelection == 0) {
+        if (selection == 0) {
             stopActivity(true);
-        } else if (endMenuSelection == 1) {
+            summaryPage = 0;
+            WatchUi.switchToView(
+                new Hyrox1_0SummaryView(),
+                new Hyrox1_0SummaryDelegate(),
+                WatchUi.SLIDE_UP
+            );
+            WatchUi.requestUpdate();
+            return;
+        } else if (selection == 1) {
             stopActivity(false);
         }
 
         WatchUi.popView(WatchUi.SLIDE_DOWN);
-        if (endMenuSelection < 2) {
+        if (selection < 2) {
             WatchUi.popView(WatchUi.SLIDE_DOWN);
         }
+        WatchUi.requestUpdate();
+    }
+
+    function getSummaryPage() {
+        return summaryPage;
+    }
+
+    function moveSummaryPage(direction) {
+        var segmentCount = runRecords.size() + stationRecords.size();
+        var pageCount = 3 + ((segmentCount + 1) / 2);
+
+        summaryPage += direction;
+        if (summaryPage < 0) {
+            summaryPage = pageCount - 1;
+        } else if (summaryPage >= pageCount) {
+            summaryPage = 0;
+        }
+        WatchUi.requestUpdate();
+    }
+
+    function closeSummary() {
+        WatchUi.popView(WatchUi.SLIDE_DOWN);
         WatchUi.requestUpdate();
     }
 
@@ -170,12 +240,12 @@ class Hyrox1_0App extends Application.AppBase {
         try {
 
             var sessionOptions = {
-                :sport => ActivityRecording.SPORT_RUNNING,
+                :sport => Activity.SPORT_RUNNING,
                 :name => "HYROX"
             };
 
             if (indoorMode) {
-                sessionOptions[:subSport] = ActivityRecording.SUB_SPORT_TREADMILL;
+                sessionOptions[:subSport] = Activity.SUB_SPORT_TREADMILL;
             }
 
             session = ActivityRecording.createSession(sessionOptions);
@@ -186,11 +256,21 @@ class Hyrox1_0App extends Application.AppBase {
 
             isRunningSegment = true;
             stationNumber = 1;
+            runRecords = [];
+            stationRecords = [];
 
             var now = System.getTimer();
 
             activityStartTime = now;
             segmentStartTime = now;
+            segmentDistanceStart = 0.0;
+            stationHeartRateTotal = 0;
+            stationHeartRateSamples = 0;
+            runHeartRateTotal = 0;
+            runHeartRateSamples = 0;
+            currentSummaryRecorded = false;
+            completedWorkoutSeconds = 0;
+            completedWorkoutDistance = 0.0;
 
             System.println("HYROX activity started");
 
@@ -220,6 +300,13 @@ class Hyrox1_0App extends Application.AppBase {
         }
 
         try {
+
+            if (!currentSummaryRecorded) {
+                recordSegmentSummary();
+            }
+
+            completedWorkoutSeconds = getActivityElapsedSeconds();
+            completedWorkoutDistance = getTotalRunDistance();
 
             if (session.isRecording()) {
                 session.stop();
@@ -303,6 +390,9 @@ class Hyrox1_0App extends Application.AppBase {
         return;
     }
 
+    // Capture analysis values before closing the corresponding FIT lap.
+    recordSegmentSummary();
+
     // Mark the end of the current segment.
     System.println("HYROX adding lap");
     session.addLap();
@@ -319,6 +409,11 @@ class Hyrox1_0App extends Application.AppBase {
         System.println("HYROX state changed to STATION");
 
         segmentStartTime = System.getTimer();
+        stationHeartRateTotal = 0;
+        stationHeartRateSamples = 0;
+        runHeartRateTotal = 0;
+        runHeartRateSamples = 0;
+        currentSummaryRecorded = false;
 
         System.println(
             "Starting Station " +
@@ -340,6 +435,12 @@ class Hyrox1_0App extends Application.AppBase {
             System.println("HYROX state changed to RUN");
 
             segmentStartTime = System.getTimer();
+            segmentDistanceStart = getCurrentDistanceMeters();
+            stationHeartRateTotal = 0;
+            stationHeartRateSamples = 0;
+            runHeartRateTotal = 0;
+            runHeartRateSamples = 0;
+            currentSummaryRecorded = false;
 
             System.println(
                 "Starting Run " +
@@ -364,4 +465,64 @@ class Hyrox1_0App extends Application.AppBase {
 
     WatchUi.requestUpdate();
 }
+
+    function getCurrentDistanceMeters() {
+        var info = Activity.getActivityInfo();
+
+        if (info != null && info.elapsedDistance != null) {
+            return info.elapsedDistance;
+        }
+
+        return segmentDistanceStart;
+    }
+
+    function recordSegmentSummary() {
+        if (currentSummaryRecorded) {
+            return;
+        }
+
+        var elapsed = ((System.getTimer() - segmentStartTime) / 1000).toNumber();
+
+        if (isRunningSegment) {
+            var distance = getCurrentDistanceMeters() - segmentDistanceStart;
+            if (distance < 0) {
+                distance = 0;
+            }
+
+            runRecords.add({
+                :number => stationNumber,
+                :distance => distance,
+                :time => elapsed,
+                :speed => (elapsed > 0) ? distance / elapsed : 0,
+                :heartRate => (runHeartRateSamples > 0)
+                    ? runHeartRateTotal / runHeartRateSamples
+                    : 0
+            });
+            completedWorkoutDistance += distance;
+        } else {
+            var averageHeartRate = (stationHeartRateSamples > 0)
+                ? stationHeartRateTotal / stationHeartRateSamples
+                : 0;
+
+            stationRecords.add({
+                :number => stationNumber,
+                :heartRate => averageHeartRate,
+                :time => elapsed
+            });
+        }
+
+        currentSummaryRecorded = true;
+    }
+
+    function getCompletedWorkoutSeconds() {
+        return completedWorkoutSeconds;
+    }
+
+    function getCompletedWorkoutDistance() {
+        return completedWorkoutDistance;
+    }
+
+    function getTotalRunDistance() {
+        return completedWorkoutDistance;
+    }
 }
