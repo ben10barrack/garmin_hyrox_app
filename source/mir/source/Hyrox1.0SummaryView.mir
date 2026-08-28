@@ -1,0 +1,3222 @@
+[ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Graphics,2,13,21]; ]
+using Toybox.Graphics;
+[ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Application,3,13,24]; ]
+using Toybox.Application;
+[ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [System,4,13,19]; ]
+using Toybox.System;
+[ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Lang,5,13,17]; ]
+using Toybox.Lang;
+[ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 7; @symbol_classdef = [Hyrox1_0SummaryView,7,6,25]; @symbol_extends<0> = [WatchUi,7,34,41]; @symbol_extends<1> = [View,7,42,46]; ]
+class Hyrox1_0SummaryView extends WatchUi.View {
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 7; ]
+    <init> {
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 11 10 ]
+        symbol [ Graphics %tmp.1 11 26 34 ];
+        %tmp.1 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.2 11 35 46 ];
+        %tmp.2 = getv %tmp.1 :COLOR_BLACK;
+        putv self :COLOR_BG %tmp.2;
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 12 10 ]
+        symbol [ Graphics %tmp.3 12 26 34 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.4 12 35 46 ];
+        %tmp.4 = getv %tmp.3 :COLOR_WHITE;
+        putv self :COLOR_PRIMARY %tmp.4;
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 13 10 ]
+        symbol [ Graphics %tmp.5 13 26 34 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_LT_GRAY %tmp.6 13 35 48 ];
+        %tmp.6 = getv %tmp.5 :COLOR_LT_GRAY;
+        putv self :COLOR_SECOND %tmp.6;
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 14 10 ]
+        symbol [ Graphics %tmp.7 14 26 34 ];
+        %tmp.7 = getm $.Toybox.Graphics;
+        symbol [ COLOR_DK_GRAY %tmp.8 14 35 48 ];
+        %tmp.8 = getv %tmp.7 :COLOR_DK_GRAY;
+        putv self :COLOR_MUTED %tmp.8;
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 15 10 ]
+        symbol [ Graphics %tmp.9 15 26 34 ];
+        %tmp.9 = getm $.Toybox.Graphics;
+        symbol [ COLOR_DK_GRAY %tmp.10 15 35 48 ];
+        %tmp.10 = getv %tmp.9 :COLOR_DK_GRAY;
+        putv self :COLOR_DIVIDER %tmp.10;
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 16 10 ]
+        symbol [ Graphics %tmp.11 16 26 34 ];
+        %tmp.11 = getm $.Toybox.Graphics;
+        symbol [ COLOR_RED %tmp.12 16 35 44 ];
+        %tmp.12 = getv %tmp.11 :COLOR_RED;
+        putv self :COLOR_HR %tmp.12;
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 17 10 ]
+        symbol [ Graphics %tmp.13 17 26 34 ];
+        %tmp.13 = getm $.Toybox.Graphics;
+        symbol [ COLOR_GREEN %tmp.14 17 35 46 ];
+        %tmp.14 = getv %tmp.13 :COLOR_GREEN;
+        putv self :COLOR_RUN %tmp.14;
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 18 10 ]
+        symbol [ Graphics %tmp.15 18 26 34 ];
+        %tmp.15 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLUE %tmp.16 18 35 45 ];
+        %tmp.16 = getv %tmp.15 :COLOR_BLUE;
+        putv self :COLOR_STATION %tmp.16;
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 19 10 ]
+        symbol [ Graphics %tmp.17 19 31 39 ];
+        %tmp.17 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLUE %tmp.18 19 40 50 ];
+        %tmp.18 = getv %tmp.17 :COLOR_BLUE;
+        putv self :COLOR_STATION_TEXT %tmp.18;
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 9; @position = 8; @symbol_vardef = [app,9,8,11]; ]
+    var app;
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 11; @position = 10; @symbol_constdef = [COLOR_BG,11,10,18]; ]
+    const COLOR_BG;
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 12; @position = 10; @symbol_constdef = [COLOR_PRIMARY,12,10,23]; ]
+    const COLOR_PRIMARY;
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 13; @position = 10; @symbol_constdef = [COLOR_SECOND,13,10,22]; ]
+    const COLOR_SECOND;
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 14; @position = 10; @symbol_constdef = [COLOR_MUTED,14,10,21]; ]
+    const COLOR_MUTED;
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 15; @position = 10; @symbol_constdef = [COLOR_DIVIDER,15,10,23]; ]
+    const COLOR_DIVIDER;
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 16; @position = 10; @symbol_constdef = [COLOR_HR,16,10,18]; ]
+    const COLOR_HR;
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 17; @position = 10; @symbol_constdef = [COLOR_RUN,17,10,19]; ]
+    const COLOR_RUN;
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 18; @position = 10; @symbol_constdef = [COLOR_STATION,18,10,23]; ]
+    const COLOR_STATION;
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 19; @position = 10; @symbol_constdef = [COLOR_STATION_TEXT,19,10,28]; ]
+    const COLOR_STATION_TEXT;
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 21; @symbol_functiondef = [initialize,21,13,23]; ]
+    function initialize() as Void {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_21_26_24_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 22 8 ]
+        symbol [ View %tmp.2 22 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 22 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 23 8 ]
+        symbol [ Application %tmp.4 23 14 25 ];
+        %tmp.4 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.5 23 26 32 ];
+        %tmp.5 = getv function %tmp.4 :getApp;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        symbol [ app ? 23 8 11 ];
+        putv self :app %tmp.6;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_21_26_24_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 26; @symbol_functiondef = [onLayout,26,13,21]; @symbol_param<0> = [dc,26,22,24]; ]
+    function onLayout(dc) {
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 28; @symbol_functiondef = [onUpdate,28,13,21]; @symbol_param<0> = [dc,28,22,24]; ]
+    function onUpdate(dc) {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 30 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %W.1 = local;
+        symbol [ W %W.1 30 12 13 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 30 17 19 ];
+        symbol [ getWidth %tmp.2 30 20 28 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %W.1 %tmp.3;
+        symbol [ W %W.1 30 12 13 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 31 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %H.2 = local;
+        symbol [ H %H.2 31 12 13 ];
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 31 17 19 ];
+        symbol [ getHeight %tmp.5 31 20 29 ];
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %H.2 %tmp.6;
+        symbol [ H %H.2 31 12 13 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 33 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 33 8 10 ];
+        symbol [ setColor %tmp.8 33 11 19 ];
+        %tmp.8 = getv function %tmp.7 :setColor;
+        symbol [ COLOR_BG %tmp.10 33 20 28 ];
+        %tmp.10 = getv ? :COLOR_BG;
+        symbol [ COLOR_BG %tmp.12 33 30 38 ];
+        %tmp.12 = getv ? :COLOR_BG;
+        invoke %tmp.7 %tmp.8(%tmp.10, %tmp.12);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 34 8 ]
+        %tmp.13 = lgetv %dc;
+        symbol [ dc %tmp.13 34 8 10 ];
+        symbol [ clear %tmp.14 34 11 16 ];
+        %tmp.14 = getv function %tmp.13 :clear;
+        invoke %tmp.13 %tmp.14();
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 42 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %fTiny.3 = local;
+        symbol [ fTiny %fTiny.3 42 12 17 ];
+        symbol [ Graphics %tmp.15 42 21 29 ];
+        %tmp.15 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.16 42 30 40 ];
+        %tmp.16 = getv %tmp.15 :FONT_XTINY;
+        lputv %fTiny.3 %tmp.16;
+        symbol [ fTiny %fTiny.3 42 12 17 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 43 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %fSmall.4 = local;
+        symbol [ fSmall %fSmall.4 43 12 18 ];
+        symbol [ Graphics %tmp.17 43 21 29 ];
+        %tmp.17 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.18 43 30 40 ];
+        %tmp.18 = getv %tmp.17 :FONT_SMALL;
+        lputv %fSmall.4 %tmp.18;
+        symbol [ fSmall %fSmall.4 43 12 18 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 44 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %fNum.5 = local;
+        symbol [ fNum %fNum.5 44 12 16 ];
+        symbol [ Graphics %tmp.19 44 21 29 ];
+        %tmp.19 = getm $.Toybox.Graphics;
+        symbol [ FONT_NUMBER_MEDIUM %tmp.20 44 30 48 ];
+        %tmp.20 = getv %tmp.19 :FONT_NUMBER_MEDIUM;
+        lputv %fNum.5 %tmp.20;
+        symbol [ fNum %fNum.5 44 12 16 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 46 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %hTiny.6 = local;
+        symbol [ hTiny %hTiny.6 46 12 17 ];
+        %tmp.21 = lgetv %dc;
+        symbol [ dc %tmp.21 46 21 23 ];
+        symbol [ getFontHeight %tmp.22 46 24 37 ];
+        %tmp.22 = getv function %tmp.21 :getFontHeight;
+        %tmp.23 = lgetv %fTiny.3;
+        symbol [ fTiny %tmp.23 46 38 43 ];
+        %tmp.24 = invoke %tmp.21 %tmp.22(%tmp.23);
+        lputv %hTiny.6 %tmp.24;
+        symbol [ hTiny %hTiny.6 46 12 17 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 47 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %hSmall.7 = local;
+        symbol [ hSmall %hSmall.7 47 12 18 ];
+        %tmp.25 = lgetv %dc;
+        symbol [ dc %tmp.25 47 21 23 ];
+        symbol [ getFontHeight %tmp.26 47 24 37 ];
+        %tmp.26 = getv function %tmp.25 :getFontHeight;
+        %tmp.27 = lgetv %fSmall.4;
+        symbol [ fSmall %tmp.27 47 38 44 ];
+        %tmp.28 = invoke %tmp.25 %tmp.26(%tmp.27);
+        lputv %hSmall.7 %tmp.28;
+        symbol [ hSmall %hSmall.7 47 12 18 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 48 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %hNum.8 = local;
+        symbol [ hNum %hNum.8 48 12 16 ];
+        %tmp.29 = lgetv %dc;
+        symbol [ dc %tmp.29 48 21 23 ];
+        symbol [ getFontHeight %tmp.30 48 24 37 ];
+        %tmp.30 = getv function %tmp.29 :getFontHeight;
+        %tmp.31 = lgetv %fNum.5;
+        symbol [ fNum %tmp.31 48 38 42 ];
+        %tmp.32 = invoke %tmp.29 %tmp.30(%tmp.31);
+        lputv %hNum.8 %tmp.32;
+        symbol [ hNum %hNum.8 48 12 16 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 51 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %pad.9 = local;
+        symbol [ pad %pad.9 51 12 15 ];
+        %tmp.33 = lgetv %H.2;
+        symbol [ H %tmp.33 51 18 19 ];
+        %tmp.34 = 0.016;
+        %tmp.35 = mul %tmp.33 %tmp.34;
+        lputv %pad.9 %tmp.35;
+        symbol [ pad %pad.9 51 12 15 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 57 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %runs.10 = local;
+        symbol [ runs %runs.10 57 12 16 ];
+        symbol [ app %tmp.37 57 23 26 ];
+        %tmp.37 = getv ? :app;
+        symbol [ getRunRecords %tmp.38 57 27 40 ];
+        %tmp.38 = getv function %tmp.37 :getRunRecords;
+        %tmp.39 = invoke %tmp.37 %tmp.38();
+        lputv %runs.10 %tmp.39;
+        symbol [ runs %runs.10 57 12 16 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 58 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %stations.11 = local;
+        symbol [ stations %stations.11 58 12 20 ];
+        symbol [ app %tmp.41 58 23 26 ];
+        %tmp.41 = getv ? :app;
+        symbol [ getStationRecords %tmp.42 58 27 44 ];
+        %tmp.42 = getv function %tmp.41 :getStationRecords;
+        %tmp.43 = invoke %tmp.41 %tmp.42();
+        lputv %stations.11 %tmp.43;
+        symbol [ stations %stations.11 58 12 20 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 59 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %segments.12 = local;
+        symbol [ segments %segments.12 59 12 20 ];
+        %tmp.44 = self;
+        symbol [ buildChronologicalList %tmp.45 59 23 45 ];
+        %tmp.45 = getv function %tmp.44 :buildChronologicalList;
+        %tmp.46 = lgetv %runs.10;
+        symbol [ runs %tmp.46 59 46 50 ];
+        %tmp.47 = lgetv %stations.11;
+        symbol [ stations %tmp.47 59 52 60 ];
+        %tmp.48 = invoke %tmp.44 %tmp.45(%tmp.46, %tmp.47);
+        lputv %segments.12 %tmp.48;
+        symbol [ segments %segments.12 59 12 20 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 60 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %segCount.13 = local;
+        symbol [ segCount %segCount.13 60 12 20 ];
+        %tmp.49 = lgetv %segments.12;
+        symbol [ segments %tmp.49 60 23 31 ];
+        symbol [ size %tmp.50 60 32 36 ];
+        %tmp.50 = getv function %tmp.49 :size;
+        %tmp.51 = invoke %tmp.49 %tmp.50();
+        lputv %segCount.13 %tmp.51;
+        symbol [ segCount %segCount.13 60 12 20 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 62 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %page.14 = local;
+        symbol [ page %page.14 62 12 16 ];
+        symbol [ app %tmp.53 62 24 27 ];
+        %tmp.53 = getv ? :app;
+        symbol [ getSummaryPage %tmp.54 62 28 42 ];
+        %tmp.54 = getv function %tmp.53 :getSummaryPage;
+        %tmp.55 = invoke %tmp.53 %tmp.54();
+        lputv %page.14 %tmp.55;
+        symbol [ page %page.14 62 12 16 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 63 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %pageCount.15 = local;
+        symbol [ pageCount %pageCount.15 63 12 21 ];
+        %tmp.56 = 3;
+        %tmp.57 = lgetv %segCount.13;
+        symbol [ segCount %tmp.57 63 30 38 ];
+        %tmp.58 = 1;
+        %tmp.59 = add %tmp.57 %tmp.58;
+        %tmp.60 = 2;
+        %tmp.61 = div %tmp.59 %tmp.60;
+        %tmp.62 = add %tmp.56 %tmp.61;
+        lputv %pageCount.15 %tmp.62;
+        symbol [ pageCount %pageCount.15 63 12 21 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 75 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %dotR.16 = local;
+        symbol [ dotR %dotR.16 75 12 16 ];
+        %tmp.63 = 3;
+        lputv %dotR.16 %tmp.63;
+        symbol [ dotR %dotR.16 75 12 16 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 76 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %dotGap.17 = local;
+        symbol [ dotGap %dotGap.17 76 12 18 ];
+        %tmp.64 = lgetv %dotR.16;
+        symbol [ dotR %tmp.64 76 25 29 ];
+        %tmp.65 = 2;
+        %tmp.66 = mul %tmp.64 %tmp.65;
+        %tmp.67 = 4;
+        %tmp.68 = add %tmp.66 %tmp.67;
+        lputv %dotGap.17 %tmp.68;
+        symbol [ dotGap %dotGap.17 76 12 18 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 77 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %dotsX.18 = local;
+        symbol [ dotsX %dotsX.18 77 12 17 ];
+        %tmp.69 = lgetv %W.1;
+        symbol [ W %tmp.69 77 25 26 ];
+        %tmp.70 = lgetv %dotR.16;
+        symbol [ dotR %tmp.70 77 29 33 ];
+        %tmp.71 = sub %tmp.69 %tmp.70;
+        %tmp.72 = lgetv %W.1;
+        symbol [ W %tmp.72 77 37 38 ];
+        %tmp.73 = 0.04;
+        %tmp.74 = mul %tmp.72 %tmp.73;
+        %tmp.75 = sub %tmp.71 %tmp.74;
+        lputv %dotsX.18 %tmp.75;
+        symbol [ dotsX %dotsX.18 77 12 17 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 78 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %totalDots.19 = local;
+        symbol [ totalDots %totalDots.19 78 12 21 ];
+        %tmp.76 = lgetv %pageCount.15;
+        symbol [ pageCount %tmp.76 78 25 34 ];
+        lputv %totalDots.19 %tmp.76;
+        symbol [ totalDots %totalDots.19 78 12 21 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 79 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %dotsHeight.20 = local;
+        symbol [ dotsHeight %dotsHeight.20 79 12 22 ];
+        %tmp.77 = lgetv %totalDots.19;
+        symbol [ totalDots %tmp.77 79 26 35 ];
+        %tmp.78 = 1;
+        %tmp.79 = sub %tmp.77 %tmp.78;
+        %tmp.80 = lgetv %dotGap.17;
+        symbol [ dotGap %tmp.80 79 43 49 ];
+        %tmp.81 = mul %tmp.79 %tmp.80;
+        lputv %dotsHeight.20 %tmp.81;
+        symbol [ dotsHeight %dotsHeight.20 79 12 22 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 80 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %dotStartY.21 = local;
+        symbol [ dotStartY %dotStartY.21 80 12 21 ];
+        %tmp.82 = lgetv %H.2;
+        symbol [ H %tmp.82 80 26 27 ];
+        %tmp.83 = lgetv %dotsHeight.20;
+        symbol [ dotsHeight %tmp.83 80 30 40 ];
+        %tmp.84 = sub %tmp.82 %tmp.83;
+        %tmp.85 = 2;
+        %tmp.86 = div %tmp.84 %tmp.85;
+        lputv %dotStartY.21 %tmp.86;
+        symbol [ dotStartY %dotStartY.21 80 12 21 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 82 8 ]
+        for @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_8_96_8_for_test @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_8_96_8_for_incr @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_8_96_8_for_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_8_96_8_for_init:
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_8_96_8_for_begin" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_8_96_8_for_end" ]
+        %d.22 = local;
+        symbol [ d %d.22 82 17 18 ];
+        %tmp.87 = 0;
+        lputv %d.22 %tmp.87;
+        symbol [ d %d.22 82 17 18 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_8_96_8_for_test:
+        %tmp.88 = lgetv %d.22;
+        symbol [ d %tmp.88 82 24 25 ];
+        %tmp.89 = lgetv %totalDots.19;
+        symbol [ totalDots %tmp.89 82 28 37 ];
+        %tmp.90 = lt %tmp.88 %tmp.89;
+        bf %tmp.90 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_8_96_8_for_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_8_96_8_for_begin:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_44_96_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 83 12 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_44_96_8_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_44_96_8_stop" ]
+        %dotY.23 = local;
+        symbol [ dotY %dotY.23 83 16 20 ];
+        %tmp.91 = lgetv %dotStartY.21;
+        symbol [ dotStartY %tmp.91 83 25 34 ];
+        %tmp.92 = lgetv %d.22;
+        symbol [ d %tmp.92 83 37 38 ];
+        %tmp.93 = lgetv %dotGap.17;
+        symbol [ dotGap %tmp.93 83 41 47 ];
+        %tmp.94 = mul %tmp.92 %tmp.93;
+        %tmp.95 = add %tmp.91 %tmp.94;
+        lputv %dotY.23 %tmp.95;
+        symbol [ dotY %dotY.23 83 16 20 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 84 12 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_44_96_8_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_44_96_8_stop" ]
+        %active.24 = local;
+        symbol [ active %active.24 84 16 22 ];
+        %tmp.96 = lgetv %d.22;
+        symbol [ d %tmp.96 84 26 27 ];
+        %tmp.97 = lgetv %page.14;
+        symbol [ page %tmp.97 84 31 35 ];
+        %tmp.98 = eq %tmp.96 %tmp.97;
+        lputv %active.24 %tmp.98;
+        symbol [ active %active.24 84 16 22 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 86 12 ]
+        %tmp.99 = lgetv %dc;
+        symbol [ dc %tmp.99 86 12 14 ];
+        symbol [ setColor %tmp.100 86 15 23 ];
+        %tmp.100 = getv function %tmp.99 :setColor;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_87_16_87_41_begin:
+        %tmp.101 = lgetv %active.24;
+        symbol [ active %tmp.101 87 16 22 ];
+        bf %tmp.101 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_87_16_87_41_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_87_16_87_41_true:
+        symbol [ COLOR_PRIMARY %tmp.103 87 25 38 ];
+        %tmp.103 = getv ? :COLOR_PRIMARY;
+        push %tmp.103;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_87_16_87_41_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_87_16_87_41_else_false:
+        symbol [ COLOR_MUTED %tmp.105 87 41 52 ];
+        %tmp.105 = getv ? :COLOR_MUTED;
+        push %tmp.105;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_87_16_87_41_end:
+        %tmp.106 = phi [%tmp.101 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_87_16_87_41_begin] [%tmp.103 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_87_16_87_41_true] [%tmp.105 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_87_16_87_41_else_false] [%tmp.106 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_87_16_87_41_end];
+        symbol [ Graphics %tmp.107 88 16 24 ];
+        %tmp.107 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.108 88 25 42 ];
+        %tmp.108 = getv %tmp.107 :COLOR_TRANSPARENT;
+        invoke %tmp.99 %tmp.100(%tmp.106, %tmp.108);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 91 12 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_91_12_95_12_if_stmt:
+        %tmp.109 = lgetv %active.24;
+        symbol [ active %tmp.109 91 16 22 ];
+        bf %tmp.109 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_91_12_95_12_if_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_91_12_95_12_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_91_24_93_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 92 16 ]
+        %tmp.110 = lgetv %dc;
+        symbol [ dc %tmp.110 92 16 18 ];
+        symbol [ fillCircle %tmp.111 92 19 29 ];
+        %tmp.111 = getv function %tmp.110 :fillCircle;
+        %tmp.112 = lgetv %dotsX.18;
+        symbol [ dotsX %tmp.112 92 30 35 ];
+        %tmp.113 = lgetv %dotY.23;
+        symbol [ dotY %tmp.113 92 37 41 ];
+        %tmp.114 = lgetv %dotR.16;
+        symbol [ dotR %tmp.114 92 43 47 ];
+        invoke %tmp.110 %tmp.111(%tmp.112, %tmp.113, %tmp.114);
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_91_24_93_12_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_91_12_95_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_91_12_95_12_if_else_false:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_93_19_95_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 94 16 ]
+        %tmp.115 = lgetv %dc;
+        symbol [ dc %tmp.115 94 16 18 ];
+        symbol [ fillCircle %tmp.116 94 19 29 ];
+        %tmp.116 = getv function %tmp.115 :fillCircle;
+        %tmp.117 = lgetv %dotsX.18;
+        symbol [ dotsX %tmp.117 94 30 35 ];
+        %tmp.118 = lgetv %dotY.23;
+        symbol [ dotY %tmp.118 94 37 41 ];
+        %tmp.119 = lgetv %dotR.16;
+        symbol [ dotR %tmp.119 94 43 47 ];
+        %tmp.120 = 1;
+        %tmp.121 = sub %tmp.119 %tmp.120;
+        invoke %tmp.115 %tmp.116(%tmp.117, %tmp.118, %tmp.121);
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_93_19_95_12_stop:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_91_12_95_12_if_end:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_44_96_8_stop:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_8_96_8_for_incr:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 82 ]
+        %tmp.124 = lgetv %d.22;
+        symbol [ d %tmp.124 82 39 40 ];
+        %tmp.125 = add %tmp.124 1;
+        lputv %d.22 %tmp.125;
+        symbol [ d %d.22 82 39 40 ];
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_8_96_8_for_test;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_82_8_96_8_for_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 99 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %contentRight.25 = local;
+        symbol [ contentRight %contentRight.25 99 12 24 ];
+        %tmp.126 = lgetv %dotsX.18;
+        symbol [ dotsX %tmp.126 99 27 32 ];
+        %tmp.127 = lgetv %dotR.16;
+        symbol [ dotR %tmp.127 99 35 39 ];
+        %tmp.128 = sub %tmp.126 %tmp.127;
+        %tmp.129 = lgetv %W.1;
+        symbol [ W %tmp.129 99 43 44 ];
+        %tmp.130 = 0.03;
+        %tmp.131 = mul %tmp.129 %tmp.130;
+        %tmp.132 = sub %tmp.128 %tmp.131;
+        lputv %contentRight.25 %tmp.132;
+        symbol [ contentRight %contentRight.25 99 12 24 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 100 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %contentLeft.26 = local;
+        symbol [ contentLeft %contentLeft.26 100 12 23 ];
+        %tmp.133 = lgetv %W.1;
+        symbol [ W %tmp.133 100 27 28 ];
+        %tmp.134 = 0.04;
+        %tmp.135 = mul %tmp.133 %tmp.134;
+        lputv %contentLeft.26 %tmp.135;
+        symbol [ contentLeft %contentLeft.26 100 12 23 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 101 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %contentW.27 = local;
+        symbol [ contentW %contentW.27 101 12 20 ];
+        %tmp.136 = lgetv %contentRight.25;
+        symbol [ contentRight %tmp.136 101 27 39 ];
+        %tmp.137 = lgetv %contentLeft.26;
+        symbol [ contentLeft %tmp.137 101 42 53 ];
+        %tmp.138 = sub %tmp.136 %tmp.137;
+        lputv %contentW.27 %tmp.138;
+        symbol [ contentW %contentW.27 101 12 20 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 107 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop" ]
+        %y.28 = local;
+        symbol [ y %y.28 107 12 13 ];
+        %tmp.139 = lgetv %H.2;
+        symbol [ H %tmp.139 107 16 17 ];
+        %tmp.140 = 0.04;
+        %tmp.141 = mul %tmp.139 %tmp.140;
+        lputv %y.28 %tmp.141;
+        symbol [ y %y.28 107 12 13 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 109 8 ]
+        %tmp.142 = lgetv %dc;
+        symbol [ dc %tmp.142 109 8 10 ];
+        symbol [ setColor %tmp.143 109 11 19 ];
+        %tmp.143 = getv function %tmp.142 :setColor;
+        symbol [ COLOR_MUTED %tmp.145 109 20 31 ];
+        %tmp.145 = getv ? :COLOR_MUTED;
+        symbol [ Graphics %tmp.146 109 33 41 ];
+        %tmp.146 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.147 109 42 59 ];
+        %tmp.147 = getv %tmp.146 :COLOR_TRANSPARENT;
+        invoke %tmp.142 %tmp.143(%tmp.145, %tmp.147);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 110 8 ]
+        %tmp.148 = lgetv %dc;
+        symbol [ dc %tmp.148 110 8 10 ];
+        symbol [ drawText %tmp.149 110 11 19 ];
+        %tmp.149 = getv function %tmp.148 :drawText;
+        %tmp.150 = lgetv %contentLeft.26;
+        symbol [ contentLeft %tmp.150 111 12 23 ];
+        %tmp.151 = lgetv %contentW.27;
+        symbol [ contentW %tmp.151 111 26 34 ];
+        %tmp.152 = 2;
+        %tmp.153 = div %tmp.151 %tmp.152;
+        %tmp.154 = add %tmp.150 %tmp.153;
+        %tmp.155 = lgetv %y.28;
+        symbol [ y %tmp.155 111 40 41 ];
+        %tmp.156 = lgetv %fTiny.3;
+        symbol [ fTiny %tmp.156 112 12 17 ];
+        %tmp.157 = "SUMMARY";
+        symbol [ Graphics %tmp.158 113 12 20 ];
+        %tmp.158 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.159 113 21 40 ];
+        %tmp.159 = getv %tmp.158 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.148 %tmp.149(%tmp.154, %tmp.155, %tmp.156, %tmp.157, %tmp.159);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 115 8 ]
+        %tmp.160 = lgetv %y.28;
+        symbol [ y %tmp.160 115 8 9 ];
+        %tmp.161 = lgetv %hTiny.6;
+        symbol [ hTiny %tmp.161 115 13 18 ];
+        %tmp.162 = lgetv %pad.9;
+        symbol [ pad %tmp.162 115 21 24 ];
+        %tmp.163 = 0.4;
+        %tmp.164 = mul %tmp.162 %tmp.163;
+        %tmp.165 = add %tmp.161 %tmp.164;
+        %tmp.166 = add %tmp.160 %tmp.165;
+        lputv %y.28 %tmp.166;
+        symbol [ y %y.28 115 8 9 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 116 8 ]
+        %tmp.167 = lgetv %y.28;
+        symbol [ y %tmp.167 116 8 9 ];
+        %tmp.168 = lgetv %pad.9;
+        symbol [ pad %tmp.168 116 13 16 ];
+        %tmp.169 = 0.6;
+        %tmp.170 = mul %tmp.168 %tmp.169;
+        %tmp.171 = add %tmp.167 %tmp.170;
+        lputv %y.28 %tmp.171;
+        symbol [ y %y.28 116 8 9 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 122 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_122_8_131_8_if_stmt:
+        %tmp.172 = lgetv %page.14;
+        symbol [ page %tmp.172 122 12 16 ];
+        %tmp.173 = 0;
+        %tmp.174 = eq %tmp.172 %tmp.173;
+        bf %tmp.174 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_122_8_131_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_122_8_131_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_122_23_131_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 123 12 ]
+        %tmp.175 = self;
+        symbol [ drawOverviewPage %tmp.176 123 12 28 ];
+        %tmp.176 = getv function %tmp.175 :drawOverviewPage;
+        %tmp.177 = lgetv %dc;
+        symbol [ dc %tmp.177 124 16 18 ];
+        %tmp.178 = lgetv %contentLeft.26;
+        symbol [ contentLeft %tmp.178 124 20 31 ];
+        %tmp.179 = lgetv %contentRight.25;
+        symbol [ contentRight %tmp.179 124 33 45 ];
+        %tmp.180 = lgetv %contentW.27;
+        symbol [ contentW %tmp.180 124 47 55 ];
+        %tmp.181 = lgetv %H.2;
+        symbol [ H %tmp.181 124 57 58 ];
+        %tmp.182 = lgetv %y.28;
+        symbol [ y %tmp.182 125 16 17 ];
+        %tmp.183 = lgetv %pad.9;
+        symbol [ pad %tmp.183 125 19 22 ];
+        %tmp.184 = lgetv %fTiny.3;
+        symbol [ fTiny %tmp.184 126 16 21 ];
+        %tmp.185 = lgetv %fSmall.4;
+        symbol [ fSmall %tmp.185 126 23 29 ];
+        %tmp.186 = lgetv %fNum.5;
+        symbol [ fNum %tmp.186 126 31 35 ];
+        %tmp.187 = lgetv %hTiny.6;
+        symbol [ hTiny %tmp.187 127 16 21 ];
+        %tmp.188 = lgetv %hSmall.7;
+        symbol [ hSmall %tmp.188 127 23 29 ];
+        %tmp.189 = lgetv %hNum.8;
+        symbol [ hNum %tmp.189 127 31 35 ];
+        %tmp.190 = lgetv %segments.12;
+        symbol [ segments %tmp.190 128 16 24 ];
+        invoke %tmp.175 %tmp.176(%tmp.177, %tmp.178, %tmp.179, %tmp.180, %tmp.181, %tmp.182, %tmp.183, %tmp.184, %tmp.185, %tmp.186, %tmp.187, %tmp.188, %tmp.189, %tmp.190);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 130 12 ]
+        ret ?;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_122_23_131_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_122_8_131_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_122_8_131_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 133 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_8_145_8_if_stmt:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_12_133_33_begin:
+        %tmp.191 = lgetv %page.14;
+        symbol [ page %tmp.191 133 12 16 ];
+        %tmp.192 = 1;
+        %tmp.193 = eq %tmp.191 %tmp.192;
+        bt %tmp.193 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_8_145_8_if_true;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_25_133_33_false:
+        %tmp.194 = lgetv %page.14;
+        symbol [ page %tmp.194 133 25 29 ];
+        %tmp.195 = 2;
+        %tmp.196 = eq %tmp.194 %tmp.195;
+        push %tmp.196;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_25_133_33_end:
+        %tmp.197 = phi [%tmp.193 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_12_133_33_begin] [%tmp.196 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_25_133_33_false] [%tmp.197 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_25_133_33_end];
+        bf %tmp.197 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_8_145_8_if_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_8_145_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_36_138_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 134 12 ]
+        %tmp.198 = self;
+        symbol [ drawGroupedListPage %tmp.199 134 12 31 ];
+        %tmp.199 = getv function %tmp.198 :drawGroupedListPage;
+        %tmp.200 = lgetv %dc;
+        symbol [ dc %tmp.200 135 16 18 ];
+        %tmp.201 = lgetv %contentLeft.26;
+        symbol [ contentLeft %tmp.201 135 20 31 ];
+        %tmp.202 = lgetv %contentRight.25;
+        symbol [ contentRight %tmp.202 135 33 45 ];
+        %tmp.203 = lgetv %contentW.27;
+        symbol [ contentW %tmp.203 135 47 55 ];
+        %tmp.204 = lgetv %H.2;
+        symbol [ H %tmp.204 135 57 58 ];
+        %tmp.205 = lgetv %y.28;
+        symbol [ y %tmp.205 135 60 61 ];
+        %tmp.206 = lgetv %pad.9;
+        symbol [ pad %tmp.206 135 63 66 ];
+        %tmp.207 = lgetv %fTiny.3;
+        symbol [ fTiny %tmp.207 136 16 21 ];
+        %tmp.208 = lgetv %hTiny.6;
+        symbol [ hTiny %tmp.208 136 23 28 ];
+        %tmp.209 = lgetv %segments.12;
+        symbol [ segments %tmp.209 136 30 38 ];
+        %tmp.210 = lgetv %page.14;
+        symbol [ page %tmp.210 136 40 44 ];
+        %tmp.211 = 1;
+        %tmp.212 = eq %tmp.210 %tmp.211;
+        invoke %tmp.198 %tmp.199(%tmp.200, %tmp.201, %tmp.202, %tmp.203, %tmp.204, %tmp.205, %tmp.206, %tmp.207, %tmp.208, %tmp.209, %tmp.212);
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_36_138_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_8_145_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_8_145_8_if_else_false:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_138_15_145_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 139 12 ]
+        %tmp.213 = self;
+        symbol [ drawDetailPage %tmp.214 139 12 26 ];
+        %tmp.214 = getv function %tmp.213 :drawDetailPage;
+        %tmp.215 = lgetv %dc;
+        symbol [ dc %tmp.215 140 16 18 ];
+        %tmp.216 = lgetv %contentLeft.26;
+        symbol [ contentLeft %tmp.216 140 20 31 ];
+        %tmp.217 = lgetv %contentRight.25;
+        symbol [ contentRight %tmp.217 140 33 45 ];
+        %tmp.218 = lgetv %contentW.27;
+        symbol [ contentW %tmp.218 140 47 55 ];
+        %tmp.219 = lgetv %H.2;
+        symbol [ H %tmp.219 140 57 58 ];
+        %tmp.220 = lgetv %y.28;
+        symbol [ y %tmp.220 140 60 61 ];
+        %tmp.221 = lgetv %pad.9;
+        symbol [ pad %tmp.221 140 63 66 ];
+        %tmp.222 = lgetv %fTiny.3;
+        symbol [ fTiny %tmp.222 141 16 21 ];
+        %tmp.223 = lgetv %fSmall.4;
+        symbol [ fSmall %tmp.223 141 23 29 ];
+        %tmp.224 = lgetv %fNum.5;
+        symbol [ fNum %tmp.224 141 31 35 ];
+        %tmp.225 = lgetv %hTiny.6;
+        symbol [ hTiny %tmp.225 142 16 21 ];
+        %tmp.226 = lgetv %hSmall.7;
+        symbol [ hSmall %tmp.226 142 23 29 ];
+        %tmp.227 = lgetv %hNum.8;
+        symbol [ hNum %tmp.227 142 31 35 ];
+        %tmp.228 = lgetv %segments.12;
+        symbol [ segments %tmp.228 143 16 24 ];
+        %tmp.229 = lgetv %page.14;
+        symbol [ page %tmp.229 143 26 30 ];
+        %tmp.230 = 3;
+        %tmp.231 = sub %tmp.229 %tmp.230;
+        invoke %tmp.213 %tmp.214(%tmp.215, %tmp.216, %tmp.217, %tmp.218, %tmp.219, %tmp.220, %tmp.221, %tmp.222, %tmp.223, %tmp.224, %tmp.225, %tmp.226, %tmp.227, %tmp.228, %tmp.231);
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_138_15_145_8_stop:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_133_8_145_8_if_end:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_28_26_146_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 155; @symbol_functiondef = [drawOverviewPage,155,13,29]; @symbol_param<0> = [dc,156,8,10]; @symbol_param<1> = [left,156,12,16]; @symbol_param<2> = [right,156,18,23]; @symbol_param<3> = [cw,156,25,27]; @symbol_param<4> = [H,156,29,30]; @symbol_param<5> = [y,157,8,9]; @symbol_param<6> = [pad,157,11,14]; @symbol_param<7> = [fTiny,158,8,13]; @symbol_param<8> = [fSmall,158,15,21]; @symbol_param<9> = [fNum,158,23,27]; @symbol_param<10> = [hTiny,159,8,13]; @symbol_param<11> = [hSmall,159,15,21]; @symbol_param<12> = [hNum,159,23,27]; @symbol_param<13> = [segments,160,8,16]; @symbol_param<13>_type<0> = [Lang,160,20,24]; @symbol_param<13>_type<1> = [Array,160,25,30]; @symbol_param<13>_type<2> = [Lang,160,31,35]; @symbol_param<13>_type<3> = [Dictionary,160,36,46]; ]
+    function drawOverviewPage(dc, left, right, cw, H, y, pad, fTiny, fSmall, fNum, hTiny, hSmall, hNum, segments as Lang.Array<Lang.Dictionary>) {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_161_6_180_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 163 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_161_6_180_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_161_6_180_4_stop" ]
+        %rowH.1 = local;
+        symbol [ rowH %rowH.1 163 12 16 ];
+        %tmp.1 = lgetv %hTiny;
+        symbol [ hTiny %tmp.1 163 19 24 ];
+        %tmp.2 = lgetv %hSmall;
+        symbol [ hSmall %tmp.2 163 27 33 ];
+        %tmp.3 = add %tmp.1 %tmp.2;
+        %tmp.4 = lgetv %pad;
+        symbol [ pad %tmp.4 163 36 39 ];
+        %tmp.5 = 0.6;
+        %tmp.6 = mul %tmp.4 %tmp.5;
+        %tmp.7 = add %tmp.3 %tmp.6;
+        lputv %rowH.1 %tmp.7;
+        symbol [ rowH %rowH.1 163 12 16 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 164 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_161_6_180_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_161_6_180_4_stop" ]
+        %rowCenter.2 = local;
+        symbol [ rowCenter %rowCenter.2 164 12 21 ];
+        %tmp.8 = lgetv %left;
+        symbol [ left %tmp.8 164 24 28 ];
+        %tmp.9 = lgetv %cw;
+        symbol [ cw %tmp.9 164 31 33 ];
+        %tmp.10 = 2;
+        %tmp.11 = div %tmp.9 %tmp.10;
+        %tmp.12 = add %tmp.8 %tmp.11;
+        lputv %rowCenter.2 %tmp.12;
+        symbol [ rowCenter %rowCenter.2 164 12 21 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 166 8 ]
+        %tmp.13 = self;
+        symbol [ drawTotalRow %tmp.14 166 8 20 ];
+        %tmp.14 = getv function %tmp.13 :drawTotalRow;
+        %tmp.15 = lgetv %dc;
+        symbol [ dc %tmp.15 167 12 14 ];
+        %tmp.16 = lgetv %left;
+        symbol [ left %tmp.16 167 16 20 ];
+        %tmp.17 = lgetv %right;
+        symbol [ right %tmp.17 167 22 27 ];
+        %tmp.18 = lgetv %rowCenter.2;
+        symbol [ rowCenter %tmp.18 167 29 38 ];
+        %tmp.19 = lgetv %y;
+        symbol [ y %tmp.19 167 40 41 ];
+        %tmp.20 = lgetv %rowH.1;
+        symbol [ rowH %tmp.20 167 43 47 ];
+        %tmp.21 = lgetv %pad;
+        symbol [ pad %tmp.21 167 49 52 ];
+        %tmp.22 = lgetv %fTiny;
+        symbol [ fTiny %tmp.22 167 54 59 ];
+        %tmp.23 = lgetv %fSmall;
+        symbol [ fSmall %tmp.23 167 61 67 ];
+        %tmp.24 = "TIME";
+        %tmp.25 = self;
+        symbol [ formatTime %tmp.26 168 20 30 ];
+        %tmp.26 = getv function %tmp.25 :formatTime;
+        symbol [ app %tmp.28 168 31 34 ];
+        %tmp.28 = getv ? :app;
+        symbol [ getCompletedWorkoutSeconds %tmp.29 168 35 61 ];
+        %tmp.29 = getv function %tmp.28 :getCompletedWorkoutSeconds;
+        %tmp.30 = invoke %tmp.28 %tmp.29();
+        %tmp.31 = invoke %tmp.25 %tmp.26(%tmp.30);
+        symbol [ COLOR_PRIMARY %tmp.33 168 66 79 ];
+        %tmp.33 = getv ? :COLOR_PRIMARY;
+        invoke %tmp.13 %tmp.14(%tmp.15, %tmp.16, %tmp.17, %tmp.18, %tmp.19, %tmp.20, %tmp.21, %tmp.22, %tmp.23, %tmp.24, %tmp.31, %tmp.33);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 170 8 ]
+        %tmp.34 = lgetv %y;
+        symbol [ y %tmp.34 170 8 9 ];
+        %tmp.35 = lgetv %rowH.1;
+        symbol [ rowH %tmp.35 170 13 17 ];
+        %tmp.36 = add %tmp.34 %tmp.35;
+        lputv %y %tmp.36;
+        symbol [ y %y 170 8 9 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 171 8 ]
+        %tmp.37 = self;
+        symbol [ drawTotalRow %tmp.38 171 8 20 ];
+        %tmp.38 = getv function %tmp.37 :drawTotalRow;
+        %tmp.39 = lgetv %dc;
+        symbol [ dc %tmp.39 172 12 14 ];
+        %tmp.40 = lgetv %left;
+        symbol [ left %tmp.40 172 16 20 ];
+        %tmp.41 = lgetv %right;
+        symbol [ right %tmp.41 172 22 27 ];
+        %tmp.42 = lgetv %rowCenter.2;
+        symbol [ rowCenter %tmp.42 172 29 38 ];
+        %tmp.43 = lgetv %y;
+        symbol [ y %tmp.43 172 40 41 ];
+        %tmp.44 = lgetv %rowH.1;
+        symbol [ rowH %tmp.44 172 43 47 ];
+        %tmp.45 = lgetv %pad;
+        symbol [ pad %tmp.45 172 49 52 ];
+        %tmp.46 = lgetv %fTiny;
+        symbol [ fTiny %tmp.46 172 54 59 ];
+        %tmp.47 = lgetv %fSmall;
+        symbol [ fSmall %tmp.47 172 61 67 ];
+        %tmp.48 = "DISTANCE";
+        %tmp.49 = self;
+        symbol [ formatDistance %tmp.50 173 24 38 ];
+        %tmp.50 = getv function %tmp.49 :formatDistance;
+        symbol [ app %tmp.52 173 39 42 ];
+        %tmp.52 = getv ? :app;
+        symbol [ getCompletedWorkoutDistance %tmp.53 173 43 70 ];
+        %tmp.53 = getv function %tmp.52 :getCompletedWorkoutDistance;
+        %tmp.54 = invoke %tmp.52 %tmp.53();
+        %tmp.55 = invoke %tmp.49 %tmp.50(%tmp.54);
+        symbol [ COLOR_SECOND %tmp.57 173 75 87 ];
+        %tmp.57 = getv ? :COLOR_SECOND;
+        invoke %tmp.37 %tmp.38(%tmp.39, %tmp.40, %tmp.41, %tmp.42, %tmp.43, %tmp.44, %tmp.45, %tmp.46, %tmp.47, %tmp.48, %tmp.55, %tmp.57);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 175 8 ]
+        %tmp.58 = lgetv %y;
+        symbol [ y %tmp.58 175 8 9 ];
+        %tmp.59 = lgetv %rowH.1;
+        symbol [ rowH %tmp.59 175 13 17 ];
+        %tmp.60 = add %tmp.58 %tmp.59;
+        lputv %y %tmp.60;
+        symbol [ y %y 175 8 9 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 176 8 ]
+        %tmp.61 = self;
+        symbol [ drawTotalRow %tmp.62 176 8 20 ];
+        %tmp.62 = getv function %tmp.61 :drawTotalRow;
+        %tmp.63 = lgetv %dc;
+        symbol [ dc %tmp.63 177 12 14 ];
+        %tmp.64 = lgetv %left;
+        symbol [ left %tmp.64 177 16 20 ];
+        %tmp.65 = lgetv %right;
+        symbol [ right %tmp.65 177 22 27 ];
+        %tmp.66 = lgetv %rowCenter.2;
+        symbol [ rowCenter %tmp.66 177 29 38 ];
+        %tmp.67 = lgetv %y;
+        symbol [ y %tmp.67 177 40 41 ];
+        %tmp.68 = lgetv %rowH.1;
+        symbol [ rowH %tmp.68 177 43 47 ];
+        %tmp.69 = lgetv %pad;
+        symbol [ pad %tmp.69 177 49 52 ];
+        %tmp.70 = lgetv %fTiny;
+        symbol [ fTiny %tmp.70 177 54 59 ];
+        %tmp.71 = lgetv %fSmall;
+        symbol [ fSmall %tmp.71 177 61 67 ];
+        %tmp.72 = "CALORIES";
+        %tmp.73 = self;
+        symbol [ formatCalories %tmp.74 178 24 38 ];
+        %tmp.74 = getv function %tmp.73 :formatCalories;
+        symbol [ app %tmp.76 178 39 42 ];
+        %tmp.76 = getv ? :app;
+        symbol [ getCompletedWorkoutCalories %tmp.77 178 43 70 ];
+        %tmp.77 = getv function %tmp.76 :getCompletedWorkoutCalories;
+        %tmp.78 = invoke %tmp.76 %tmp.77();
+        %tmp.79 = invoke %tmp.73 %tmp.74(%tmp.78);
+        symbol [ COLOR_SECOND %tmp.81 178 75 87 ];
+        %tmp.81 = getv ? :COLOR_SECOND;
+        invoke %tmp.61 %tmp.62(%tmp.63, %tmp.64, %tmp.65, %tmp.66, %tmp.67, %tmp.68, %tmp.69, %tmp.70, %tmp.71, %tmp.72, %tmp.79, %tmp.81);
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_161_6_180_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 182; @symbol_functiondef = [drawTotalRow,182,13,25]; @symbol_param<0> = [dc,182,26,28]; @symbol_param<1> = [left,182,30,34]; @symbol_param<2> = [right,182,36,41]; @symbol_param<3> = [cx,182,43,45]; @symbol_param<4> = [y,182,47,48]; @symbol_param<5> = [rowH,182,50,54]; @symbol_param<6> = [pad,182,56,59]; @symbol_param<7> = [fTiny,182,61,66]; @symbol_param<8> = [fSmall,182,68,74]; @symbol_param<9> = [label,182,76,81]; @symbol_param<10> = [value,182,83,88]; @symbol_param<11> = [valueColor,182,90,100]; ]
+    function drawTotalRow(dc, left, right, cx, y, rowH, pad, fTiny, fSmall, label, value, valueColor) {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_182_102_189_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 183 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 183 8 10 ];
+        symbol [ setColor %tmp.2 183 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ COLOR_MUTED %tmp.4 183 20 31 ];
+        %tmp.4 = getv ? :COLOR_MUTED;
+        symbol [ Graphics %tmp.5 183 33 41 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.6 183 42 59 ];
+        %tmp.6 = getv %tmp.5 :COLOR_TRANSPARENT;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 184 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 184 8 10 ];
+        symbol [ drawText %tmp.8 184 11 19 ];
+        %tmp.8 = getv function %tmp.7 :drawText;
+        %tmp.9 = lgetv %cx;
+        symbol [ cx %tmp.9 184 20 22 ];
+        %tmp.10 = lgetv %y;
+        symbol [ y %tmp.10 184 24 25 ];
+        %tmp.11 = lgetv %fTiny;
+        symbol [ fTiny %tmp.11 184 27 32 ];
+        %tmp.12 = lgetv %label;
+        symbol [ label %tmp.12 184 34 39 ];
+        symbol [ Graphics %tmp.13 184 41 49 ];
+        %tmp.13 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.14 184 50 69 ];
+        %tmp.14 = getv %tmp.13 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.7 %tmp.8(%tmp.9, %tmp.10, %tmp.11, %tmp.12, %tmp.14);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 186 8 ]
+        %tmp.15 = lgetv %dc;
+        symbol [ dc %tmp.15 186 8 10 ];
+        symbol [ setColor %tmp.16 186 11 19 ];
+        %tmp.16 = getv function %tmp.15 :setColor;
+        %tmp.17 = lgetv %valueColor;
+        symbol [ valueColor %tmp.17 186 20 30 ];
+        symbol [ Graphics %tmp.18 186 32 40 ];
+        %tmp.18 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.19 186 41 58 ];
+        %tmp.19 = getv %tmp.18 :COLOR_TRANSPARENT;
+        invoke %tmp.15 %tmp.16(%tmp.17, %tmp.19);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 187 8 ]
+        %tmp.20 = lgetv %dc;
+        symbol [ dc %tmp.20 187 8 10 ];
+        symbol [ drawText %tmp.21 187 11 19 ];
+        %tmp.21 = getv function %tmp.20 :drawText;
+        %tmp.22 = lgetv %cx;
+        symbol [ cx %tmp.22 187 20 22 ];
+        %tmp.23 = lgetv %y;
+        symbol [ y %tmp.23 187 24 25 ];
+        %tmp.24 = lgetv %dc;
+        symbol [ dc %tmp.24 187 28 30 ];
+        symbol [ getFontHeight %tmp.25 187 31 44 ];
+        %tmp.25 = getv function %tmp.24 :getFontHeight;
+        %tmp.26 = lgetv %fTiny;
+        symbol [ fTiny %tmp.26 187 45 50 ];
+        %tmp.27 = invoke %tmp.24 %tmp.25(%tmp.26);
+        %tmp.28 = add %tmp.23 %tmp.27;
+        %tmp.29 = lgetv %pad;
+        symbol [ pad %tmp.29 187 54 57 ];
+        %tmp.30 = 0.2;
+        %tmp.31 = mul %tmp.29 %tmp.30;
+        %tmp.32 = add %tmp.28 %tmp.31;
+        %tmp.33 = lgetv %fSmall;
+        symbol [ fSmall %tmp.33 187 65 71 ];
+        %tmp.34 = lgetv %value;
+        symbol [ value %tmp.34 187 73 78 ];
+        symbol [ Graphics %tmp.35 187 80 88 ];
+        %tmp.35 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.36 187 89 108 ];
+        %tmp.36 = getv %tmp.35 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.20 %tmp.21(%tmp.22, %tmp.32, %tmp.33, %tmp.34, %tmp.36);
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_182_102_189_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 191; @symbol_functiondef = [drawGroupedListPage,191,13,32]; @symbol_param<0> = [dc,192,8,10]; @symbol_param<1> = [left,192,12,16]; @symbol_param<2> = [right,192,18,23]; @symbol_param<3> = [cw,192,25,27]; @symbol_param<4> = [H,192,29,30]; @symbol_param<5> = [y,192,32,33]; @symbol_param<6> = [pad,192,35,38]; @symbol_param<7> = [fTiny,193,8,13]; @symbol_param<8> = [hTiny,193,15,20]; @symbol_param<9> = [segments,193,22,30]; @symbol_param<9>_type<0> = [Lang,193,34,38]; @symbol_param<9>_type<1> = [Array,193,39,44]; @symbol_param<9>_type<2> = [Lang,193,45,49]; @symbol_param<9>_type<3> = [Dictionary,193,50,60]; @symbol_param<10> = [showRuns,193,63,71]; ]
+    function drawGroupedListPage(dc, left, right, cw, H, y, pad, fTiny, hTiny, segments as Lang.Array<Lang.Dictionary>, showRuns) {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_194_6_242_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 195 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_194_6_242_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_194_6_242_4_stop" ]
+        %cx.1 = local;
+        symbol [ cx %cx.1 195 12 14 ];
+        %tmp.1 = lgetv %left;
+        symbol [ left %tmp.1 195 17 21 ];
+        %tmp.2 = lgetv %cw;
+        symbol [ cw %tmp.2 195 24 26 ];
+        %tmp.3 = 2;
+        %tmp.4 = div %tmp.2 %tmp.3;
+        %tmp.5 = add %tmp.1 %tmp.4;
+        lputv %cx.1 %tmp.5;
+        symbol [ cx %cx.1 195 12 14 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 196 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_194_6_242_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_194_6_242_4_stop" ]
+        %title.2 = local;
+        symbol [ title %title.2 196 12 17 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_196_20_196_40_begin:
+        %tmp.6 = lgetv %showRuns;
+        symbol [ showRuns %tmp.6 196 20 28 ];
+        bf %tmp.6 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_196_20_196_40_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_196_20_196_40_true:
+        %tmp.7 = "RUNS";
+        push %tmp.7;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_196_20_196_40_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_196_20_196_40_else_false:
+        %tmp.8 = "STATIONS";
+        push %tmp.8;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_196_20_196_40_end:
+        %tmp.9 = phi [%tmp.6 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_196_20_196_40_begin] [%tmp.7 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_196_20_196_40_true] [%tmp.8 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_196_20_196_40_else_false] [%tmp.9 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_196_20_196_40_end];
+        lputv %title.2 %tmp.9;
+        symbol [ title %title.2 196 12 17 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 197 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_194_6_242_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_194_6_242_4_stop" ]
+        %accent.3 = local;
+        symbol [ accent %accent.3 197 12 18 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_197_21_197_44_begin:
+        %tmp.10 = lgetv %showRuns;
+        symbol [ showRuns %tmp.10 197 21 29 ];
+        bf %tmp.10 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_197_21_197_44_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_197_21_197_44_true:
+        symbol [ COLOR_RUN %tmp.12 197 32 41 ];
+        %tmp.12 = getv ? :COLOR_RUN;
+        push %tmp.12;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_197_21_197_44_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_197_21_197_44_else_false:
+        symbol [ COLOR_STATION %tmp.14 197 44 57 ];
+        %tmp.14 = getv ? :COLOR_STATION;
+        push %tmp.14;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_197_21_197_44_end:
+        %tmp.15 = phi [%tmp.10 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_197_21_197_44_begin] [%tmp.12 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_197_21_197_44_true] [%tmp.14 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_197_21_197_44_else_false] [%tmp.15 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_197_21_197_44_end];
+        lputv %accent.3 %tmp.15;
+        symbol [ accent %accent.3 197 12 18 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 199 8 ]
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 199 8 10 ];
+        symbol [ setColor %tmp.17 199 11 19 ];
+        %tmp.17 = getv function %tmp.16 :setColor;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_199_20_199_40_begin:
+        %tmp.18 = lgetv %showRuns;
+        symbol [ showRuns %tmp.18 199 20 28 ];
+        bf %tmp.18 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_199_20_199_40_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_199_20_199_40_true:
+        %tmp.19 = lgetv %accent.3;
+        symbol [ accent %tmp.19 199 31 37 ];
+        push %tmp.19;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_199_20_199_40_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_199_20_199_40_else_false:
+        symbol [ COLOR_STATION_TEXT %tmp.21 199 40 58 ];
+        %tmp.21 = getv ? :COLOR_STATION_TEXT;
+        push %tmp.21;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_199_20_199_40_end:
+        %tmp.22 = phi [%tmp.18 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_199_20_199_40_begin] [%tmp.19 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_199_20_199_40_true] [%tmp.21 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_199_20_199_40_else_false] [%tmp.22 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_199_20_199_40_end];
+        symbol [ Graphics %tmp.23 199 60 68 ];
+        %tmp.23 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.24 199 69 86 ];
+        %tmp.24 = getv %tmp.23 :COLOR_TRANSPARENT;
+        invoke %tmp.16 %tmp.17(%tmp.22, %tmp.24);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 200 8 ]
+        %tmp.25 = lgetv %dc;
+        symbol [ dc %tmp.25 200 8 10 ];
+        symbol [ drawText %tmp.26 200 11 19 ];
+        %tmp.26 = getv function %tmp.25 :drawText;
+        %tmp.27 = lgetv %cx.1;
+        symbol [ cx %tmp.27 200 20 22 ];
+        %tmp.28 = lgetv %y;
+        symbol [ y %tmp.28 200 24 25 ];
+        %tmp.29 = lgetv %fTiny;
+        symbol [ fTiny %tmp.29 200 27 32 ];
+        %tmp.30 = lgetv %title.2;
+        symbol [ title %tmp.30 200 34 39 ];
+        symbol [ Graphics %tmp.31 200 41 49 ];
+        %tmp.31 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.32 200 50 69 ];
+        %tmp.32 = getv %tmp.31 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.25 %tmp.26(%tmp.27, %tmp.28, %tmp.29, %tmp.30, %tmp.32);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 201 8 ]
+        %tmp.33 = lgetv %y;
+        symbol [ y %tmp.33 201 8 9 ];
+        %tmp.34 = lgetv %hTiny;
+        symbol [ hTiny %tmp.34 201 13 18 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_201_22_201_52_begin:
+        %tmp.35 = lgetv %showRuns;
+        symbol [ showRuns %tmp.35 201 22 30 ];
+        bf %tmp.35 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_201_22_201_52_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_201_22_201_52_true:
+        %tmp.36 = lgetv %pad;
+        symbol [ pad %tmp.36 201 33 36 ];
+        %tmp.37 = 0.25;
+        %tmp.38 = mul %tmp.36 %tmp.37;
+        push %tmp.38;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_201_22_201_52_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_201_22_201_52_else_false:
+        %tmp.39 = lgetv %pad;
+        symbol [ pad %tmp.39 201 46 49 ];
+        %tmp.40 = 0.05;
+        %tmp.41 = mul %tmp.39 %tmp.40;
+        push %tmp.41;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_201_22_201_52_end:
+        %tmp.42 = phi [%tmp.35 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_201_22_201_52_begin] [%tmp.38 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_201_22_201_52_true] [%tmp.41 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_201_22_201_52_else_false] [%tmp.42 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_201_22_201_52_end];
+        %tmp.43 = add %tmp.34 %tmp.42;
+        %tmp.44 = add %tmp.33 %tmp.43;
+        lputv %y %tmp.44;
+        symbol [ y %y 201 8 9 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 203 8 ]
+        %tmp.45 = lgetv %dc;
+        symbol [ dc %tmp.45 203 8 10 ];
+        symbol [ setColor %tmp.46 203 11 19 ];
+        %tmp.46 = getv function %tmp.45 :setColor;
+        symbol [ COLOR_MUTED %tmp.48 203 20 31 ];
+        %tmp.48 = getv ? :COLOR_MUTED;
+        symbol [ Graphics %tmp.49 203 33 41 ];
+        %tmp.49 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.50 203 42 59 ];
+        %tmp.50 = getv %tmp.49 :COLOR_TRANSPARENT;
+        invoke %tmp.45 %tmp.46(%tmp.48, %tmp.50);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 204 8 ]
+        %tmp.51 = lgetv %dc;
+        symbol [ dc %tmp.51 204 8 10 ];
+        symbol [ drawText %tmp.52 204 11 19 ];
+        %tmp.52 = getv function %tmp.51 :drawText;
+        %tmp.53 = lgetv %cx.1;
+        symbol [ cx %tmp.53 204 20 22 ];
+        %tmp.54 = lgetv %y;
+        symbol [ y %tmp.54 204 24 25 ];
+        %tmp.55 = lgetv %fTiny;
+        symbol [ fTiny %tmp.55 204 27 32 ];
+        %tmp.56 = "LAP       TIME";
+        symbol [ Graphics %tmp.57 204 52 60 ];
+        %tmp.57 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.58 204 61 80 ];
+        %tmp.58 = getv %tmp.57 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.51 %tmp.52(%tmp.53, %tmp.54, %tmp.55, %tmp.56, %tmp.58);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 205 8 ]
+        %tmp.59 = lgetv %y;
+        symbol [ y %tmp.59 205 8 9 ];
+        %tmp.60 = lgetv %hTiny;
+        symbol [ hTiny %tmp.60 205 13 18 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_205_22_205_46_begin:
+        %tmp.61 = lgetv %showRuns;
+        symbol [ showRuns %tmp.61 205 22 30 ];
+        bf %tmp.61 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_205_22_205_46_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_205_22_205_46_true:
+        %tmp.62 = lgetv %pad;
+        symbol [ pad %tmp.62 205 33 36 ];
+        %tmp.63 = 0.15;
+        %tmp.64 = mul %tmp.62 %tmp.63;
+        push %tmp.64;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_205_22_205_46_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_205_22_205_46_else_false:
+        %tmp.65 = 0;
+        push %tmp.65;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_205_22_205_46_end:
+        %tmp.66 = phi [%tmp.61 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_205_22_205_46_begin] [%tmp.64 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_205_22_205_46_true] [%tmp.65 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_205_22_205_46_else_false] [%tmp.66 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_205_22_205_46_end];
+        %tmp.67 = add %tmp.60 %tmp.66;
+        %tmp.68 = add %tmp.59 %tmp.67;
+        lputv %y %tmp.68;
+        symbol [ y %y 205 8 9 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 207 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_194_6_242_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_194_6_242_4_stop" ]
+        %rowH.4 = local;
+        symbol [ rowH %rowH.4 207 12 16 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_207_19_207_59_begin:
+        %tmp.69 = lgetv %showRuns;
+        symbol [ showRuns %tmp.69 207 19 27 ];
+        bf %tmp.69 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_207_19_207_59_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_207_19_207_59_true:
+        %tmp.70 = lgetv %hTiny;
+        symbol [ hTiny %tmp.70 207 30 35 ];
+        %tmp.71 = lgetv %pad;
+        symbol [ pad %tmp.71 207 38 41 ];
+        %tmp.72 = 0.25;
+        %tmp.73 = mul %tmp.71 %tmp.72;
+        %tmp.74 = add %tmp.70 %tmp.73;
+        push %tmp.74;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_207_19_207_59_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_207_19_207_59_else_false:
+        %tmp.75 = lgetv %hTiny;
+        symbol [ hTiny %tmp.75 207 51 56 ];
+        %tmp.76 = 0.82;
+        %tmp.77 = mul %tmp.75 %tmp.76;
+        push %tmp.77;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_207_19_207_59_end:
+        %tmp.78 = phi [%tmp.69 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_207_19_207_59_begin] [%tmp.74 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_207_19_207_59_true] [%tmp.77 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_207_19_207_59_else_false] [%tmp.78 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_207_19_207_59_end];
+        lputv %rowH.4 %tmp.78;
+        symbol [ rowH %rowH.4 207 12 16 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 208 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_194_6_242_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_194_6_242_4_stop" ]
+        %rowCenter.5 = local;
+        symbol [ rowCenter %rowCenter.5 208 12 21 ];
+        %tmp.79 = lgetv %cx.1;
+        symbol [ cx %tmp.79 208 24 26 ];
+        lputv %rowCenter.5 %tmp.79;
+        symbol [ rowCenter %rowCenter.5 208 12 21 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 209 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_194_6_242_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_194_6_242_4_stop" ]
+        %shown.6 = local;
+        symbol [ shown %shown.6 209 12 17 ];
+        %tmp.80 = 0;
+        lputv %shown.6 %tmp.80;
+        symbol [ shown %shown.6 209 12 17 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 211 8 ]
+        for @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_8_241_8_for_test @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_8_241_8_for_incr @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_8_241_8_for_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_8_241_8_for_init:
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_8_241_8_for_begin" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_8_241_8_for_end" ]
+        %i.7 = local;
+        symbol [ i %i.7 211 17 18 ];
+        %tmp.81 = 0;
+        lputv %i.7 %tmp.81;
+        symbol [ i %i.7 211 17 18 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_8_241_8_for_test:
+        %tmp.82 = lgetv %i.7;
+        symbol [ i %tmp.82 211 24 25 ];
+        %tmp.83 = lgetv %segments;
+        symbol [ segments %tmp.83 211 28 36 ];
+        symbol [ size %tmp.84 211 37 41 ];
+        %tmp.84 = getv function %tmp.83 :size;
+        %tmp.85 = invoke %tmp.83 %tmp.84();
+        %tmp.86 = lt %tmp.82 %tmp.85;
+        bf %tmp.86 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_8_241_8_for_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_8_241_8_for_begin:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 212 12 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_stop" ]
+        %segment.8 = local;
+        symbol [ segment %segment.8 212 16 23 ];
+        %tmp.87 = lgetv %segments;
+        symbol [ segments %tmp.87 212 26 34 ];
+        %tmp.88 = lgetv %i.7;
+        symbol [ i %tmp.88 212 35 36 ];
+        %tmp.89 = agetv %tmp.87 %tmp.88;
+        lputv %segment.8 %tmp.89;
+        symbol [ segment %segment.8 212 16 23 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 213 12 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_stop" ]
+        %isRun.9 = local;
+        symbol [ isRun %isRun.9 213 16 21 ];
+        %tmp.90 = lgetv %segment.8;
+        symbol [ segment %tmp.90 213 24 31 ];
+        %tmp.92 = const :type;
+        symbol [ type %tmp.92 213 33 37 const ];
+        %tmp.93 = agetv %tmp.90 %tmp.92;
+        symbol [ equals %tmp.94 213 39 45 ];
+        %tmp.94 = getv function %tmp.93 :equals;
+        %tmp.95 = "run";
+        %tmp.96 = invoke %tmp.93 %tmp.94(%tmp.95);
+        lputv %isRun.9 %tmp.96;
+        symbol [ isRun %isRun.9 213 16 21 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 215 12 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_215_12_217_12_if_stmt:
+        %tmp.97 = lgetv %isRun.9;
+        symbol [ isRun %tmp.97 215 16 21 ];
+        %tmp.98 = lgetv %showRuns;
+        symbol [ showRuns %tmp.98 215 25 33 ];
+        %tmp.99 = ne %tmp.97 %tmp.98;
+        bf %tmp.99 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_215_12_217_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_215_12_217_12_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_215_35_217_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 216 16 ]
+        goto break @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_8_241_8_for_incr;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_215_35_217_12_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_215_12_217_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_215_12_217_12_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 219 12 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_stop" ]
+        %rowY.10 = local;
+        symbol [ rowY %rowY.10 219 16 20 ];
+        %tmp.100 = lgetv %y;
+        symbol [ y %tmp.100 219 23 24 ];
+        %tmp.101 = lgetv %shown.6;
+        symbol [ shown %tmp.101 219 27 32 ];
+        %tmp.102 = lgetv %rowH.4;
+        symbol [ rowH %tmp.102 219 35 39 ];
+        %tmp.103 = mul %tmp.101 %tmp.102;
+        %tmp.104 = add %tmp.100 %tmp.103;
+        lputv %rowY.10 %tmp.104;
+        symbol [ rowY %rowY.10 219 16 20 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 220 12 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_stop" ]
+        %labelFont.11 = local;
+        symbol [ labelFont %labelFont.11 220 16 25 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_220_28_220_53_begin:
+        %tmp.105 = lgetv %isRun.9;
+        symbol [ isRun %tmp.105 220 28 33 ];
+        bf %tmp.105 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_220_28_220_53_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_220_28_220_53_true:
+        %tmp.106 = lgetv %fTiny;
+        symbol [ fTiny %tmp.106 220 36 41 ];
+        push %tmp.106;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_220_28_220_53_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_220_28_220_53_else_false:
+        symbol [ Graphics %tmp.107 220 44 52 ];
+        %tmp.107 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.108 220 53 63 ];
+        %tmp.108 = getv %tmp.107 :FONT_XTINY;
+        push %tmp.108;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_220_28_220_53_end:
+        %tmp.109 = phi [%tmp.105 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_220_28_220_53_begin] [%tmp.106 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_220_28_220_53_true] [%tmp.108 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_220_28_220_53_else_false] [%tmp.109 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_220_28_220_53_end];
+        lputv %labelFont.11 %tmp.109;
+        symbol [ labelFont %labelFont.11 220 16 25 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 221 12 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_stop" ]
+        %labelColor.12 = local;
+        symbol [ labelColor %labelColor.12 221 16 26 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_221_29_221_46_begin:
+        %tmp.110 = lgetv %isRun.9;
+        symbol [ isRun %tmp.110 221 29 34 ];
+        bf %tmp.110 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_221_29_221_46_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_221_29_221_46_true:
+        %tmp.111 = lgetv %accent.3;
+        symbol [ accent %tmp.111 221 37 43 ];
+        push %tmp.111;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_221_29_221_46_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_221_29_221_46_else_false:
+        symbol [ COLOR_STATION_TEXT %tmp.113 221 46 64 ];
+        %tmp.113 = getv ? :COLOR_STATION_TEXT;
+        push %tmp.113;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_221_29_221_46_end:
+        %tmp.114 = phi [%tmp.110 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_221_29_221_46_begin] [%tmp.111 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_221_29_221_46_true] [%tmp.113 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_221_29_221_46_else_false] [%tmp.114 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_221_29_221_46_end];
+        lputv %labelColor.12 %tmp.114;
+        symbol [ labelColor %labelColor.12 221 16 26 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 222 12 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_stop" ]
+        %labelX.13 = local;
+        symbol [ labelX %labelX.13 222 16 22 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_222_25_222_69_begin:
+        %tmp.115 = lgetv %isRun.9;
+        symbol [ isRun %tmp.115 222 25 30 ];
+        bf %tmp.115 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_222_25_222_69_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_222_25_222_69_true:
+        %tmp.116 = lgetv %rowCenter.5;
+        symbol [ rowCenter %tmp.116 222 33 42 ];
+        %tmp.117 = lgetv %cw;
+        symbol [ cw %tmp.117 222 45 47 ];
+        %tmp.118 = 0.16;
+        %tmp.119 = mul %tmp.117 %tmp.118;
+        %tmp.120 = sub %tmp.116 %tmp.119;
+        push %tmp.120;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_222_25_222_69_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_222_25_222_69_else_false:
+        %tmp.121 = lgetv %left;
+        symbol [ left %tmp.121 222 57 61 ];
+        %tmp.122 = lgetv %cw;
+        symbol [ cw %tmp.122 222 64 66 ];
+        %tmp.123 = 0.08;
+        %tmp.124 = mul %tmp.122 %tmp.123;
+        %tmp.125 = add %tmp.121 %tmp.124;
+        push %tmp.125;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_222_25_222_69_end:
+        %tmp.126 = phi [%tmp.115 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_222_25_222_69_begin] [%tmp.120 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_222_25_222_69_true] [%tmp.125 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_222_25_222_69_else_false] [%tmp.126 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_222_25_222_69_end];
+        lputv %labelX.13 %tmp.126;
+        symbol [ labelX %labelX.13 222 16 22 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 223 12 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_stop" ]
+        %timeX.14 = local;
+        symbol [ timeX %timeX.14 223 16 21 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_223_24_223_73_begin:
+        %tmp.127 = lgetv %isRun.9;
+        symbol [ isRun %tmp.127 223 24 29 ];
+        bf %tmp.127 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_223_24_223_73_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_223_24_223_73_true:
+        %tmp.128 = lgetv %rowCenter.5;
+        symbol [ rowCenter %tmp.128 223 32 41 ];
+        %tmp.129 = lgetv %cw;
+        symbol [ cw %tmp.129 223 44 46 ];
+        %tmp.130 = 0.16;
+        %tmp.131 = mul %tmp.129 %tmp.130;
+        %tmp.132 = add %tmp.128 %tmp.131;
+        push %tmp.132;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_223_24_223_73_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_223_24_223_73_else_false:
+        %tmp.133 = lgetv %rowCenter.5;
+        symbol [ rowCenter %tmp.133 223 56 65 ];
+        %tmp.134 = lgetv %cw;
+        symbol [ cw %tmp.134 223 68 70 ];
+        %tmp.135 = 0.20;
+        %tmp.136 = mul %tmp.134 %tmp.135;
+        %tmp.137 = add %tmp.133 %tmp.136;
+        push %tmp.137;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_223_24_223_73_end:
+        %tmp.138 = phi [%tmp.127 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_223_24_223_73_begin] [%tmp.132 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_223_24_223_73_true] [%tmp.137 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_223_24_223_73_else_false] [%tmp.138 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_223_24_223_73_end];
+        lputv %timeX.14 %tmp.138;
+        symbol [ timeX %timeX.14 223 16 21 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 224 12 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_stop" ]
+        %timeFont.15 = local;
+        symbol [ timeFont %timeFont.15 224 16 24 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_224_27_224_52_begin:
+        %tmp.139 = lgetv %isRun.9;
+        symbol [ isRun %tmp.139 224 27 32 ];
+        bf %tmp.139 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_224_27_224_52_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_224_27_224_52_true:
+        %tmp.140 = lgetv %fTiny;
+        symbol [ fTiny %tmp.140 224 35 40 ];
+        push %tmp.140;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_224_27_224_52_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_224_27_224_52_else_false:
+        symbol [ Graphics %tmp.141 224 43 51 ];
+        %tmp.141 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.142 224 52 62 ];
+        %tmp.142 = getv %tmp.141 :FONT_XTINY;
+        push %tmp.142;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_224_27_224_52_end:
+        %tmp.143 = phi [%tmp.139 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_224_27_224_52_begin] [%tmp.140 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_224_27_224_52_true] [%tmp.142 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_224_27_224_52_else_false] [%tmp.143 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_224_27_224_52_end];
+        lputv %timeFont.15 %tmp.143;
+        symbol [ timeFont %timeFont.15 224 16 24 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 225 12 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_stop" ]
+        %label.16 = local;
+        symbol [ label %label.16 225 16 21 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_225_24_227_75_begin:
+        %tmp.144 = lgetv %isRun.9;
+        symbol [ isRun %tmp.144 225 24 29 ];
+        bf %tmp.144 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_225_24_227_75_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_225_24_227_75_true:
+        %tmp.145 = lgetv %segment.8;
+        symbol [ segment %tmp.145 226 18 25 ];
+        %tmp.147 = const :label;
+        symbol [ label %tmp.147 226 27 32 const ];
+        %tmp.148 = agetv %tmp.145 %tmp.147;
+        push %tmp.148;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_225_24_227_75_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_225_24_227_75_else_false:
+        %tmp.149 = self;
+        symbol [ fitStationLabel %tmp.150 227 18 33 ];
+        %tmp.150 = getv function %tmp.149 :fitStationLabel;
+        %tmp.151 = lgetv %segment.8;
+        symbol [ segment %tmp.151 227 34 41 ];
+        %tmp.153 = const :label;
+        symbol [ label %tmp.153 227 43 48 const ];
+        %tmp.154 = agetv %tmp.151 %tmp.153;
+        %tmp.155 = lgetv %labelFont.11;
+        symbol [ labelFont %tmp.155 227 51 60 ];
+        %tmp.156 = lgetv %cw;
+        symbol [ cw %tmp.156 227 62 64 ];
+        %tmp.157 = 0.28;
+        %tmp.158 = mul %tmp.156 %tmp.157;
+        %tmp.159 = lgetv %dc;
+        symbol [ dc %tmp.159 227 73 75 ];
+        %tmp.160 = invoke %tmp.149 %tmp.150(%tmp.154, %tmp.155, %tmp.158, %tmp.159);
+        push %tmp.160;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_225_24_227_75_end:
+        %tmp.161 = phi [%tmp.144 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_225_24_227_75_begin] [%tmp.148 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_225_24_227_75_true] [%tmp.160 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_225_24_227_75_else_false] [%tmp.161 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_225_24_227_75_end];
+        lputv %label.16 %tmp.161;
+        symbol [ label %label.16 225 16 21 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 229 12 ]
+        %tmp.162 = lgetv %dc;
+        symbol [ dc %tmp.162 229 12 14 ];
+        symbol [ setColor %tmp.163 229 15 23 ];
+        %tmp.163 = getv function %tmp.162 :setColor;
+        %tmp.164 = lgetv %labelColor.12;
+        symbol [ labelColor %tmp.164 229 24 34 ];
+        symbol [ Graphics %tmp.165 229 36 44 ];
+        %tmp.165 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.166 229 45 62 ];
+        %tmp.166 = getv %tmp.165 :COLOR_TRANSPARENT;
+        invoke %tmp.162 %tmp.163(%tmp.164, %tmp.166);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 230 12 ]
+        %tmp.167 = lgetv %dc;
+        symbol [ dc %tmp.167 230 12 14 ];
+        symbol [ drawText %tmp.168 230 15 23 ];
+        %tmp.168 = getv function %tmp.167 :drawText;
+        %tmp.169 = lgetv %labelX.13;
+        symbol [ labelX %tmp.169 231 16 22 ];
+        %tmp.170 = lgetv %rowY.10;
+        symbol [ rowY %tmp.170 231 24 28 ];
+        %tmp.171 = lgetv %labelFont.11;
+        symbol [ labelFont %tmp.171 231 30 39 ];
+        %tmp.172 = lgetv %label.16;
+        symbol [ label %tmp.172 231 41 46 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_232_16_232_64_begin:
+        %tmp.173 = lgetv %isRun.9;
+        symbol [ isRun %tmp.173 232 16 21 ];
+        bf %tmp.173 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_232_16_232_64_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_232_16_232_64_true:
+        symbol [ Graphics %tmp.174 232 24 32 ];
+        %tmp.174 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.175 232 33 52 ];
+        %tmp.175 = getv %tmp.174 :TEXT_JUSTIFY_CENTER;
+        push %tmp.175;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_232_16_232_64_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_232_16_232_64_else_false:
+        symbol [ Graphics %tmp.176 232 55 63 ];
+        %tmp.176 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.177 232 64 81 ];
+        %tmp.177 = getv %tmp.176 :TEXT_JUSTIFY_LEFT;
+        push %tmp.177;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_232_16_232_64_end:
+        %tmp.178 = phi [%tmp.173 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_232_16_232_64_begin] [%tmp.175 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_232_16_232_64_true] [%tmp.177 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_232_16_232_64_else_false] [%tmp.178 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_232_16_232_64_end];
+        invoke %tmp.167 %tmp.168(%tmp.169, %tmp.170, %tmp.171, %tmp.172, %tmp.178);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 234 12 ]
+        %tmp.179 = lgetv %dc;
+        symbol [ dc %tmp.179 234 12 14 ];
+        symbol [ setColor %tmp.180 234 15 23 ];
+        %tmp.180 = getv function %tmp.179 :setColor;
+        symbol [ COLOR_SECOND %tmp.182 234 24 36 ];
+        %tmp.182 = getv ? :COLOR_SECOND;
+        symbol [ Graphics %tmp.183 234 38 46 ];
+        %tmp.183 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.184 234 47 64 ];
+        %tmp.184 = getv %tmp.183 :COLOR_TRANSPARENT;
+        invoke %tmp.179 %tmp.180(%tmp.182, %tmp.184);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 235 12 ]
+        %tmp.185 = lgetv %dc;
+        symbol [ dc %tmp.185 235 12 14 ];
+        symbol [ drawText %tmp.186 235 15 23 ];
+        %tmp.186 = getv function %tmp.185 :drawText;
+        %tmp.187 = lgetv %timeX.14;
+        symbol [ timeX %tmp.187 235 24 29 ];
+        %tmp.188 = lgetv %rowY.10;
+        symbol [ rowY %tmp.188 235 31 35 ];
+        %tmp.189 = lgetv %timeFont.15;
+        symbol [ timeFont %tmp.189 235 37 45 ];
+        %tmp.190 = self;
+        symbol [ formatTime %tmp.191 235 47 57 ];
+        %tmp.191 = getv function %tmp.190 :formatTime;
+        %tmp.192 = lgetv %segment.8;
+        symbol [ segment %tmp.192 235 58 65 ];
+        %tmp.194 = const :time;
+        symbol [ time %tmp.194 235 67 71 const ];
+        %tmp.195 = agetv %tmp.192 %tmp.194;
+        %tmp.196 = invoke %tmp.190 %tmp.191(%tmp.195);
+        symbol [ Graphics %tmp.197 235 75 83 ];
+        %tmp.197 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.198 235 84 103 ];
+        %tmp.198 = getv %tmp.197 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.185 %tmp.186(%tmp.187, %tmp.188, %tmp.189, %tmp.196, %tmp.198);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 236 12 ]
+        %tmp.199 = lgetv %shown.6;
+        symbol [ shown %tmp.199 236 12 17 ];
+        %tmp.200 = 1;
+        %tmp.201 = add %tmp.199 %tmp.200;
+        lputv %shown.6 %tmp.201;
+        symbol [ shown %shown.6 236 12 17 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 238 12 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_238_12_240_12_if_stmt:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_238_16_238_48_begin:
+        %tmp.202 = lgetv %shown.6;
+        symbol [ shown %tmp.202 238 16 21 ];
+        %tmp.203 = 8;
+        %tmp.204 = gte %tmp.202 %tmp.203;
+        bt %tmp.204 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_238_12_240_12_if_true;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_238_30_238_48_false:
+        %tmp.205 = lgetv %rowY.10;
+        symbol [ rowY %tmp.205 238 30 34 ];
+        %tmp.206 = lgetv %rowH.4;
+        symbol [ rowH %tmp.206 238 37 41 ];
+        %tmp.207 = add %tmp.205 %tmp.206;
+        %tmp.208 = lgetv %H;
+        symbol [ H %tmp.208 238 44 45 ];
+        %tmp.209 = 0.92;
+        %tmp.210 = mul %tmp.208 %tmp.209;
+        %tmp.211 = gt %tmp.207 %tmp.210;
+        push %tmp.211;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_238_30_238_48_end:
+        %tmp.212 = phi [%tmp.204 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_238_16_238_48_begin] [%tmp.211 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_238_30_238_48_false] [%tmp.212 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_238_30_238_48_end];
+        bf %tmp.212 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_238_12_240_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_238_12_240_12_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_238_54_240_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 239 16 ]
+        goto break @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_8_241_8_for_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_238_54_240_12_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_238_12_240_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_238_12_240_12_if_end:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_50_241_8_stop:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_8_241_8_for_incr:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 211 ]
+        %tmp.215 = lgetv %i.7;
+        symbol [ i %tmp.215 211 45 46 ];
+        %tmp.216 = add %tmp.215 1;
+        lputv %i.7 %tmp.216;
+        symbol [ i %i.7 211 45 46 ];
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_8_241_8_for_test;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_211_8_241_8_for_end:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_194_6_242_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 244; @symbol_functiondef = [fitStationLabel,244,13,28]; @symbol_param<0> = [label,244,29,34]; @symbol_param<1> = [font,244,36,40]; @symbol_param<2> = [maxWidth,244,42,50]; @symbol_param<3> = [dc,244,52,54]; ]
+    function fitStationLabel(label, font, maxWidth, dc) {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_244_56_256_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 245 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_245_8_247_8_if_stmt:
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 245 12 14 ];
+        symbol [ getTextWidthInPixels %tmp.2 245 15 35 ];
+        %tmp.2 = getv function %tmp.1 :getTextWidthInPixels;
+        %tmp.3 = lgetv %label;
+        symbol [ label %tmp.3 245 36 41 ];
+        %tmp.4 = lgetv %font;
+        symbol [ font %tmp.4 245 43 47 ];
+        %tmp.5 = invoke %tmp.1 %tmp.2(%tmp.3, %tmp.4);
+        %tmp.6 = lgetv %maxWidth;
+        symbol [ maxWidth %tmp.6 245 52 60 ];
+        %tmp.7 = lte %tmp.5 %tmp.6;
+        bf %tmp.7 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_245_8_247_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_245_8_247_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_245_62_247_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 246 12 ]
+        %tmp.8 = lgetv %label;
+        symbol [ label %tmp.8 246 19 24 ];
+        ret %tmp.8;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_245_62_247_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_245_8_247_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_245_8_247_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 249 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_244_56_256_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_244_56_256_4_stop" ]
+        %shortened.1 = local;
+        symbol [ shortened %shortened.1 249 12 21 ];
+        %tmp.9 = lgetv %label;
+        symbol [ label %tmp.9 249 24 29 ];
+        lputv %shortened.1 %tmp.9;
+        symbol [ shortened %shortened.1 249 12 21 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 250 8 ]
+        while @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_250_8_253_8_while_test @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_250_8_253_8_while_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_250_8_253_8_while_test:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_250_15_251_66_begin:
+        %tmp.10 = lgetv %shortened.1;
+        symbol [ shortened %tmp.10 250 15 24 ];
+        symbol [ length %tmp.11 250 25 31 ];
+        %tmp.11 = getv function %tmp.10 :length;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        %tmp.13 = 3;
+        %tmp.14 = gt %tmp.12 %tmp.13;
+        %tmp.15 = dup %tmp.14;
+        bf %tmp.15 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_251_15_251_66_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_251_15_251_66_true:
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 251 15 17 ];
+        symbol [ getTextWidthInPixels %tmp.17 251 18 38 ];
+        %tmp.17 = getv function %tmp.16 :getTextWidthInPixels;
+        %tmp.18 = lgetv %shortened.1;
+        symbol [ shortened %tmp.18 251 39 48 ];
+        %tmp.19 = "...";
+        %tmp.20 = add %tmp.18 %tmp.19;
+        %tmp.21 = lgetv %font;
+        symbol [ font %tmp.21 251 58 62 ];
+        %tmp.22 = invoke %tmp.16 %tmp.17(%tmp.20, %tmp.21);
+        %tmp.23 = lgetv %maxWidth;
+        symbol [ maxWidth %tmp.23 251 66 74 ];
+        %tmp.24 = gt %tmp.22 %tmp.23;
+        %tmp.25 = and %tmp.14 %tmp.24;
+        push %tmp.25;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_251_15_251_66_end:
+        %tmp.26 = phi [%tmp.15 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_250_15_251_66_begin] [%tmp.25 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_251_15_251_66_true] [%tmp.26 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_251_15_251_66_end];
+        bf %tmp.26 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_250_8_253_8_while_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_250_8_253_8_while_begin:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_251_76_253_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 252 12 ]
+        %tmp.27 = lgetv %shortened.1;
+        symbol [ shortened %tmp.27 252 24 33 ];
+        symbol [ substring %tmp.28 252 34 43 ];
+        %tmp.28 = getv function %tmp.27 :substring;
+        %tmp.29 = 0;
+        %tmp.30 = lgetv %shortened.1;
+        symbol [ shortened %tmp.30 252 47 56 ];
+        symbol [ length %tmp.31 252 57 63 ];
+        %tmp.31 = getv function %tmp.30 :length;
+        %tmp.32 = invoke %tmp.30 %tmp.31();
+        %tmp.33 = 1;
+        %tmp.34 = sub %tmp.32 %tmp.33;
+        %tmp.35 = invoke %tmp.27 %tmp.28(%tmp.29, %tmp.34);
+        lputv %shortened.1 %tmp.35;
+        symbol [ shortened %shortened.1 252 12 21 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_251_76_253_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_250_8_253_8_while_test;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_250_8_253_8_while_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 255 8 ]
+        %tmp.36 = lgetv %shortened.1;
+        symbol [ shortened %tmp.36 255 15 24 ];
+        %tmp.37 = "...";
+        %tmp.38 = add %tmp.36 %tmp.37;
+        ret %tmp.38;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_244_56_256_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 258; @symbol_functiondef = [drawDetailPage,258,13,27]; @symbol_param<0> = [dc,259,8,10]; @symbol_param<1> = [left,259,12,16]; @symbol_param<2> = [right,259,18,23]; @symbol_param<3> = [cw,259,25,27]; @symbol_param<4> = [H,259,29,30]; @symbol_param<5> = [y,259,32,33]; @symbol_param<6> = [pad,259,35,38]; @symbol_param<7> = [fTiny,260,8,13]; @symbol_param<8> = [fSmall,260,15,21]; @symbol_param<9> = [fNum,260,23,27]; @symbol_param<10> = [hTiny,261,8,13]; @symbol_param<11> = [hSmall,261,15,21]; @symbol_param<12> = [hNum,261,23,27]; @symbol_param<13> = [segments,262,8,16]; @symbol_param<13>_type<0> = [Lang,262,20,24]; @symbol_param<13>_type<1> = [Array,262,25,30]; @symbol_param<13>_type<2> = [Lang,262,31,35]; @symbol_param<13>_type<3> = [Dictionary,262,36,46]; @symbol_param<14> = [pairIndex,262,49,58]; ]
+    function drawDetailPage(dc, left, right, cw, H, y, pad, fTiny, fSmall, fNum, hTiny, hSmall, hNum, segments as Lang.Array<Lang.Dictionary>, pairIndex) {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_263_6_290_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 264 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_263_6_290_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_263_6_290_4_stop" ]
+        %firstIndex.1 = local;
+        symbol [ firstIndex %firstIndex.1 264 12 22 ];
+        %tmp.1 = lgetv %pairIndex;
+        symbol [ pairIndex %tmp.1 264 25 34 ];
+        %tmp.2 = 2;
+        %tmp.3 = mul %tmp.1 %tmp.2;
+        lputv %firstIndex.1 %tmp.3;
+        symbol [ firstIndex %firstIndex.1 264 12 22 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 265 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_263_6_290_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_263_6_290_4_stop" ]
+        %available.2 = local;
+        symbol [ available %available.2 265 12 21 ];
+        %tmp.4 = lgetv %H;
+        symbol [ H %tmp.4 265 24 25 ];
+        %tmp.5 = 0.96;
+        %tmp.6 = mul %tmp.4 %tmp.5;
+        %tmp.7 = lgetv %y;
+        symbol [ y %tmp.7 265 35 36 ];
+        %tmp.8 = sub %tmp.6 %tmp.7;
+        lputv %available.2 %tmp.8;
+        symbol [ available %available.2 265 12 21 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 266 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_263_6_290_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_263_6_290_4_stop" ]
+        %halfH.3 = local;
+        symbol [ halfH %halfH.3 266 12 17 ];
+        %tmp.9 = lgetv %available.2;
+        symbol [ available %tmp.9 266 20 29 ];
+        %tmp.10 = 2;
+        %tmp.11 = div %tmp.9 %tmp.10;
+        lputv %halfH.3 %tmp.11;
+        symbol [ halfH %halfH.3 266 12 17 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 268 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_268_8_275_8_if_stmt:
+        %tmp.12 = lgetv %firstIndex.1;
+        symbol [ firstIndex %tmp.12 268 12 22 ];
+        %tmp.13 = lgetv %segments;
+        symbol [ segments %tmp.13 268 25 33 ];
+        symbol [ size %tmp.14 268 34 38 ];
+        %tmp.14 = getv function %tmp.13 :size;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        %tmp.16 = lt %tmp.12 %tmp.15;
+        bf %tmp.16 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_268_8_275_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_268_8_275_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_268_42_275_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 269 12 ]
+        %tmp.17 = self;
+        symbol [ drawSegmentRow %tmp.18 269 12 26 ];
+        %tmp.18 = getv function %tmp.17 :drawSegmentRow;
+        %tmp.19 = lgetv %dc;
+        symbol [ dc %tmp.19 270 16 18 ];
+        %tmp.20 = lgetv %left;
+        symbol [ left %tmp.20 270 20 24 ];
+        %tmp.21 = lgetv %right;
+        symbol [ right %tmp.21 270 26 31 ];
+        %tmp.22 = lgetv %cw;
+        symbol [ cw %tmp.22 270 33 35 ];
+        %tmp.23 = lgetv %y;
+        symbol [ y %tmp.23 270 37 38 ];
+        %tmp.24 = lgetv %halfH.3;
+        symbol [ halfH %tmp.24 270 40 45 ];
+        %tmp.25 = lgetv %pad;
+        symbol [ pad %tmp.25 270 47 50 ];
+        %tmp.26 = lgetv %fTiny;
+        symbol [ fTiny %tmp.26 271 16 21 ];
+        %tmp.27 = lgetv %fSmall;
+        symbol [ fSmall %tmp.27 271 23 29 ];
+        %tmp.28 = lgetv %fNum;
+        symbol [ fNum %tmp.28 271 31 35 ];
+        %tmp.29 = lgetv %hTiny;
+        symbol [ hTiny %tmp.29 272 16 21 ];
+        %tmp.30 = lgetv %hSmall;
+        symbol [ hSmall %tmp.30 272 23 29 ];
+        %tmp.31 = lgetv %hNum;
+        symbol [ hNum %tmp.31 272 31 35 ];
+        %tmp.32 = lgetv %segments;
+        symbol [ segments %tmp.32 273 16 24 ];
+        %tmp.33 = lgetv %firstIndex.1;
+        symbol [ firstIndex %tmp.33 273 25 35 ];
+        %tmp.34 = agetv %tmp.32 %tmp.33;
+        invoke %tmp.17 %tmp.18(%tmp.19, %tmp.20, %tmp.21, %tmp.22, %tmp.23, %tmp.24, %tmp.25, %tmp.26, %tmp.27, %tmp.28, %tmp.29, %tmp.30, %tmp.31, %tmp.34);
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_268_42_275_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_268_8_275_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_268_8_275_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 277 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_263_6_290_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_263_6_290_4_stop" ]
+        %middle.4 = local;
+        symbol [ middle %middle.4 277 12 18 ];
+        %tmp.35 = lgetv %y;
+        symbol [ y %tmp.35 277 21 22 ];
+        %tmp.36 = lgetv %halfH.3;
+        symbol [ halfH %tmp.36 277 25 30 ];
+        %tmp.37 = add %tmp.35 %tmp.36;
+        lputv %middle.4 %tmp.37;
+        symbol [ middle %middle.4 277 12 18 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 278 8 ]
+        %tmp.38 = lgetv %dc;
+        symbol [ dc %tmp.38 278 8 10 ];
+        symbol [ setColor %tmp.39 278 11 19 ];
+        %tmp.39 = getv function %tmp.38 :setColor;
+        symbol [ COLOR_DIVIDER %tmp.41 278 20 33 ];
+        %tmp.41 = getv ? :COLOR_DIVIDER;
+        symbol [ Graphics %tmp.42 278 35 43 ];
+        %tmp.42 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.43 278 44 61 ];
+        %tmp.43 = getv %tmp.42 :COLOR_TRANSPARENT;
+        invoke %tmp.38 %tmp.39(%tmp.41, %tmp.43);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 279 8 ]
+        %tmp.44 = lgetv %dc;
+        symbol [ dc %tmp.44 279 8 10 ];
+        symbol [ drawLine %tmp.45 279 11 19 ];
+        %tmp.45 = getv function %tmp.44 :drawLine;
+        %tmp.46 = lgetv %left;
+        symbol [ left %tmp.46 279 20 24 ];
+        %tmp.47 = lgetv %middle.4;
+        symbol [ middle %tmp.47 279 26 32 ];
+        %tmp.48 = lgetv %right;
+        symbol [ right %tmp.48 279 34 39 ];
+        %tmp.49 = lgetv %middle.4;
+        symbol [ middle %tmp.49 279 41 47 ];
+        invoke %tmp.44 %tmp.45(%tmp.46, %tmp.47, %tmp.48, %tmp.49);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 281 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_281_8_289_8_if_stmt:
+        %tmp.50 = lgetv %firstIndex.1;
+        symbol [ firstIndex %tmp.50 281 12 22 ];
+        %tmp.51 = 1;
+        %tmp.52 = add %tmp.50 %tmp.51;
+        %tmp.53 = lgetv %segments;
+        symbol [ segments %tmp.53 281 29 37 ];
+        symbol [ size %tmp.54 281 38 42 ];
+        %tmp.54 = getv function %tmp.53 :size;
+        %tmp.55 = invoke %tmp.53 %tmp.54();
+        %tmp.56 = lt %tmp.52 %tmp.55;
+        bf %tmp.56 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_281_8_289_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_281_8_289_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_281_46_289_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 282 12 ]
+        %tmp.57 = self;
+        symbol [ drawSegmentRow %tmp.58 282 12 26 ];
+        %tmp.58 = getv function %tmp.57 :drawSegmentRow;
+        %tmp.59 = lgetv %dc;
+        symbol [ dc %tmp.59 283 16 18 ];
+        %tmp.60 = lgetv %left;
+        symbol [ left %tmp.60 283 20 24 ];
+        %tmp.61 = lgetv %right;
+        symbol [ right %tmp.61 283 26 31 ];
+        %tmp.62 = lgetv %cw;
+        symbol [ cw %tmp.62 283 33 35 ];
+        %tmp.63 = lgetv %middle.4;
+        symbol [ middle %tmp.63 284 16 22 ];
+        %tmp.64 = lgetv %pad;
+        symbol [ pad %tmp.64 284 25 28 ];
+        %tmp.65 = 0.4;
+        %tmp.66 = mul %tmp.64 %tmp.65;
+        %tmp.67 = add %tmp.63 %tmp.66;
+        %tmp.68 = lgetv %halfH.3;
+        symbol [ halfH %tmp.68 284 36 41 ];
+        %tmp.69 = lgetv %pad;
+        symbol [ pad %tmp.69 284 44 47 ];
+        %tmp.70 = 0.4;
+        %tmp.71 = mul %tmp.69 %tmp.70;
+        %tmp.72 = sub %tmp.68 %tmp.71;
+        %tmp.73 = lgetv %pad;
+        symbol [ pad %tmp.73 284 55 58 ];
+        %tmp.74 = lgetv %fTiny;
+        symbol [ fTiny %tmp.74 285 16 21 ];
+        %tmp.75 = lgetv %fSmall;
+        symbol [ fSmall %tmp.75 285 23 29 ];
+        %tmp.76 = lgetv %fNum;
+        symbol [ fNum %tmp.76 285 31 35 ];
+        %tmp.77 = lgetv %hTiny;
+        symbol [ hTiny %tmp.77 286 16 21 ];
+        %tmp.78 = lgetv %hSmall;
+        symbol [ hSmall %tmp.78 286 23 29 ];
+        %tmp.79 = lgetv %hNum;
+        symbol [ hNum %tmp.79 286 31 35 ];
+        %tmp.80 = lgetv %segments;
+        symbol [ segments %tmp.80 287 16 24 ];
+        %tmp.81 = lgetv %firstIndex.1;
+        symbol [ firstIndex %tmp.81 287 25 35 ];
+        %tmp.82 = 1;
+        %tmp.83 = add %tmp.81 %tmp.82;
+        %tmp.84 = agetv %tmp.80 %tmp.83;
+        invoke %tmp.57 %tmp.58(%tmp.59, %tmp.60, %tmp.61, %tmp.62, %tmp.67, %tmp.72, %tmp.73, %tmp.74, %tmp.75, %tmp.76, %tmp.77, %tmp.78, %tmp.79, %tmp.84);
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_281_46_289_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_281_8_289_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_281_8_289_8_if_end:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_263_6_290_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 306; @symbol_functiondef = [drawSegmentRow,306,13,27]; @symbol_param<0> = [dc,307,8,10]; @symbol_param<1> = [left,307,12,16]; @symbol_param<2> = [right,307,18,23]; @symbol_param<3> = [cw,307,25,27]; @symbol_param<4> = [y,308,8,9]; @symbol_param<5> = [availH,308,11,17]; @symbol_param<6> = [pad,308,19,22]; @symbol_param<7> = [fTiny,309,8,13]; @symbol_param<8> = [fSmall,309,15,21]; @symbol_param<9> = [fNum,309,23,27]; @symbol_param<10> = [hTiny,310,8,13]; @symbol_param<11> = [hSmall,310,15,21]; @symbol_param<12> = [hNum,310,23,27]; @symbol_param<13> = [seg,311,8,11]; @symbol_param<13>_type<0> = [Lang,311,15,19]; @symbol_param<13>_type<1> = [Dictionary,311,20,30]; ]
+    function drawSegmentRow(dc, left, right, cw, y, availH, pad, fTiny, fSmall, fNum, hTiny, hSmall, hNum, seg as Lang.Dictionary) {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 313 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_stop" ]
+        %isRun.1 = local;
+        symbol [ isRun %isRun.1 313 12 17 ];
+        %tmp.1 = lgetv %seg;
+        symbol [ seg %tmp.1 313 21 24 ];
+        %tmp.3 = const :type;
+        symbol [ type %tmp.3 313 26 30 const ];
+        %tmp.4 = agetv %tmp.1 %tmp.3;
+        symbol [ equals %tmp.5 313 32 38 ];
+        %tmp.5 = getv function %tmp.4 :equals;
+        %tmp.6 = "run";
+        %tmp.7 = invoke %tmp.4 %tmp.5(%tmp.6);
+        lputv %isRun.1 %tmp.7;
+        symbol [ isRun %isRun.1 313 12 17 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 314 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_stop" ]
+        %accent.2 = local;
+        symbol [ accent %accent.2 314 12 18 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_314_21_314_41_begin:
+        %tmp.8 = lgetv %isRun.1;
+        symbol [ isRun %tmp.8 314 21 26 ];
+        bf %tmp.8 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_314_21_314_41_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_314_21_314_41_true:
+        symbol [ COLOR_RUN %tmp.10 314 29 38 ];
+        %tmp.10 = getv ? :COLOR_RUN;
+        push %tmp.10;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_314_21_314_41_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_314_21_314_41_else_false:
+        symbol [ COLOR_STATION %tmp.12 314 41 54 ];
+        %tmp.12 = getv ? :COLOR_STATION;
+        push %tmp.12;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_314_21_314_41_end:
+        %tmp.13 = phi [%tmp.8 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_314_21_314_41_begin] [%tmp.10 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_314_21_314_41_true] [%tmp.12 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_314_21_314_41_else_false] [%tmp.13 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_314_21_314_41_end];
+        lputv %accent.2 %tmp.13;
+        symbol [ accent %accent.2 314 12 18 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 315 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_stop" ]
+        %cx.3 = local;
+        symbol [ cx %cx.3 315 12 14 ];
+        %tmp.14 = lgetv %left;
+        symbol [ left %tmp.14 315 21 25 ];
+        %tmp.15 = lgetv %cw;
+        symbol [ cw %tmp.15 315 28 30 ];
+        %tmp.16 = 2;
+        %tmp.17 = div %tmp.15 %tmp.16;
+        %tmp.18 = add %tmp.14 %tmp.17;
+        lputv %cx.3 %tmp.18;
+        symbol [ cx %cx.3 315 12 14 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 318 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_stop" ]
+        %barH.4 = local;
+        symbol [ barH %barH.4 318 12 16 ];
+        %tmp.19 = lgetv %hTiny;
+        symbol [ hTiny %tmp.19 318 19 24 ];
+        %tmp.20 = lgetv %pad;
+        symbol [ pad %tmp.20 318 27 30 ];
+        %tmp.21 = 0.9;
+        %tmp.22 = mul %tmp.20 %tmp.21;
+        %tmp.23 = add %tmp.19 %tmp.22;
+        lputv %barH.4 %tmp.23;
+        symbol [ barH %barH.4 318 12 16 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 320 8 ]
+        %tmp.24 = lgetv %dc;
+        symbol [ dc %tmp.24 320 8 10 ];
+        symbol [ setColor %tmp.25 320 11 19 ];
+        %tmp.25 = getv function %tmp.24 :setColor;
+        %tmp.26 = lgetv %accent.2;
+        symbol [ accent %tmp.26 320 20 26 ];
+        symbol [ Graphics %tmp.27 320 28 36 ];
+        %tmp.27 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.28 320 37 54 ];
+        %tmp.28 = getv %tmp.27 :COLOR_TRANSPARENT;
+        invoke %tmp.24 %tmp.25(%tmp.26, %tmp.28);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 321 8 ]
+        %tmp.29 = lgetv %dc;
+        symbol [ dc %tmp.29 321 8 10 ];
+        symbol [ fillRectangle %tmp.30 321 11 24 ];
+        %tmp.30 = getv function %tmp.29 :fillRectangle;
+        %tmp.31 = lgetv %left;
+        symbol [ left %tmp.31 321 25 29 ];
+        %tmp.32 = lgetv %y;
+        symbol [ y %tmp.32 321 31 32 ];
+        %tmp.33 = lgetv %cw;
+        symbol [ cw %tmp.33 321 34 36 ];
+        %tmp.34 = lgetv %barH.4;
+        symbol [ barH %tmp.34 321 38 42 ];
+        invoke %tmp.29 %tmp.30(%tmp.31, %tmp.32, %tmp.33, %tmp.34);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 324 8 ]
+        %tmp.35 = lgetv %dc;
+        symbol [ dc %tmp.35 324 8 10 ];
+        symbol [ setColor %tmp.36 324 11 19 ];
+        %tmp.36 = getv function %tmp.35 :setColor;
+        symbol [ COLOR_BG %tmp.38 324 20 28 ];
+        %tmp.38 = getv ? :COLOR_BG;
+        symbol [ Graphics %tmp.39 324 30 38 ];
+        %tmp.39 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.40 324 39 56 ];
+        %tmp.40 = getv %tmp.39 :COLOR_TRANSPARENT;
+        invoke %tmp.35 %tmp.36(%tmp.38, %tmp.40);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 325 8 ]
+        %tmp.41 = lgetv %dc;
+        symbol [ dc %tmp.41 325 8 10 ];
+        symbol [ drawText %tmp.42 325 11 19 ];
+        %tmp.42 = getv function %tmp.41 :drawText;
+        %tmp.43 = lgetv %cx.3;
+        symbol [ cx %tmp.43 326 12 14 ];
+        %tmp.44 = lgetv %y;
+        symbol [ y %tmp.44 326 16 17 ];
+        %tmp.45 = lgetv %barH.4;
+        symbol [ barH %tmp.45 326 21 25 ];
+        %tmp.46 = lgetv %hTiny;
+        symbol [ hTiny %tmp.46 326 28 33 ];
+        %tmp.47 = sub %tmp.45 %tmp.46;
+        %tmp.48 = 2;
+        %tmp.49 = div %tmp.47 %tmp.48;
+        %tmp.50 = add %tmp.44 %tmp.49;
+        %tmp.51 = lgetv %fTiny;
+        symbol [ fTiny %tmp.51 327 12 17 ];
+        %tmp.52 = lgetv %seg;
+        symbol [ seg %tmp.52 327 19 22 ];
+        %tmp.54 = const :label;
+        symbol [ label %tmp.54 327 24 29 const ];
+        %tmp.55 = agetv %tmp.52 %tmp.54;
+        symbol [ Graphics %tmp.56 328 12 20 ];
+        %tmp.56 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.57 328 21 40 ];
+        %tmp.57 = getv %tmp.56 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.41 %tmp.42(%tmp.43, %tmp.50, %tmp.51, %tmp.55, %tmp.57);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 330 8 ]
+        %tmp.58 = lgetv %y;
+        symbol [ y %tmp.58 330 8 9 ];
+        %tmp.59 = lgetv %barH.4;
+        symbol [ barH %tmp.59 330 13 17 ];
+        %tmp.60 = lgetv %pad;
+        symbol [ pad %tmp.60 330 20 23 ];
+        %tmp.61 = 0.5;
+        %tmp.62 = mul %tmp.60 %tmp.61;
+        %tmp.63 = add %tmp.59 %tmp.62;
+        %tmp.64 = add %tmp.58 %tmp.63;
+        lputv %y %tmp.64;
+        symbol [ y %y 330 8 9 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 336 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_stop" ]
+        %col1X.5 = local;
+        symbol [ col1X %col1X.5 336 12 17 ];
+        %tmp.65 = lgetv %left;
+        symbol [ left %tmp.65 336 20 24 ];
+        %tmp.66 = lgetv %cw;
+        symbol [ cw %tmp.66 336 27 29 ];
+        %tmp.67 = 0.17;
+        %tmp.68 = mul %tmp.66 %tmp.67;
+        %tmp.69 = add %tmp.65 %tmp.68;
+        lputv %col1X.5 %tmp.69;
+        symbol [ col1X %col1X.5 336 12 17 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 337 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_stop" ]
+        %col2X.6 = local;
+        symbol [ col2X %col2X.6 337 12 17 ];
+        %tmp.70 = lgetv %left;
+        symbol [ left %tmp.70 337 20 24 ];
+        %tmp.71 = lgetv %cw;
+        symbol [ cw %tmp.71 337 27 29 ];
+        %tmp.72 = 0.50;
+        %tmp.73 = mul %tmp.71 %tmp.72;
+        %tmp.74 = add %tmp.70 %tmp.73;
+        lputv %col2X.6 %tmp.74;
+        symbol [ col2X %col2X.6 337 12 17 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 338 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_stop" ]
+        %col3X.7 = local;
+        symbol [ col3X %col3X.7 338 12 17 ];
+        %tmp.75 = lgetv %left;
+        symbol [ left %tmp.75 338 20 24 ];
+        %tmp.76 = lgetv %cw;
+        symbol [ cw %tmp.76 338 27 29 ];
+        %tmp.77 = 0.83;
+        %tmp.78 = mul %tmp.76 %tmp.77;
+        %tmp.79 = add %tmp.75 %tmp.78;
+        lputv %col3X.7 %tmp.79;
+        symbol [ col3X %col3X.7 338 12 17 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 340 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_stop" ]
+        %l1.8 = local;
+        symbol [ l1 %l1.8 340 12 14 ];
+        %tmp.80 = "";
+        lputv %l1.8 %tmp.80;
+        symbol [ l1 %l1.8 340 12 14 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 341 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_stop" ]
+        %v1.9 = local;
+        symbol [ v1 %v1.9 341 12 14 ];
+        %tmp.81 = "";
+        lputv %v1.9 %tmp.81;
+        symbol [ v1 %v1.9 341 12 14 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 342 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_stop" ]
+        %l2.10 = local;
+        symbol [ l2 %l2.10 342 12 14 ];
+        %tmp.82 = "";
+        lputv %l2.10 %tmp.82;
+        symbol [ l2 %l2.10 342 12 14 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 343 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_stop" ]
+        %v2.11 = local;
+        symbol [ v2 %v2.11 343 12 14 ];
+        %tmp.83 = "";
+        lputv %v2.11 %tmp.83;
+        symbol [ v2 %v2.11 343 12 14 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 344 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_stop" ]
+        %l3.12 = local;
+        symbol [ l3 %l3.12 344 12 14 ];
+        %tmp.84 = "";
+        lputv %l3.12 %tmp.84;
+        symbol [ l3 %l3.12 344 12 14 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 345 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_stop" ]
+        %v3.13 = local;
+        symbol [ v3 %v3.13 345 12 14 ];
+        %tmp.85 = "";
+        lputv %v3.13 %tmp.85;
+        symbol [ v3 %v3.13 345 12 14 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 347 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_347_8_355_8_if_stmt:
+        %tmp.86 = lgetv %isRun.1;
+        symbol [ isRun %tmp.86 347 12 17 ];
+        bf %tmp.86 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_347_8_355_8_if_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_347_8_355_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_347_19_351_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 348 12 ]
+        %tmp.87 = "DIST";
+        lputv %l1.8 %tmp.87;
+        symbol [ l1 %l1.8 348 12 14 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 348 28 ]
+        %tmp.88 = self;
+        symbol [ formatDistance %tmp.89 348 33 47 ];
+        %tmp.89 = getv function %tmp.88 :formatDistance;
+        %tmp.90 = lgetv %seg;
+        symbol [ seg %tmp.90 348 48 51 ];
+        %tmp.92 = const :distance;
+        symbol [ distance %tmp.92 348 53 61 const ];
+        %tmp.93 = agetv %tmp.90 %tmp.92;
+        %tmp.94 = invoke %tmp.88 %tmp.89(%tmp.93);
+        lputv %v1.9 %tmp.94;
+        symbol [ v1 %v1.9 348 28 30 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 349 12 ]
+        %tmp.95 = "AVG HR";
+        lputv %l2.10 %tmp.95;
+        symbol [ l2 %l2.10 349 12 14 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 349 28 ]
+        %tmp.96 = self;
+        symbol [ formatHeartRate %tmp.97 349 33 48 ];
+        %tmp.97 = getv function %tmp.96 :formatHeartRate;
+        %tmp.98 = lgetv %seg;
+        symbol [ seg %tmp.98 349 49 52 ];
+        %tmp.100 = const :heartRate;
+        symbol [ heartRate %tmp.100 349 54 63 const ];
+        %tmp.101 = agetv %tmp.98 %tmp.100;
+        %tmp.102 = invoke %tmp.96 %tmp.97(%tmp.101);
+        lputv %v2.11 %tmp.102;
+        symbol [ v2 %v2.11 349 28 30 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 350 12 ]
+        %tmp.103 = "PACE";
+        lputv %l3.12 %tmp.103;
+        symbol [ l3 %l3.12 350 12 14 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 350 28 ]
+        %tmp.104 = self;
+        symbol [ formatPace %tmp.105 350 33 43 ];
+        %tmp.105 = getv function %tmp.104 :formatPace;
+        %tmp.106 = lgetv %seg;
+        symbol [ seg %tmp.106 350 44 47 ];
+        %tmp.108 = const :distance;
+        symbol [ distance %tmp.108 350 49 57 const ];
+        %tmp.109 = agetv %tmp.106 %tmp.108;
+        %tmp.110 = lgetv %seg;
+        symbol [ seg %tmp.110 350 60 63 ];
+        %tmp.112 = const :time;
+        symbol [ time %tmp.112 350 65 69 const ];
+        %tmp.113 = agetv %tmp.110 %tmp.112;
+        %tmp.114 = invoke %tmp.104 %tmp.105(%tmp.109, %tmp.113);
+        lputv %v3.13 %tmp.114;
+        symbol [ v3 %v3.13 350 28 30 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_347_19_351_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_347_8_355_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_347_8_355_8_if_else_false:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_351_15_355_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 352 12 ]
+        %tmp.115 = "TIME";
+        lputv %l1.8 %tmp.115;
+        symbol [ l1 %l1.8 352 12 14 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 352 28 ]
+        %tmp.116 = self;
+        symbol [ formatTime %tmp.117 352 33 43 ];
+        %tmp.117 = getv function %tmp.116 :formatTime;
+        %tmp.118 = lgetv %seg;
+        symbol [ seg %tmp.118 352 44 47 ];
+        %tmp.120 = const :time;
+        symbol [ time %tmp.120 352 49 53 const ];
+        %tmp.121 = agetv %tmp.118 %tmp.120;
+        %tmp.122 = invoke %tmp.116 %tmp.117(%tmp.121);
+        lputv %v1.9 %tmp.122;
+        symbol [ v1 %v1.9 352 28 30 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 353 12 ]
+        %tmp.123 = "AVG HR";
+        lputv %l2.10 %tmp.123;
+        symbol [ l2 %l2.10 353 12 14 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 353 28 ]
+        %tmp.124 = self;
+        symbol [ formatHeartRate %tmp.125 353 33 48 ];
+        %tmp.125 = getv function %tmp.124 :formatHeartRate;
+        %tmp.126 = lgetv %seg;
+        symbol [ seg %tmp.126 353 49 52 ];
+        %tmp.128 = const :heartRate;
+        symbol [ heartRate %tmp.128 353 54 63 const ];
+        %tmp.129 = agetv %tmp.126 %tmp.128;
+        %tmp.130 = invoke %tmp.124 %tmp.125(%tmp.129);
+        lputv %v2.11 %tmp.130;
+        symbol [ v2 %v2.11 353 28 30 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 354 12 ]
+        %tmp.131 = "EFFORT";
+        lputv %l3.12 %tmp.131;
+        symbol [ l3 %l3.12 354 12 14 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 354 28 ]
+        %tmp.132 = self;
+        symbol [ formatEffort %tmp.133 354 33 45 ];
+        %tmp.133 = getv function %tmp.132 :formatEffort;
+        %tmp.134 = lgetv %seg;
+        symbol [ seg %tmp.134 354 46 49 ];
+        %tmp.136 = const :heartRate;
+        symbol [ heartRate %tmp.136 354 51 60 const ];
+        %tmp.137 = agetv %tmp.134 %tmp.136;
+        %tmp.138 = invoke %tmp.132 %tmp.133(%tmp.137);
+        lputv %v3.13 %tmp.138;
+        symbol [ v3 %v3.13 354 28 30 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_351_15_355_8_stop:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_347_8_355_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 358 8 ]
+        %tmp.139 = lgetv %dc;
+        symbol [ dc %tmp.139 358 8 10 ];
+        symbol [ setColor %tmp.140 358 11 19 ];
+        %tmp.140 = getv function %tmp.139 :setColor;
+        symbol [ COLOR_MUTED %tmp.142 358 20 31 ];
+        %tmp.142 = getv ? :COLOR_MUTED;
+        symbol [ Graphics %tmp.143 358 33 41 ];
+        %tmp.143 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.144 358 42 59 ];
+        %tmp.144 = getv %tmp.143 :COLOR_TRANSPARENT;
+        invoke %tmp.139 %tmp.140(%tmp.142, %tmp.144);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 359 8 ]
+        %tmp.145 = lgetv %dc;
+        symbol [ dc %tmp.145 359 8 10 ];
+        symbol [ drawText %tmp.146 359 11 19 ];
+        %tmp.146 = getv function %tmp.145 :drawText;
+        %tmp.147 = lgetv %col1X.5;
+        symbol [ col1X %tmp.147 359 20 25 ];
+        %tmp.148 = lgetv %y;
+        symbol [ y %tmp.148 359 27 28 ];
+        %tmp.149 = lgetv %fTiny;
+        symbol [ fTiny %tmp.149 359 30 35 ];
+        %tmp.150 = lgetv %l1.8;
+        symbol [ l1 %tmp.150 359 37 39 ];
+        symbol [ Graphics %tmp.151 359 41 49 ];
+        %tmp.151 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.152 359 50 69 ];
+        %tmp.152 = getv %tmp.151 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.145 %tmp.146(%tmp.147, %tmp.148, %tmp.149, %tmp.150, %tmp.152);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 360 8 ]
+        %tmp.153 = lgetv %dc;
+        symbol [ dc %tmp.153 360 8 10 ];
+        symbol [ drawText %tmp.154 360 11 19 ];
+        %tmp.154 = getv function %tmp.153 :drawText;
+        %tmp.155 = lgetv %col2X.6;
+        symbol [ col2X %tmp.155 360 20 25 ];
+        %tmp.156 = lgetv %y;
+        symbol [ y %tmp.156 360 27 28 ];
+        %tmp.157 = lgetv %fTiny;
+        symbol [ fTiny %tmp.157 360 30 35 ];
+        %tmp.158 = lgetv %l2.10;
+        symbol [ l2 %tmp.158 360 37 39 ];
+        symbol [ Graphics %tmp.159 360 41 49 ];
+        %tmp.159 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.160 360 50 69 ];
+        %tmp.160 = getv %tmp.159 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.153 %tmp.154(%tmp.155, %tmp.156, %tmp.157, %tmp.158, %tmp.160);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 361 8 ]
+        %tmp.161 = lgetv %dc;
+        symbol [ dc %tmp.161 361 8 10 ];
+        symbol [ drawText %tmp.162 361 11 19 ];
+        %tmp.162 = getv function %tmp.161 :drawText;
+        %tmp.163 = lgetv %col3X.7;
+        symbol [ col3X %tmp.163 361 20 25 ];
+        %tmp.164 = lgetv %y;
+        symbol [ y %tmp.164 361 27 28 ];
+        %tmp.165 = lgetv %fTiny;
+        symbol [ fTiny %tmp.165 361 30 35 ];
+        %tmp.166 = lgetv %l3.12;
+        symbol [ l3 %tmp.166 361 37 39 ];
+        symbol [ Graphics %tmp.167 361 41 49 ];
+        %tmp.167 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.168 361 50 69 ];
+        %tmp.168 = getv %tmp.167 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.161 %tmp.162(%tmp.163, %tmp.164, %tmp.165, %tmp.166, %tmp.168);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 362 8 ]
+        %tmp.169 = lgetv %y;
+        symbol [ y %tmp.169 362 8 9 ];
+        %tmp.170 = lgetv %hTiny;
+        symbol [ hTiny %tmp.170 362 13 18 ];
+        %tmp.171 = lgetv %pad;
+        symbol [ pad %tmp.171 362 21 24 ];
+        %tmp.172 = 0.2;
+        %tmp.173 = mul %tmp.171 %tmp.172;
+        %tmp.174 = add %tmp.170 %tmp.173;
+        %tmp.175 = add %tmp.169 %tmp.174;
+        lputv %y %tmp.175;
+        symbol [ y %y 362 8 9 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 365 8 ]
+        %tmp.176 = lgetv %dc;
+        symbol [ dc %tmp.176 365 8 10 ];
+        symbol [ setColor %tmp.177 365 11 19 ];
+        %tmp.177 = getv function %tmp.176 :setColor;
+        symbol [ COLOR_PRIMARY %tmp.179 365 20 33 ];
+        %tmp.179 = getv ? :COLOR_PRIMARY;
+        symbol [ Graphics %tmp.180 365 35 43 ];
+        %tmp.180 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.181 365 44 61 ];
+        %tmp.181 = getv %tmp.180 :COLOR_TRANSPARENT;
+        invoke %tmp.176 %tmp.177(%tmp.179, %tmp.181);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 366 8 ]
+        %tmp.182 = lgetv %dc;
+        symbol [ dc %tmp.182 366 8 10 ];
+        symbol [ drawText %tmp.183 366 11 19 ];
+        %tmp.183 = getv function %tmp.182 :drawText;
+        %tmp.184 = lgetv %col1X.5;
+        symbol [ col1X %tmp.184 366 20 25 ];
+        %tmp.185 = lgetv %y;
+        symbol [ y %tmp.185 366 27 28 ];
+        %tmp.186 = lgetv %fTiny;
+        symbol [ fTiny %tmp.186 366 30 35 ];
+        %tmp.187 = lgetv %v1.9;
+        symbol [ v1 %tmp.187 366 37 39 ];
+        symbol [ Graphics %tmp.188 366 41 49 ];
+        %tmp.188 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.189 366 50 69 ];
+        %tmp.189 = getv %tmp.188 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.182 %tmp.183(%tmp.184, %tmp.185, %tmp.186, %tmp.187, %tmp.189);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 369 8 ]
+        %tmp.190 = lgetv %dc;
+        symbol [ dc %tmp.190 369 8 10 ];
+        symbol [ setColor %tmp.191 369 11 19 ];
+        %tmp.191 = getv function %tmp.190 :setColor;
+        symbol [ COLOR_HR %tmp.193 369 20 28 ];
+        %tmp.193 = getv ? :COLOR_HR;
+        symbol [ Graphics %tmp.194 369 30 38 ];
+        %tmp.194 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.195 369 39 56 ];
+        %tmp.195 = getv %tmp.194 :COLOR_TRANSPARENT;
+        invoke %tmp.190 %tmp.191(%tmp.193, %tmp.195);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 370 8 ]
+        %tmp.196 = lgetv %dc;
+        symbol [ dc %tmp.196 370 8 10 ];
+        symbol [ drawText %tmp.197 370 11 19 ];
+        %tmp.197 = getv function %tmp.196 :drawText;
+        %tmp.198 = lgetv %col2X.6;
+        symbol [ col2X %tmp.198 370 20 25 ];
+        %tmp.199 = lgetv %y;
+        symbol [ y %tmp.199 370 27 28 ];
+        %tmp.200 = lgetv %fTiny;
+        symbol [ fTiny %tmp.200 370 30 35 ];
+        %tmp.201 = lgetv %v2.11;
+        symbol [ v2 %tmp.201 370 37 39 ];
+        symbol [ Graphics %tmp.202 370 41 49 ];
+        %tmp.202 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.203 370 50 69 ];
+        %tmp.203 = getv %tmp.202 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.196 %tmp.197(%tmp.198, %tmp.199, %tmp.200, %tmp.201, %tmp.203);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 372 8 ]
+        %tmp.204 = lgetv %dc;
+        symbol [ dc %tmp.204 372 8 10 ];
+        symbol [ setColor %tmp.205 372 11 19 ];
+        %tmp.205 = getv function %tmp.204 :setColor;
+        symbol [ COLOR_PRIMARY %tmp.207 372 20 33 ];
+        %tmp.207 = getv ? :COLOR_PRIMARY;
+        symbol [ Graphics %tmp.208 372 35 43 ];
+        %tmp.208 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.209 372 44 61 ];
+        %tmp.209 = getv %tmp.208 :COLOR_TRANSPARENT;
+        invoke %tmp.204 %tmp.205(%tmp.207, %tmp.209);
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 373 8 ]
+        %tmp.210 = lgetv %dc;
+        symbol [ dc %tmp.210 373 8 10 ];
+        symbol [ drawText %tmp.211 373 11 19 ];
+        %tmp.211 = getv function %tmp.210 :drawText;
+        %tmp.212 = lgetv %col3X.7;
+        symbol [ col3X %tmp.212 373 20 25 ];
+        %tmp.213 = lgetv %y;
+        symbol [ y %tmp.213 373 27 28 ];
+        %tmp.214 = lgetv %fTiny;
+        symbol [ fTiny %tmp.214 373 30 35 ];
+        %tmp.215 = lgetv %v3.13;
+        symbol [ v3 %tmp.215 373 37 39 ];
+        symbol [ Graphics %tmp.216 373 41 49 ];
+        %tmp.216 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.217 373 50 69 ];
+        %tmp.217 = getv %tmp.216 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.210 %tmp.211(%tmp.212, %tmp.213, %tmp.214, %tmp.215, %tmp.217);
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_312_6_375_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 382; @symbol_functiondef = [buildChronologicalList,382,13,35]; @symbol_param<0> = [runs,383,8,12]; @symbol_param<0>_type<0> = [Lang,383,20,24]; @symbol_param<0>_type<1> = [Array,383,25,30]; @symbol_param<0>_type<2> = [Lang,383,31,35]; @symbol_param<0>_type<3> = [Dictionary,383,36,46]; @symbol_param<1> = [stations,384,8,16]; @symbol_param<1>_type<0> = [Lang,384,20,24]; @symbol_param<1>_type<1> = [Array,384,25,30]; @symbol_param<1>_type<2> = [Lang,384,31,35]; @symbol_param<1>_type<3> = [Dictionary,384,36,46]; @symbol_return<0> = [Lang,385,9,13]; @symbol_return<1> = [Array,385,14,19]; @symbol_return<2> = [Lang,385,20,24]; @symbol_return<3> = [Dictionary,385,25,35]; ]
+    function buildChronologicalList(runs as Lang.Array<Lang.Dictionary>, stations as Lang.Array<Lang.Dictionary>) as Lang.Array<Lang.Dictionary> {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_385_37_420_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 387 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_385_37_420_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_385_37_420_4_stop" ]
+        %list.1 = local;
+        symbol [ list %list.1 387 12 16 ];
+        %tmp.1 = newa 0;
+        lputv %list.1 %tmp.1;
+        symbol [ list %list.1 387 12 16 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 388 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_385_37_420_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_385_37_420_4_stop" ]
+        %runCount.2 = local;
+        symbol [ runCount %runCount.2 388 12 20 ];
+        %tmp.2 = lgetv %runs;
+        symbol [ runs %tmp.2 388 23 27 ];
+        symbol [ size %tmp.3 388 28 32 ];
+        %tmp.3 = getv function %tmp.2 :size;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %runCount.2 %tmp.4;
+        symbol [ runCount %runCount.2 388 12 20 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 389 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_385_37_420_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_385_37_420_4_stop" ]
+        %stnCount.3 = local;
+        symbol [ stnCount %stnCount.3 389 12 20 ];
+        %tmp.5 = lgetv %stations;
+        symbol [ stations %tmp.5 389 23 31 ];
+        symbol [ size %tmp.6 389 32 36 ];
+        %tmp.6 = getv function %tmp.5 :size;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        lputv %stnCount.3 %tmp.7;
+        symbol [ stnCount %stnCount.3 389 12 20 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 390 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_385_37_420_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_385_37_420_4_stop" ]
+        %maxPairs.4 = local;
+        symbol [ maxPairs %maxPairs.4 390 12 20 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_390_23_390_56_begin:
+        %tmp.8 = lgetv %runCount.2;
+        symbol [ runCount %tmp.8 390 23 31 ];
+        %tmp.9 = lgetv %stnCount.3;
+        symbol [ stnCount %tmp.9 390 34 42 ];
+        %tmp.10 = gt %tmp.8 %tmp.9;
+        bf %tmp.10 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_390_23_390_56_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_390_23_390_56_true:
+        %tmp.11 = lgetv %runCount.2;
+        symbol [ runCount %tmp.11 390 45 53 ];
+        push %tmp.11;
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_390_23_390_56_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_390_23_390_56_else_false:
+        %tmp.12 = lgetv %stnCount.3;
+        symbol [ stnCount %tmp.12 390 56 64 ];
+        push %tmp.12;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_390_23_390_56_end:
+        %tmp.13 = phi [%tmp.10 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_390_23_390_56_begin] [%tmp.11 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_390_23_390_56_true] [%tmp.12 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_390_23_390_56_else_false] [%tmp.13 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_390_23_390_56_end];
+        lputv %maxPairs.4 %tmp.13;
+        symbol [ maxPairs %maxPairs.4 390 12 20 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 392 8 ]
+        for @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_392_8_417_8_for_test @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_392_8_417_8_for_incr @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_392_8_417_8_for_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_392_8_417_8_for_init:
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_392_8_417_8_for_begin" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_392_8_417_8_for_end" ]
+        %i.5 = local;
+        symbol [ i %i.5 392 17 18 ];
+        %tmp.14 = 0;
+        lputv %i.5 %tmp.14;
+        symbol [ i %i.5 392 17 18 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_392_8_417_8_for_test:
+        %tmp.15 = lgetv %i.5;
+        symbol [ i %tmp.15 392 24 25 ];
+        %tmp.16 = lgetv %maxPairs.4;
+        symbol [ maxPairs %tmp.16 392 28 36 ];
+        %tmp.17 = lt %tmp.15 %tmp.16;
+        bf %tmp.17 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_392_8_417_8_for_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_392_8_417_8_for_begin:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_392_43_417_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 394 12 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_394_12_404_12_if_stmt:
+        %tmp.18 = lgetv %i.5;
+        symbol [ i %tmp.18 394 16 17 ];
+        %tmp.19 = lgetv %runCount.2;
+        symbol [ runCount %tmp.19 394 20 28 ];
+        %tmp.20 = lt %tmp.18 %tmp.19;
+        bf %tmp.20 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_394_12_404_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_394_12_404_12_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_394_30_404_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 395 16 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_394_30_404_12_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_394_30_404_12_stop" ]
+        %r.6 = local;
+        symbol [ r %r.6 395 20 21 ];
+        %tmp.21 = lgetv %runs;
+        symbol [ runs %tmp.21 395 24 28 ];
+        %tmp.22 = lgetv %i.5;
+        symbol [ i %tmp.22 395 29 30 ];
+        %tmp.23 = agetv %tmp.21 %tmp.22;
+        %tmp.24 = as %tmp.23 Lang.Dictionary;
+        symbol [ Lang %tmp.24 395 35 39 ];
+        symbol [ Dictionary %tmp.24 395 40 50 ];
+        lputv %r.6 %tmp.24;
+        symbol [ r %r.6 395 20 21 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 396 16 ]
+        %tmp.25 = lgetv %list.1;
+        symbol [ list %tmp.25 396 16 20 ];
+        symbol [ add %tmp.26 396 21 24 ];
+        %tmp.26 = getv function %tmp.25 :add;
+        %tmp.27 = newd 6;
+        %tmp.29 = const :type;
+        symbol [ type %tmp.29 397 21 25 const ];
+        %tmp.30 = "run";
+        %tmp.31 = dup %tmp.27;
+        %tmp.32 = aputv %tmp.31 %tmp.29 %tmp.30;
+        %tmp.34 = const :label;
+        symbol [ label %tmp.34 398 21 26 const ];
+        %tmp.35 = "RUN ";
+        %tmp.36 = lgetv %r.6;
+        symbol [ r %tmp.36 398 43 44 ];
+        %tmp.38 = const :number;
+        symbol [ number %tmp.38 398 46 52 const ];
+        %tmp.39 = agetv %tmp.36 %tmp.38;
+        symbol [ format %tmp.40 398 54 60 ];
+        %tmp.40 = getv function %tmp.39 :format;
+        %tmp.41 = "%d";
+        %tmp.42 = invoke %tmp.39 %tmp.40(%tmp.41);
+        %tmp.43 = add %tmp.35 %tmp.42;
+        %tmp.44 = dup %tmp.32;
+        %tmp.45 = aputv %tmp.44 %tmp.34 %tmp.43;
+        %tmp.47 = const :number;
+        symbol [ number %tmp.47 399 21 27 const ];
+        %tmp.48 = lgetv %r.6;
+        symbol [ r %tmp.48 399 34 35 ];
+        %tmp.50 = const :number;
+        symbol [ number %tmp.50 399 37 43 const ];
+        %tmp.51 = agetv %tmp.48 %tmp.50;
+        %tmp.52 = dup %tmp.45;
+        %tmp.53 = aputv %tmp.52 %tmp.47 %tmp.51;
+        %tmp.55 = const :time;
+        symbol [ time %tmp.55 400 21 25 const ];
+        %tmp.56 = lgetv %r.6;
+        symbol [ r %tmp.56 400 34 35 ];
+        %tmp.58 = const :time;
+        symbol [ time %tmp.58 400 37 41 const ];
+        %tmp.59 = agetv %tmp.56 %tmp.58;
+        %tmp.60 = dup %tmp.53;
+        %tmp.61 = aputv %tmp.60 %tmp.55 %tmp.59;
+        %tmp.63 = const :distance;
+        symbol [ distance %tmp.63 401 21 29 const ];
+        %tmp.64 = lgetv %r.6;
+        symbol [ r %tmp.64 401 34 35 ];
+        %tmp.66 = const :distance;
+        symbol [ distance %tmp.66 401 37 45 const ];
+        %tmp.67 = agetv %tmp.64 %tmp.66;
+        %tmp.68 = dup %tmp.61;
+        %tmp.69 = aputv %tmp.68 %tmp.63 %tmp.67;
+        %tmp.71 = const :heartRate;
+        symbol [ heartRate %tmp.71 402 21 30 const ];
+        %tmp.72 = lgetv %r.6;
+        symbol [ r %tmp.72 402 34 35 ];
+        %tmp.74 = const :heartRate;
+        symbol [ heartRate %tmp.74 402 37 46 const ];
+        %tmp.75 = agetv %tmp.72 %tmp.74;
+        %tmp.76 = dup %tmp.69;
+        %tmp.77 = aputv %tmp.76 %tmp.71 %tmp.75;
+        invoke %tmp.25 %tmp.26(%tmp.77);
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_394_30_404_12_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_394_12_404_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_394_12_404_12_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 406 12 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_406_12_416_12_if_stmt:
+        %tmp.78 = lgetv %i.5;
+        symbol [ i %tmp.78 406 16 17 ];
+        %tmp.79 = lgetv %stnCount.3;
+        symbol [ stnCount %tmp.79 406 20 28 ];
+        %tmp.80 = lt %tmp.78 %tmp.79;
+        bf %tmp.80 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_406_12_416_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_406_12_416_12_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_406_30_416_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 407 16 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_406_30_416_12_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_406_30_416_12_stop" ]
+        %s.7 = local;
+        symbol [ s %s.7 407 20 21 ];
+        %tmp.81 = lgetv %stations;
+        symbol [ stations %tmp.81 407 24 32 ];
+        %tmp.82 = lgetv %i.5;
+        symbol [ i %tmp.82 407 33 34 ];
+        %tmp.83 = agetv %tmp.81 %tmp.82;
+        %tmp.84 = as %tmp.83 Lang.Dictionary;
+        symbol [ Lang %tmp.84 407 39 43 ];
+        symbol [ Dictionary %tmp.84 407 44 54 ];
+        lputv %s.7 %tmp.84;
+        symbol [ s %s.7 407 20 21 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 408 16 ]
+        %tmp.85 = lgetv %list.1;
+        symbol [ list %tmp.85 408 16 20 ];
+        symbol [ add %tmp.86 408 21 24 ];
+        %tmp.86 = getv function %tmp.85 :add;
+        %tmp.87 = newd 6;
+        %tmp.89 = const :type;
+        symbol [ type %tmp.89 409 21 25 const ];
+        %tmp.90 = "station";
+        %tmp.91 = dup %tmp.87;
+        %tmp.92 = aputv %tmp.91 %tmp.89 %tmp.90;
+        %tmp.94 = const :label;
+        symbol [ label %tmp.94 410 21 26 const ];
+        symbol [ app %tmp.96 410 34 37 ];
+        %tmp.96 = getv ? :app;
+        symbol [ getStationName %tmp.97 410 38 52 ];
+        %tmp.97 = getv function %tmp.96 :getStationName;
+        %tmp.98 = lgetv %s.7;
+        symbol [ s %tmp.98 410 53 54 ];
+        %tmp.100 = const :number;
+        symbol [ number %tmp.100 410 56 62 const ];
+        %tmp.101 = agetv %tmp.98 %tmp.100;
+        %tmp.102 = invoke %tmp.96 %tmp.97(%tmp.101);
+        %tmp.103 = dup %tmp.92;
+        %tmp.104 = aputv %tmp.103 %tmp.94 %tmp.102;
+        %tmp.106 = const :number;
+        symbol [ number %tmp.106 411 21 27 const ];
+        %tmp.107 = lgetv %s.7;
+        symbol [ s %tmp.107 411 34 35 ];
+        %tmp.109 = const :number;
+        symbol [ number %tmp.109 411 37 43 const ];
+        %tmp.110 = agetv %tmp.107 %tmp.109;
+        %tmp.111 = dup %tmp.104;
+        %tmp.112 = aputv %tmp.111 %tmp.106 %tmp.110;
+        %tmp.114 = const :time;
+        symbol [ time %tmp.114 412 21 25 const ];
+        %tmp.115 = lgetv %s.7;
+        symbol [ s %tmp.115 412 34 35 ];
+        %tmp.117 = const :time;
+        symbol [ time %tmp.117 412 37 41 const ];
+        %tmp.118 = agetv %tmp.115 %tmp.117;
+        %tmp.119 = dup %tmp.112;
+        %tmp.120 = aputv %tmp.119 %tmp.114 %tmp.118;
+        %tmp.122 = const :distance;
+        symbol [ distance %tmp.122 413 21 29 const ];
+        %tmp.123 = 0;
+        %tmp.124 = dup %tmp.120;
+        %tmp.125 = aputv %tmp.124 %tmp.122 %tmp.123;
+        %tmp.127 = const :heartRate;
+        symbol [ heartRate %tmp.127 414 21 30 const ];
+        %tmp.128 = lgetv %s.7;
+        symbol [ s %tmp.128 414 34 35 ];
+        %tmp.130 = const :heartRate;
+        symbol [ heartRate %tmp.130 414 37 46 const ];
+        %tmp.131 = agetv %tmp.128 %tmp.130;
+        %tmp.132 = dup %tmp.125;
+        %tmp.133 = aputv %tmp.132 %tmp.127 %tmp.131;
+        invoke %tmp.85 %tmp.86(%tmp.133);
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_406_30_416_12_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_406_12_416_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_406_12_416_12_if_end:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_392_43_417_8_stop:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_392_8_417_8_for_incr:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 392 ]
+        %tmp.136 = lgetv %i.5;
+        symbol [ i %tmp.136 392 38 39 ];
+        %tmp.137 = add %tmp.136 1;
+        lputv %i.5 %tmp.137;
+        symbol [ i %i.5 392 38 39 ];
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_392_8_417_8_for_test;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_392_8_417_8_for_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 419 8 ]
+        %tmp.138 = lgetv %list.1;
+        symbol [ list %tmp.138 419 15 19 ];
+        ret %tmp.138;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_385_37_420_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 427; @symbol_functiondef = [formatTime,427,13,23]; @symbol_param<0> = [seconds,427,24,31]; ]
+    function formatTime(seconds) {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_427_33_440_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 428 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_427_33_440_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_427_33_440_4_stop" ]
+        %t.1 = local;
+        symbol [ t %t.1 428 12 13 ];
+        %tmp.1 = lgetv %seconds;
+        symbol [ seconds %tmp.1 428 16 23 ];
+        symbol [ toNumber %tmp.2 428 24 32 ];
+        %tmp.2 = getv function %tmp.1 :toNumber;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %t.1 %tmp.3;
+        symbol [ t %t.1 428 12 13 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 429 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_427_33_440_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_427_33_440_4_stop" ]
+        %h.2 = local;
+        symbol [ h %h.2 429 12 13 ];
+        %tmp.4 = lgetv %t.1;
+        symbol [ t %tmp.4 429 16 17 ];
+        %tmp.5 = 3600;
+        %tmp.6 = div %tmp.4 %tmp.5;
+        lputv %h.2 %tmp.6;
+        symbol [ h %h.2 429 12 13 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 430 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_427_33_440_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_427_33_440_4_stop" ]
+        %m.3 = local;
+        symbol [ m %m.3 430 12 13 ];
+        %tmp.7 = lgetv %t.1;
+        symbol [ t %tmp.7 430 17 18 ];
+        %tmp.8 = 3600;
+        %tmp.9 = mod %tmp.7 %tmp.8;
+        %tmp.10 = 60;
+        %tmp.11 = div %tmp.9 %tmp.10;
+        lputv %m.3 %tmp.11;
+        symbol [ m %m.3 430 12 13 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 431 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_427_33_440_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_427_33_440_4_stop" ]
+        %s.4 = local;
+        symbol [ s %s.4 431 12 13 ];
+        %tmp.12 = lgetv %t.1;
+        symbol [ t %tmp.12 431 16 17 ];
+        %tmp.13 = 60;
+        %tmp.14 = mod %tmp.12 %tmp.13;
+        lputv %s.4 %tmp.14;
+        symbol [ s %s.4 431 12 13 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 433 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_433_8_437_8_if_stmt:
+        %tmp.15 = lgetv %h.2;
+        symbol [ h %tmp.15 433 12 13 ];
+        %tmp.16 = 0;
+        %tmp.17 = gt %tmp.15 %tmp.16;
+        bf %tmp.17 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_433_8_437_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_433_8_437_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_433_19_437_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 434 12 ]
+        %tmp.18 = lgetv %h.2;
+        symbol [ h %tmp.18 434 19 20 ];
+        symbol [ format %tmp.19 434 21 27 ];
+        %tmp.19 = getv function %tmp.18 :format;
+        %tmp.20 = "%d";
+        %tmp.21 = invoke %tmp.18 %tmp.19(%tmp.20);
+        %tmp.22 = ":";
+        %tmp.23 = add %tmp.21 %tmp.22;
+        %tmp.24 = lgetv %m.3;
+        symbol [ m %tmp.24 435 19 20 ];
+        symbol [ format %tmp.25 435 21 27 ];
+        %tmp.25 = getv function %tmp.24 :format;
+        %tmp.26 = "%02d";
+        %tmp.27 = invoke %tmp.24 %tmp.25(%tmp.26);
+        %tmp.28 = add %tmp.23 %tmp.27;
+        %tmp.29 = ":";
+        %tmp.30 = add %tmp.28 %tmp.29;
+        %tmp.31 = lgetv %s.4;
+        symbol [ s %tmp.31 436 19 20 ];
+        symbol [ format %tmp.32 436 21 27 ];
+        %tmp.32 = getv function %tmp.31 :format;
+        %tmp.33 = "%02d";
+        %tmp.34 = invoke %tmp.31 %tmp.32(%tmp.33);
+        %tmp.35 = add %tmp.30 %tmp.34;
+        ret %tmp.35;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_433_19_437_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_433_8_437_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_433_8_437_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 439 8 ]
+        %tmp.36 = lgetv %m.3;
+        symbol [ m %tmp.36 439 15 16 ];
+        symbol [ format %tmp.37 439 17 23 ];
+        %tmp.37 = getv function %tmp.36 :format;
+        %tmp.38 = "%d";
+        %tmp.39 = invoke %tmp.36 %tmp.37(%tmp.38);
+        %tmp.40 = ":";
+        %tmp.41 = add %tmp.39 %tmp.40;
+        %tmp.42 = lgetv %s.4;
+        symbol [ s %tmp.42 439 38 39 ];
+        symbol [ format %tmp.43 439 40 46 ];
+        %tmp.43 = getv function %tmp.42 :format;
+        %tmp.44 = "%02d";
+        %tmp.45 = invoke %tmp.42 %tmp.43(%tmp.44);
+        %tmp.46 = add %tmp.41 %tmp.45;
+        ret %tmp.46;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_427_33_440_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 442; @symbol_functiondef = [formatDistance,442,13,27]; @symbol_param<0> = [meters,442,28,34]; ]
+    function formatDistance(meters) {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_442_36_457_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 443 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_443_8_443_58_if_stmt:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_443_12_443_40_begin:
+        %tmp.1 = lgetv %meters;
+        symbol [ meters %tmp.1 443 12 18 ];
+        %tmp.2 = null;
+        %tmp.3 = eq %tmp.1 %tmp.2;
+        bt %tmp.3 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_443_8_443_58_if_true;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_443_30_443_40_false:
+        %tmp.4 = lgetv %meters;
+        symbol [ meters %tmp.4 443 30 36 ];
+        %tmp.5 = as %tmp.4 { (!Null) };
+        %tmp.6 = 0;
+        %tmp.7 = lte %tmp.5 %tmp.6;
+        push %tmp.7;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_443_30_443_40_end:
+        %tmp.8 = phi [%tmp.3 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_443_12_443_40_begin] [%tmp.7 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_443_30_443_40_false] [%tmp.8 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_443_30_443_40_end];
+        bf %tmp.8 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_443_8_443_58_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_443_8_443_58_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_443_43_443_58_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 443 45 ]
+        %tmp.9 = "--";
+        ret %tmp.9;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_443_43_443_58_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_443_8_443_58_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_443_8_443_58_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 445 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_442_36_457_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_442_36_457_4_stop" ]
+        %settings.1 = local;
+        symbol [ settings %settings.1 445 12 20 ];
+        symbol [ System %tmp.10 445 23 29 ];
+        %tmp.10 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.11 445 30 47 ];
+        %tmp.11 = getv function %tmp.10 :getDeviceSettings;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        lputv %settings.1 %tmp.12;
+        symbol [ settings %settings.1 445 12 20 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 447 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_447_8_450_8_if_stmt:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_447_12_448_45_begin:
+        %tmp.13 = lgetv %settings.1;
+        symbol [ settings %tmp.13 447 12 20 ];
+        %tmp.14 = null;
+        %tmp.15 = ne %tmp.13 %tmp.14;
+        bf %tmp.15 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_447_8_450_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_448_12_448_45_true:
+        %tmp.16 = lgetv %settings.1;
+        symbol [ settings %tmp.16 448 12 20 ];
+        %tmp.17 = as %tmp.16 { (!Null) };
+        symbol [ distanceUnits %tmp.18 448 21 34 ];
+        %tmp.18 = getv %tmp.17 :distanceUnits;
+        symbol [ System %tmp.19 448 38 44 ];
+        %tmp.19 = getm $.Toybox.System;
+        symbol [ UNIT_STATUTE %tmp.20 448 45 57 ];
+        %tmp.20 = getv %tmp.19 :UNIT_STATUTE;
+        %tmp.21 = eq %tmp.18 %tmp.20;
+        push %tmp.21;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_448_12_448_45_end:
+        %tmp.22 = phi [%tmp.15 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_447_12_448_45_begin] [%tmp.21 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_448_12_448_45_true] [%tmp.22 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_448_12_448_45_end];
+        bf %tmp.22 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_447_8_450_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_447_8_450_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_448_59_450_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 449 12 ]
+        %tmp.23 = lgetv %meters;
+        symbol [ meters %tmp.23 449 20 26 ];
+        %tmp.24 = 1609.34;
+        %tmp.25 = div %tmp.23 %tmp.24;
+        symbol [ format %tmp.26 449 38 44 ];
+        %tmp.26 = getv function %tmp.25 :format;
+        %tmp.27 = "%.2f";
+        %tmp.28 = invoke %tmp.25 %tmp.26(%tmp.27);
+        %tmp.29 = "mi";
+        %tmp.30 = add %tmp.28 %tmp.29;
+        ret %tmp.30;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_448_59_450_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_447_8_450_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_447_8_450_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 452 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_452_8_454_8_if_stmt:
+        %tmp.31 = lgetv %meters;
+        symbol [ meters %tmp.31 452 12 18 ];
+        %tmp.32 = 1000;
+        %tmp.33 = gte %tmp.31 %tmp.32;
+        bf %tmp.33 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_452_8_454_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_452_8_454_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_452_28_454_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 453 12 ]
+        %tmp.34 = lgetv %meters;
+        symbol [ meters %tmp.34 453 20 26 ];
+        %tmp.35 = 1000.0;
+        %tmp.36 = div %tmp.34 %tmp.35;
+        symbol [ format %tmp.37 453 37 43 ];
+        %tmp.37 = getv function %tmp.36 :format;
+        %tmp.38 = "%.2f";
+        %tmp.39 = invoke %tmp.36 %tmp.37(%tmp.38);
+        %tmp.40 = "km";
+        %tmp.41 = add %tmp.39 %tmp.40;
+        ret %tmp.41;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_452_28_454_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_452_8_454_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_452_8_454_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 456 8 ]
+        %tmp.42 = lgetv %meters;
+        symbol [ meters %tmp.42 456 15 21 ];
+        symbol [ format %tmp.43 456 22 28 ];
+        %tmp.43 = getv function %tmp.42 :format;
+        %tmp.44 = "%.0f";
+        %tmp.45 = invoke %tmp.42 %tmp.43(%tmp.44);
+        %tmp.46 = "m";
+        %tmp.47 = add %tmp.45 %tmp.46;
+        ret %tmp.47;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_442_36_457_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 459; @symbol_functiondef = [formatPace,459,13,23]; @symbol_param<0> = [meters,459,24,30]; @symbol_param<1> = [secs,459,32,36]; ]
+    function formatPace(meters, secs) {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_459_38_478_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 460 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_8_461_62_if_stmt:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_12_461_40_begin:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_12_461_22_begin:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_12_460_40_begin:
+        %tmp.1 = lgetv %meters;
+        symbol [ meters %tmp.1 460 12 18 ];
+        %tmp.2 = null;
+        %tmp.3 = eq %tmp.1 %tmp.2;
+        bt %tmp.3 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_8_461_62_if_true;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_30_460_40_false:
+        %tmp.4 = lgetv %meters;
+        symbol [ meters %tmp.4 460 30 36 ];
+        %tmp.5 = as %tmp.4 { (!Null) };
+        %tmp.6 = 10;
+        %tmp.7 = lte %tmp.5 %tmp.6;
+        push %tmp.7;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_30_460_40_end:
+        %tmp.8 = phi [%tmp.3 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_12_460_40_begin] [%tmp.7 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_30_460_40_false] [%tmp.8 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_30_460_40_end];
+        bt %tmp.8 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_8_461_62_if_true;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_461_12_461_22_false:
+        %tmp.9 = lgetv %secs;
+        symbol [ secs %tmp.9 461 12 16 ];
+        %tmp.10 = null;
+        %tmp.11 = eq %tmp.9 %tmp.10;
+        push %tmp.11;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_461_12_461_22_end:
+        %tmp.12 = phi [%tmp.8 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_12_461_22_begin] [%tmp.11 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_461_12_461_22_false] [%tmp.12 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_461_12_461_22_end];
+        bt %tmp.12 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_8_461_62_if_true;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_461_30_461_40_false:
+        %tmp.13 = lgetv %secs;
+        symbol [ secs %tmp.13 461 30 34 ];
+        %tmp.14 = as %tmp.13 { (!Null) };
+        %tmp.15 = 0;
+        %tmp.16 = lte %tmp.14 %tmp.15;
+        push %tmp.16;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_461_30_461_40_end:
+        %tmp.17 = phi [%tmp.12 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_12_461_40_begin] [%tmp.16 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_461_30_461_40_false] [%tmp.17 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_461_30_461_40_end];
+        bf %tmp.17 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_8_461_62_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_8_461_62_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_461_44_461_62_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 461 46 ]
+        %tmp.18 = "--:--";
+        ret %tmp.18;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_461_44_461_62_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_8_461_62_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_460_8_461_62_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 463 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_459_38_478_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_459_38_478_4_stop" ]
+        %settings.1 = local;
+        symbol [ settings %settings.1 463 12 20 ];
+        symbol [ System %tmp.19 463 23 29 ];
+        %tmp.19 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.20 463 30 47 ];
+        %tmp.20 = getv function %tmp.19 :getDeviceSettings;
+        %tmp.21 = invoke %tmp.19 %tmp.20();
+        lputv %settings.1 %tmp.21;
+        symbol [ settings %settings.1 463 12 20 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 464 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_459_38_478_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_459_38_478_4_stop" ]
+        %unitM.2 = local;
+        symbol [ unitM %unitM.2 464 12 17 ];
+        %tmp.22 = 1000.0;
+        lputv %unitM.2 %tmp.22;
+        symbol [ unitM %unitM.2 464 12 17 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 465 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_459_38_478_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_459_38_478_4_stop" ]
+        %label.3 = local;
+        symbol [ label %label.3 465 12 17 ];
+        %tmp.23 = "/k";
+        lputv %label.3 %tmp.23;
+        symbol [ label %label.3 465 12 17 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 467 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_467_8_471_8_if_stmt:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_467_12_468_45_begin:
+        %tmp.24 = lgetv %settings.1;
+        symbol [ settings %tmp.24 467 12 20 ];
+        %tmp.25 = null;
+        %tmp.26 = ne %tmp.24 %tmp.25;
+        bf %tmp.26 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_467_8_471_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_468_12_468_45_true:
+        %tmp.27 = lgetv %settings.1;
+        symbol [ settings %tmp.27 468 12 20 ];
+        %tmp.28 = as %tmp.27 { (!Null) };
+        symbol [ distanceUnits %tmp.29 468 21 34 ];
+        %tmp.29 = getv %tmp.28 :distanceUnits;
+        symbol [ System %tmp.30 468 38 44 ];
+        %tmp.30 = getm $.Toybox.System;
+        symbol [ UNIT_STATUTE %tmp.31 468 45 57 ];
+        %tmp.31 = getv %tmp.30 :UNIT_STATUTE;
+        %tmp.32 = eq %tmp.29 %tmp.31;
+        push %tmp.32;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_468_12_468_45_end:
+        %tmp.33 = phi [%tmp.26 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_467_12_468_45_begin] [%tmp.32 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_468_12_468_45_true] [%tmp.33 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_468_12_468_45_end];
+        bf %tmp.33 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_467_8_471_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_467_8_471_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_468_59_471_8_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 469 12 ]
+        %tmp.34 = 1609.34;
+        lputv %unitM.2 %tmp.34;
+        symbol [ unitM %unitM.2 469 12 17 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 470 12 ]
+        %tmp.35 = "/m";
+        lputv %label.3 %tmp.35;
+        symbol [ label %label.3 470 12 17 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_468_59_471_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_467_8_471_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_467_8_471_8_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 473 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_459_38_478_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_459_38_478_4_stop" ]
+        %spu.4 = local;
+        symbol [ spu %spu.4 473 12 15 ];
+        %tmp.36 = lgetv %secs;
+        symbol [ secs %tmp.36 473 19 23 ];
+        symbol [ toFloat %tmp.37 473 24 31 ];
+        %tmp.37 = getv function %tmp.36 :toFloat;
+        %tmp.38 = invoke %tmp.36 %tmp.37();
+        %tmp.39 = lgetv %meters;
+        symbol [ meters %tmp.39 473 36 42 ];
+        symbol [ toFloat %tmp.40 473 43 50 ];
+        %tmp.40 = getv function %tmp.39 :toFloat;
+        %tmp.41 = invoke %tmp.39 %tmp.40();
+        %tmp.42 = div %tmp.38 %tmp.41;
+        %tmp.43 = lgetv %unitM.2;
+        symbol [ unitM %tmp.43 473 56 61 ];
+        %tmp.44 = mul %tmp.42 %tmp.43;
+        lputv %spu.4 %tmp.44;
+        symbol [ spu %spu.4 473 12 15 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 474 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_459_38_478_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_459_38_478_4_stop" ]
+        %m.5 = local;
+        symbol [ m %m.5 474 12 13 ];
+        %tmp.45 = lgetv %spu.4;
+        symbol [ spu %tmp.45 474 18 21 ];
+        symbol [ toNumber %tmp.46 474 22 30 ];
+        %tmp.46 = getv function %tmp.45 :toNumber;
+        %tmp.47 = invoke %tmp.45 %tmp.46();
+        %tmp.48 = 60;
+        %tmp.49 = div %tmp.47 %tmp.48;
+        lputv %m.5 %tmp.49;
+        symbol [ m %m.5 474 12 13 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 475 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_459_38_478_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_459_38_478_4_stop" ]
+        %r.6 = local;
+        symbol [ r %r.6 475 12 13 ];
+        %tmp.50 = lgetv %spu.4;
+        symbol [ spu %tmp.50 475 18 21 ];
+        symbol [ toNumber %tmp.51 475 22 30 ];
+        %tmp.51 = getv function %tmp.50 :toNumber;
+        %tmp.52 = invoke %tmp.50 %tmp.51();
+        %tmp.53 = 60;
+        %tmp.54 = mod %tmp.52 %tmp.53;
+        lputv %r.6 %tmp.54;
+        symbol [ r %r.6 475 12 13 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 477 8 ]
+        %tmp.55 = lgetv %m.5;
+        symbol [ m %tmp.55 477 15 16 ];
+        symbol [ format %tmp.56 477 17 23 ];
+        %tmp.56 = getv function %tmp.55 :format;
+        %tmp.57 = "%d";
+        %tmp.58 = invoke %tmp.55 %tmp.56(%tmp.57);
+        %tmp.59 = ":";
+        %tmp.60 = add %tmp.58 %tmp.59;
+        %tmp.61 = lgetv %r.6;
+        symbol [ r %tmp.61 477 38 39 ];
+        symbol [ format %tmp.62 477 40 46 ];
+        %tmp.62 = getv function %tmp.61 :format;
+        %tmp.63 = "%02d";
+        %tmp.64 = invoke %tmp.61 %tmp.62(%tmp.63);
+        %tmp.65 = add %tmp.60 %tmp.64;
+        %tmp.66 = lgetv %label.3;
+        symbol [ label %tmp.66 477 57 62 ];
+        %tmp.67 = add %tmp.65 %tmp.66;
+        ret %tmp.67;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_459_38_478_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 480; @symbol_functiondef = [formatHeartRate,480,13,28]; @symbol_param<0> = [hr,480,29,31]; ]
+    function formatHeartRate(hr) {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_480_33_483_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 481 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_481_8_481_50_if_stmt:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_481_12_481_32_begin:
+        %tmp.1 = lgetv %hr;
+        symbol [ hr %tmp.1 481 12 14 ];
+        %tmp.2 = null;
+        %tmp.3 = eq %tmp.1 %tmp.2;
+        bt %tmp.3 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_481_8_481_50_if_true;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_481_26_481_32_false:
+        %tmp.4 = lgetv %hr;
+        symbol [ hr %tmp.4 481 26 28 ];
+        %tmp.5 = as %tmp.4 { (!Null) };
+        %tmp.6 = 0;
+        %tmp.7 = lte %tmp.5 %tmp.6;
+        push %tmp.7;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_481_26_481_32_end:
+        %tmp.8 = phi [%tmp.3 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_481_12_481_32_begin] [%tmp.7 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_481_26_481_32_false] [%tmp.8 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_481_26_481_32_end];
+        bf %tmp.8 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_481_8_481_50_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_481_8_481_50_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_481_35_481_50_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 481 37 ]
+        %tmp.9 = "--";
+        ret %tmp.9;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_481_35_481_50_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_481_8_481_50_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_481_8_481_50_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 482 8 ]
+        %tmp.10 = lgetv %hr;
+        symbol [ hr %tmp.10 482 15 17 ];
+        symbol [ format %tmp.11 482 18 24 ];
+        %tmp.11 = getv function %tmp.10 :format;
+        %tmp.12 = "%.0f";
+        %tmp.13 = invoke %tmp.10 %tmp.11(%tmp.12);
+        ret %tmp.13;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_480_33_483_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 485; @symbol_functiondef = [formatCalories,485,13,27]; @symbol_param<0> = [calories,485,28,36]; ]
+    function formatCalories(calories) {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_485_38_488_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 486 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_486_8_486_62_if_stmt:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_486_12_486_44_begin:
+        %tmp.1 = lgetv %calories;
+        symbol [ calories %tmp.1 486 12 20 ];
+        %tmp.2 = null;
+        %tmp.3 = eq %tmp.1 %tmp.2;
+        bt %tmp.3 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_486_8_486_62_if_true;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_486_32_486_44_false:
+        %tmp.4 = lgetv %calories;
+        symbol [ calories %tmp.4 486 32 40 ];
+        %tmp.5 = as %tmp.4 { (!Null) };
+        %tmp.6 = 0;
+        %tmp.7 = lte %tmp.5 %tmp.6;
+        push %tmp.7;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_486_32_486_44_end:
+        %tmp.8 = phi [%tmp.3 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_486_12_486_44_begin] [%tmp.7 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_486_32_486_44_false] [%tmp.8 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_486_32_486_44_end];
+        bf %tmp.8 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_486_8_486_62_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_486_8_486_62_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_486_47_486_62_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 486 49 ]
+        %tmp.9 = "--";
+        ret %tmp.9;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_486_47_486_62_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_486_8_486_62_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_486_8_486_62_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 487 8 ]
+        %tmp.10 = lgetv %calories;
+        symbol [ calories %tmp.10 487 15 23 ];
+        symbol [ format %tmp.11 487 24 30 ];
+        %tmp.11 = getv function %tmp.10 :format;
+        %tmp.12 = "%.0f";
+        %tmp.13 = invoke %tmp.10 %tmp.11(%tmp.12);
+        %tmp.14 = "kcal";
+        %tmp.15 = add %tmp.13 %tmp.14;
+        ret %tmp.15;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_485_38_488_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 490; @symbol_functiondef = [formatEffort,490,13,25]; @symbol_param<0> = [hr,490,26,28]; ]
+    function formatEffort(hr) {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_490_30_498_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 491 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_491_8_491_50_if_stmt:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_491_12_491_32_begin:
+        %tmp.1 = lgetv %hr;
+        symbol [ hr %tmp.1 491 12 14 ];
+        %tmp.2 = null;
+        %tmp.3 = eq %tmp.1 %tmp.2;
+        bt %tmp.3 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_491_8_491_50_if_true;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_491_26_491_32_false:
+        %tmp.4 = lgetv %hr;
+        symbol [ hr %tmp.4 491 26 28 ];
+        %tmp.5 = as %tmp.4 { (!Null) };
+        %tmp.6 = 0;
+        %tmp.7 = lte %tmp.5 %tmp.6;
+        push %tmp.7;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_491_26_491_32_end:
+        %tmp.8 = phi [%tmp.3 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_491_12_491_32_begin] [%tmp.7 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_491_26_491_32_false] [%tmp.8 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_491_26_491_32_end];
+        bf %tmp.8 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_491_8_491_50_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_491_8_491_50_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_491_35_491_50_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 491 37 ]
+        %tmp.9 = "--";
+        ret %tmp.9;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_491_35_491_50_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_491_8_491_50_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_491_8_491_50_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 492 8 ]
+        [ "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_490_30_498_4_start" "C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_490_30_498_4_stop" ]
+        %bpm.1 = local;
+        symbol [ bpm %bpm.1 492 12 15 ];
+        %tmp.10 = lgetv %hr;
+        symbol [ hr %tmp.10 492 18 20 ];
+        symbol [ toNumber %tmp.11 492 21 29 ];
+        %tmp.11 = getv function %tmp.10 :toNumber;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        lputv %bpm.1 %tmp.12;
+        symbol [ bpm %bpm.1 492 12 15 ];
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 493 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_493_8_493_40_if_stmt:
+        %tmp.13 = lgetv %bpm.1;
+        symbol [ bpm %tmp.13 493 12 15 ];
+        %tmp.14 = 120;
+        %tmp.15 = lt %tmp.13 %tmp.14;
+        bf %tmp.15 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_493_8_493_40_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_493_8_493_40_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_493_23_493_40_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 493 25 ]
+        %tmp.16 = "EASY";
+        ret %tmp.16;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_493_23_493_40_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_493_8_493_40_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_493_8_493_40_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 494 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_494_8_494_39_if_stmt:
+        %tmp.17 = lgetv %bpm.1;
+        symbol [ bpm %tmp.17 494 12 15 ];
+        %tmp.18 = 140;
+        %tmp.19 = lt %tmp.17 %tmp.18;
+        bf %tmp.19 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_494_8_494_39_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_494_8_494_39_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_494_23_494_39_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 494 25 ]
+        %tmp.20 = "MOD";
+        ret %tmp.20;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_494_23_494_39_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_494_8_494_39_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_494_8_494_39_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 495 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_495_8_495_40_if_stmt:
+        %tmp.21 = lgetv %bpm.1;
+        symbol [ bpm %tmp.21 495 12 15 ];
+        %tmp.22 = 160;
+        %tmp.23 = lt %tmp.21 %tmp.22;
+        bf %tmp.23 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_495_8_495_40_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_495_8_495_40_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_495_23_495_40_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 495 25 ]
+        %tmp.24 = "HARD";
+        ret %tmp.24;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_495_23_495_40_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_495_8_495_40_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_495_8_495_40_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 496 8 ]
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_496_8_496_42_if_stmt:
+        %tmp.25 = lgetv %bpm.1;
+        symbol [ bpm %tmp.25 496 12 15 ];
+        %tmp.26 = 175;
+        %tmp.27 = lt %tmp.25 %tmp.26;
+        bf %tmp.27 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_496_8_496_42_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_496_8_496_42_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_496_23_496_42_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 496 25 ]
+        %tmp.28 = "V.HARD";
+        ret %tmp.28;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_496_23_496_42_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_496_8_496_42_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_496_8_496_42_if_end:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc" 497 8 ]
+        %tmp.29 = "MAX";
+        ret %tmp.29;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0SummaryView_mc_490_30_498_4_stop:
+    }
+}
+[ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0SummaryView.mc"; @line = 1; ]
+<init> {
+}

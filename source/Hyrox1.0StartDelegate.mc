@@ -1,4 +1,5 @@
 using Toybox.WatchUi;
+using Toybox.System;
 
 class Hyrox1_0StartDelegate extends WatchUi.BehaviorDelegate {
 
@@ -31,6 +32,6 @@ class Hyrox1_0StartDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onBack() {
-        return false;
+        System.exit();
     }
 }

@@ -113,9 +113,6 @@ class Hyrox1_0SummaryView extends WatchUi.View {
             Graphics.TEXT_JUSTIFY_CENTER
         );
         y += hTiny + pad * 0.4;
-
-        dc.setColor(COLOR_DIVIDER, Graphics.COLOR_TRANSPARENT);
-        dc.drawLine(contentLeft, y, contentRight, y);
         y += pad * 0.6;
 
         // =====================================================
@@ -189,8 +186,6 @@ class Hyrox1_0SummaryView extends WatchUi.View {
         dc.setColor(valueColor, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, y + dc.getFontHeight(fTiny) + pad * 0.2, fSmall, value, Graphics.TEXT_JUSTIFY_CENTER);
 
-        dc.setColor(COLOR_DIVIDER, Graphics.COLOR_TRANSPARENT);
-        dc.drawLine(left + (right - left) * 0.1, y + rowH - pad * 0.2, right - (right - left) * 0.1, y + rowH - pad * 0.2);
     }
 
     function drawGroupedListPage(
@@ -304,7 +299,7 @@ class Hyrox1_0SummaryView extends WatchUi.View {
     //   [col1 label] | [col2 label] | [col3 label]
     //   [col1 value] | [col2 value] | [col3 value]
     //
-    // All three value cells use FONT_SMALL — same size, no
+    // All three value cells use FONT_XTINY — same size, no
     // hero number, so nothing can overflow its cell.
     // =========================================================
 
@@ -350,8 +345,8 @@ class Hyrox1_0SummaryView extends WatchUi.View {
         var v3 = "";
 
         if (isRun) {
-            l1 = "AVG HR";  v1 = formatHeartRate(seg[:heartRate]);
-            l2 = "DIST";    v2 = formatDistance(seg[:distance]);
+            l1 = "DIST";    v1 = formatDistance(seg[:distance]);
+            l2 = "AVG HR";  v2 = formatHeartRate(seg[:heartRate]);
             l3 = "PACE";    v3 = formatPace(seg[:distance], seg[:time]);
         } else {
             l1 = "TIME";    v1 = formatTime(seg[:time]);
@@ -366,25 +361,17 @@ class Hyrox1_0SummaryView extends WatchUi.View {
         dc.drawText(col3X, y, fTiny, l3, Graphics.TEXT_JUSTIFY_CENTER);
         y += hTiny + pad * 0.2;
 
-        // Values row — all FONT_SMALL, same height
+        // Values row — all FONT_XTINY, same height
         dc.setColor(COLOR_PRIMARY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(col1X, y, fSmall, v1, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(col1X, y, fTiny, v1, Graphics.TEXT_JUSTIFY_CENTER);
 
         // HR in red for quick scanning
-        dc.setColor(isRun ? COLOR_PRIMARY : COLOR_HR, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(col2X, y, isRun ? fTiny : fSmall, v2, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.setColor(COLOR_HR, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(col2X, y, fTiny, v2, Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(COLOR_PRIMARY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(col3X, y, isRun ? fTiny : fSmall, v3, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(col3X, y, fTiny, v3, Graphics.TEXT_JUSTIFY_CENTER);
 
-        // Vertical dividers between cells, spanning both label
-        // and value rows.
-        var vTop    = y - hTiny - pad * 0.2 - pad * 0.2;
-        var vBottom = y + hSmall;
-
-        dc.setColor(COLOR_DIVIDER, Graphics.COLOR_TRANSPARENT);
-        dc.drawLine(left + cw * 0.34, vTop, left + cw * 0.34, vBottom);
-        dc.drawLine(left + cw * 0.66, vTop, left + cw * 0.66, vBottom);
     }
 
 

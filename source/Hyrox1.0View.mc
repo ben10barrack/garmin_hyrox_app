@@ -98,11 +98,9 @@ class Hyrox1_0View extends WatchUi.View {
 
         var fTiny   = Graphics.FONT_XTINY;
         var fSmall  = Graphics.FONT_SMALL;
-        var fNumMed = Graphics.FONT_NUMBER_MEDIUM;
 
         var hTiny   = dc.getFontHeight(fTiny);
         var hSmall  = dc.getFontHeight(fSmall);
-        var hNumMed = dc.getFontHeight(fNumMed);
 
         var pad = H * 0.012;   // compact spacing for the circular display
 
@@ -114,14 +112,15 @@ class Hyrox1_0View extends WatchUi.View {
         if (!active)        { accentFill = COLOR_READY_FILL; }
         else if (running)   { accentFill = COLOR_RUN_FILL; }
         else                { accentFill = COLOR_STATION_FILL; }
+        var stateColor = running ? COLOR_RUN_FILL : COLOR_STATION_FILL;
 
         // =====================================================
         // ROW 0 — CLOCK (top center, muted)
         // =====================================================
 
-        var clockY = H * 0.03;
+        var clockY = H * 0.077;
 
-        dc.setColor(COLOR_TEXT_MUTED, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(COLOR_TEXT_PRIMARY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
             cx, clockY,
             fTiny,
@@ -148,7 +147,7 @@ class Hyrox1_0View extends WatchUi.View {
         // top fields gets the solid accent-color background.
         // =====================================================
 
-        var row1H    = hTiny + hNumMed + pad;  // label + number + inner pad
+        var row1H    = hTiny + hTiny + pad;  // label + number + inner pad
         var halfW    = W / 2;
 
         // -- LEFT CELL: total time --
@@ -156,7 +155,7 @@ class Hyrox1_0View extends WatchUi.View {
         var totalSecs   = app.getActivityElapsedSeconds();
         var totalStr    = formatTime(totalSecs);
 
-        dc.setColor(COLOR_TEXT_MUTED, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(COLOR_TEXT_PRIMARY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
             halfW * 0.5, y + pad * 0.4,
             fTiny, "TOTAL",
@@ -166,7 +165,7 @@ class Hyrox1_0View extends WatchUi.View {
         dc.setColor(COLOR_TEXT_PRIMARY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
             halfW * 0.5, y + hTiny + pad * 0.4,
-            fSmall, totalStr,
+            fTiny, totalStr,
             Graphics.TEXT_JUSTIFY_CENTER
         );
 
@@ -198,7 +197,7 @@ class Hyrox1_0View extends WatchUi.View {
 
         dc.drawText(
             halfW + halfW * 0.5, y + hTiny + pad * 0.4,
-            fNumMed, segLabelValue,
+            fTiny, segLabelValue,
             Graphics.TEXT_JUSTIFY_CENTER
         );
 
@@ -232,7 +231,7 @@ class Hyrox1_0View extends WatchUi.View {
             segmentTitle = app.getStationName(stationNum);
         }
 
-        dc.setColor(COLOR_TEXT_PRIMARY, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(stateColor, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
             cx, y,
             fSmall, segmentTitle,
@@ -262,29 +261,29 @@ class Hyrox1_0View extends WatchUi.View {
         var col1X = W * 0.18;
         var col3X = W * 0.82;
 
-        var row2H = hSmall + pad;
+        var row2H = hTiny + pad;
 
         // left: distance
         dc.setColor(COLOR_TEXT_PRIMARY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
-            col1X, y + (row2H - hSmall) / 2,
-            fSmall, distStr,
+            col1X, y + (row2H - hTiny) / 2,
+            fTiny, distStr,
             Graphics.TEXT_JUSTIFY_CENTER
         );
 
         // center: compact segment timer
-        dc.setColor(COLOR_TEXT_PRIMARY, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(stateColor, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
             cx, y,
-            fSmall, segStr,
+            fTiny, segStr,
             Graphics.TEXT_JUSTIFY_CENTER
         );
 
         // right: heart rate
         dc.setColor(COLOR_HR, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
-            col3X, y + (row2H - hSmall) / 2,
-            fSmall, hrStr,
+            col3X, y + (row2H - hTiny) / 2,
+            fTiny, hrStr,
             Graphics.TEXT_JUSTIFY_CENTER
         );
 
@@ -296,9 +295,11 @@ class Hyrox1_0View extends WatchUi.View {
         y += row2H + pad * 0.5;
 
         // labels under each column
-        dc.setColor(COLOR_TEXT_MUTED, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(COLOR_TEXT_PRIMARY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(col1X, y, fTiny, "DIST", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(cx,    y, fTiny, running ? "RUN" : "STN", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.setColor(stateColor, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, y, fTiny, running ? "RUN" : "STN", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.setColor(COLOR_HR, Graphics.COLOR_TRANSPARENT);
         dc.drawText(col3X, y, fTiny, "HR", Graphics.TEXT_JUSTIFY_CENTER);
 
         y += hTiny + pad;
@@ -323,7 +324,7 @@ class Hyrox1_0View extends WatchUi.View {
             nextUp = getEndMenuText(app.getEndMenuSelection());
         }
 
-        dc.setColor(COLOR_READY_FILL, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(stateColor, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
             cx, y,
             Graphics.FONT_XTINY, nextUp,
@@ -358,11 +359,11 @@ class Hyrox1_0View extends WatchUi.View {
         }
 
         if (running) {
-            return "> " + app.getStationName(stationNum);
+            return "-> " + app.getStationName(stationNum);
         }
 
         if (stationNum < totalStation) {
-            return "> RUN " + (stationNum + 1).format("%d");
+            return "-> RUN " + (stationNum + 1).format("%d");
         }
 
         return "FINISH";

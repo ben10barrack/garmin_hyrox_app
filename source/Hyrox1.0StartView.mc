@@ -28,7 +28,7 @@ class Hyrox1_0StartView extends WatchUi.View {
         dc.setColor(COLOR_BG, COLOR_BG);
         dc.clear();
 
-        dc.setColor(COLOR_PRIMARY, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(COLOR_GPS, Graphics.COLOR_TRANSPARENT);
         dc.drawText(centerX, height * 0.10, Graphics.FONT_SMALL,
             "HYROX", Graphics.TEXT_JUSTIFY_CENTER);
 
@@ -38,28 +38,25 @@ class Hyrox1_0StartView extends WatchUi.View {
 
         var options = ["GPS RUN", "TREADMILL"];
         var colors = [COLOR_GPS, COLOR_TREADMILL];
-        var rowHeight = height * 0.17;
+        var buttonFont = Graphics.FONT_SMALL;
+        var buttonTextHeight = dc.getFontHeight(buttonFont);
+        var rowHeight = height * 0.13;
         var rowTop = height * 0.34;
 
         for (var i = 0; i < options.size(); i++) {
-            var y = rowTop + i * (rowHeight + height * 0.04);
+            var y = rowTop + i * (rowHeight + height * 0.03);
             if (i == selected) {
                 dc.setColor(colors[i], Graphics.COLOR_TRANSPARENT);
-                dc.fillRoundedRectangle(width * 0.10, y, width * 0.80,
+                dc.fillRoundedRectangle(width * 0.14, y, width * 0.72,
                     rowHeight, rowHeight * 0.18);
                 dc.setColor(COLOR_BG, Graphics.COLOR_TRANSPARENT);
             } else {
                 dc.setColor(COLOR_MUTED, Graphics.COLOR_TRANSPARENT);
             }
 
-            dc.drawText(centerX, y + rowHeight * 0.28, Graphics.FONT_MEDIUM,
+            dc.drawText(centerX, y + (rowHeight - buttonTextHeight) / 2,
+                buttonFont,
                 options[i], Graphics.TEXT_JUSTIFY_CENTER);
         }
-
-        dc.setColor(COLOR_MUTED, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(centerX, height * 0.82, Graphics.FONT_XTINY,
-            "UP/DOWN: TYPE", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(centerX, height * 0.90, Graphics.FONT_XTINY,
-            "SELECT: START", Graphics.TEXT_JUSTIFY_CENTER);
     }
 }

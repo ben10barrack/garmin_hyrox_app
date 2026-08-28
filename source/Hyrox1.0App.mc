@@ -174,18 +174,15 @@ class Hyrox1_0App extends Application.AppBase {
         var selection = endMenuSelection;
         endMenuOpen = false;
 
-        if (selection == 0) {
-            stopActivity(true);
-            summaryPage = 0;
+        if (selection == 0 || selection == 1) {
+            stopActivity(selection == 0);
             WatchUi.switchToView(
-                new Hyrox1_0SummaryView(),
-                new Hyrox1_0SummaryDelegate(),
-                WatchUi.SLIDE_UP
+                new Hyrox1_0StartView(),
+                new Hyrox1_0StartDelegate(),
+                WatchUi.SLIDE_DOWN
             );
             WatchUi.requestUpdate();
             return;
-        } else if (selection == 1) {
-            stopActivity(false);
         }
 
         WatchUi.popView(WatchUi.SLIDE_DOWN);
