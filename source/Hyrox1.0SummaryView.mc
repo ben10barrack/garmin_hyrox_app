@@ -15,7 +15,8 @@ class Hyrox1_0SummaryView extends WatchUi.View {
     const COLOR_DIVIDER = Graphics.COLOR_DK_GRAY;
     const COLOR_HR      = Graphics.COLOR_RED;
     const COLOR_RUN     = Graphics.COLOR_GREEN;
-    const COLOR_STATION = Graphics.COLOR_ORANGE;
+    const COLOR_STATION = Graphics.COLOR_BLUE;
+    const COLOR_STATION_TEXT = Graphics.COLOR_BLUE;
 
     function initialize() {
         View.initialize();
@@ -151,9 +152,7 @@ class Hyrox1_0SummaryView extends WatchUi.View {
     // =========================================================
     // OVERVIEW PAGE
     //
-    // Total time at top, then a compact two-column list of all
-    // segments. All 16 segments of a Hyrox fit in the available
-    // height at FONT_XTINY with the tight row spacing below.
+    // Workout totals are stacked above the segment pages.
     // =========================================================
 
     function drawOverviewPage(
@@ -163,39 +162,35 @@ class Hyrox1_0SummaryView extends WatchUi.View {
         hTiny, hSmall, hNum,
         segments as Lang.Array<Lang.Dictionary>
     ) {
-        var cx = left + cw / 2;
+        // -- Totals: one compact row per metric --
+        var rowH = hTiny + hSmall + pad * 0.6;
+        var rowCenter = left + cw / 2;
 
-        // -- Totals row: equal-width cells with room for both values --
-        var totalsMid = left + cw / 2;
-        var totalsY = y;
+        drawTotalRow(
+            dc, left, right, rowCenter, y, rowH, pad, fTiny, fSmall,
+            "TIME", formatTime(app.getCompletedWorkoutSeconds()), COLOR_PRIMARY
+        );
+        y += rowH;
+        drawTotalRow(
+            dc, left, right, rowCenter, y, rowH, pad, fTiny, fSmall,
+            "DISTANCE", formatDistance(app.getCompletedWorkoutDistance()), COLOR_SECOND
+        );
+        y += rowH;
+        drawTotalRow(
+            dc, left, right, rowCenter, y, rowH, pad, fTiny, fSmall,
+            "CALORIES", formatCalories(app.getCompletedWorkoutCalories()), COLOR_SECOND
+        );
+    }
 
+    function drawTotalRow(dc, left, right, cx, y, rowH, pad, fTiny, fSmall, label, value, valueColor) {
         dc.setColor(COLOR_MUTED, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(left + cw * 0.25, totalsY, fTiny, "TIME", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(left + cw * 0.75, totalsY, fTiny, "DISTANCE", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, y, fTiny, label, Graphics.TEXT_JUSTIFY_CENTER);
 
-        dc.setColor(COLOR_PRIMARY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(
-            left + cw * 0.25, totalsY + hTiny + pad * 0.2, fSmall,
-            formatTime(app.getCompletedWorkoutSeconds()),
-            Graphics.TEXT_JUSTIFY_CENTER
-        );
-        dc.setColor(COLOR_SECOND, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(
-            left + cw * 0.75, totalsY + hTiny + pad * 0.2, fSmall,
-            formatDistance(app.getCompletedWorkoutDistance()),
-            Graphics.TEXT_JUSTIFY_CENTER
-        );
-        y += hTiny + pad * 0.2 + hSmall + pad * 0.5;
+        dc.setColor(valueColor, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, y + dc.getFontHeight(fTiny) + pad * 0.2, fSmall, value, Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(COLOR_DIVIDER, Graphics.COLOR_TRANSPARENT);
-        dc.drawLine(totalsMid, totalsY, totalsMid, y - pad * 0.2);
-
-        dc.setColor(COLOR_DIVIDER, Graphics.COLOR_TRANSPARENT);
-        dc.drawLine(left + cw * 0.1, y, right - cw * 0.1, y);
-        y += pad * 0.6;
-
-        dc.setColor(COLOR_MUTED, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, y + pad, fTiny, "UP / DOWN FOR SEGMENTS", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawLine(left + (right - left) * 0.1, y + rowH - pad * 0.2, right - (right - left) * 0.1, y + rowH - pad * 0.2);
     }
 
     function drawGroupedListPage(
@@ -206,15 +201,15 @@ class Hyrox1_0SummaryView extends WatchUi.View {
         var title = showRuns ? "RUNS" : "STATIONS";
         var accent = showRuns ? COLOR_RUN : COLOR_STATION;
 
-        dc.setColor(accent, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, y, Graphics.FONT_SMALL, title, Graphics.TEXT_JUSTIFY_CENTER);
-        y += dc.getFontHeight(Graphics.FONT_SMALL) + pad * 0.5;
+        dc.setColor(showRuns ? accent : COLOR_STATION_TEXT, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, y, fTiny, title, Graphics.TEXT_JUSTIFY_CENTER);
+        y += hTiny + (showRuns ? pad * 0.25 : pad * 0.05);
 
         dc.setColor(COLOR_MUTED, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, y, fTiny, "LAP       TIME", Graphics.TEXT_JUSTIFY_CENTER);
-        y += hTiny + pad * 0.25;
+        y += hTiny + (showRuns ? pad * 0.15 : 0);
 
-        var rowH = hTiny + pad * 0.65;
+        var rowH = showRuns ? hTiny + pad * 0.25 : hTiny * 0.82;
         var rowCenter = cx;
         var shown = 0;
 
@@ -227,16 +222,42 @@ class Hyrox1_0SummaryView extends WatchUi.View {
             }
 
             var rowY = y + shown * rowH;
-            dc.setColor(accent, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(rowCenter - cw * 0.16, rowY, fTiny, segment[:label], Graphics.TEXT_JUSTIFY_CENTER);
+            var labelFont = isRun ? fTiny : Graphics.FONT_XTINY;
+            var labelColor = isRun ? accent : COLOR_STATION_TEXT;
+            var labelX = isRun ? rowCenter - cw * 0.16 : left + cw * 0.08;
+            var timeX = isRun ? rowCenter + cw * 0.16 : rowCenter + cw * 0.20;
+            var timeFont = isRun ? fTiny : Graphics.FONT_XTINY;
+            var label = isRun
+                ? segment[:label]
+                : fitStationLabel(segment[:label], labelFont, cw * 0.28, dc);
+
+            dc.setColor(labelColor, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(
+                labelX, rowY, labelFont, label,
+                isRun ? Graphics.TEXT_JUSTIFY_CENTER : Graphics.TEXT_JUSTIFY_LEFT
+            );
             dc.setColor(COLOR_SECOND, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(rowCenter + cw * 0.16, rowY, fTiny, formatTime(segment[:time]), Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(timeX, rowY, timeFont, formatTime(segment[:time]), Graphics.TEXT_JUSTIFY_CENTER);
             shown += 1;
 
             if (shown >= 8 || rowY + rowH > H * 0.92) {
                 break;
             }
         }
+    }
+
+    function fitStationLabel(label, font, maxWidth, dc) {
+        if (dc.getTextWidthInPixels(label, font) <= maxWidth) {
+            return label;
+        }
+
+        var shortened = label;
+        while (shortened.length() > 3 &&
+               dc.getTextWidthInPixels(shortened + "...", font) > maxWidth) {
+            shortened = shortened.substring(0, shortened.length() - 1);
+        }
+
+        return shortened + "...";
     }
 
     function drawDetailPage(
@@ -399,7 +420,7 @@ class Hyrox1_0SummaryView extends WatchUi.View {
                 var s = stations[i] as Lang.Dictionary;
                 list.add({
                     :type      => "station",
-                    :label     => "STN " + s[:number].format("%d"),
+                    :label     => app.getStationName(s[:number]),
                     :number    => s[:number],
                     :time      => s[:time],
                     :distance  => 0,
@@ -472,6 +493,11 @@ class Hyrox1_0SummaryView extends WatchUi.View {
     function formatHeartRate(hr) {
         if (hr == null || hr <= 0) { return "--"; }
         return hr.format("%.0f");
+    }
+
+    function formatCalories(calories) {
+        if (calories == null || calories <= 0) { return "--"; }
+        return calories.format("%.0f") + "kcal";
     }
 
     function formatEffort(hr) {

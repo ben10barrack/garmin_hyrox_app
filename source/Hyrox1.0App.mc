@@ -32,6 +32,7 @@ class Hyrox1_0App extends Application.AppBase {
     var currentSummaryRecorded = false;
     var completedWorkoutSeconds = 0;
     var completedWorkoutDistance = 0.0;
+    var completedWorkoutCalories = 0;
 
     // Analysis data shown after the workout. FIT laps are also created below.
     var runRecords = [];
@@ -39,6 +40,18 @@ class Hyrox1_0App extends Application.AppBase {
 
     // HYROX has 8 stations
     const TOTAL_STATIONS = 8;
+
+    // Edit these names to customize the station order for your routine.
+    var stationNames as Lang.Array<Lang.String> = [
+        "100m BEAR CRAWL",
+        "100m CARRY 40",
+        "PULL UPS 50",
+        "BURPEE",
+        "750m ROW",
+        "150m FARMERS CARRY",
+        "75m LUNGES",
+        "75 WALL BALLS"
+    ];
 
     function initialize() {
         AppBase.initialize();
@@ -67,6 +80,15 @@ class Hyrox1_0App extends Application.AppBase {
         return stationRecords;
     }
 
+    function getStationName(number) {
+        var index = number - 1;
+        if (index >= 0 && index < stationNames.size() && stationNames[index] != null) {
+            return stationNames[index];
+        }
+
+        return "STN " + number.format("%d");
+    }
+
     function recordActivitySample(info) {
         if (!isActivityActive() || info == null) {
             return;
@@ -80,6 +102,10 @@ class Hyrox1_0App extends Application.AppBase {
                 stationHeartRateTotal += info.currentHeartRate;
                 stationHeartRateSamples += 1;
             }
+        }
+
+        if (info.calories != null) {
+            completedWorkoutCalories = info.calories;
         }
     }
 
@@ -240,13 +266,10 @@ class Hyrox1_0App extends Application.AppBase {
         try {
 
             var sessionOptions = {
-                :sport => Activity.SPORT_RUNNING,
+                :sport => Activity.SPORT_GENERIC,
+                :subSport => Activity.SUB_SPORT_GENERIC,
                 :name => "HYROX"
             };
-
-            if (indoorMode) {
-                sessionOptions[:subSport] = Activity.SUB_SPORT_TREADMILL;
-            }
 
             session = ActivityRecording.createSession(sessionOptions);
 
@@ -271,6 +294,7 @@ class Hyrox1_0App extends Application.AppBase {
             currentSummaryRecorded = false;
             completedWorkoutSeconds = 0;
             completedWorkoutDistance = 0.0;
+            completedWorkoutCalories = 0;
 
             System.println("HYROX activity started");
 
@@ -300,6 +324,8 @@ class Hyrox1_0App extends Application.AppBase {
         }
 
         try {
+
+            recordActivitySample(Activity.getActivityInfo());
 
             if (!currentSummaryRecorded) {
                 recordSegmentSummary();
@@ -520,6 +546,10 @@ class Hyrox1_0App extends Application.AppBase {
 
     function getCompletedWorkoutDistance() {
         return completedWorkoutDistance;
+    }
+
+    function getCompletedWorkoutCalories() {
+        return completedWorkoutCalories;
     }
 
     function getTotalRunDistance() {

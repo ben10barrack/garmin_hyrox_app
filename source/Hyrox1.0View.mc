@@ -21,7 +21,7 @@ class Hyrox1_0View extends WatchUi.View {
     const COLOR_DIVIDER      = Graphics.COLOR_DK_GRAY;
     const COLOR_HR           = Graphics.COLOR_RED;
     const COLOR_RUN_FILL     = Graphics.COLOR_GREEN;
-    const COLOR_STATION_FILL = Graphics.COLOR_ORANGE;
+    const COLOR_STATION_FILL = Graphics.COLOR_BLUE;
     const COLOR_READY_FILL   = Graphics.COLOR_BLUE;
 
     function initialize() {
@@ -229,7 +229,7 @@ class Hyrox1_0View extends WatchUi.View {
         } else if (running) {
             segmentTitle = "RUN " + stationNum + " of " + totalStation;
         } else {
-            segmentTitle = "STATION " + stationNum + " of " + totalStation;
+            segmentTitle = app.getStationName(stationNum);
         }
 
         dc.setColor(COLOR_TEXT_PRIMARY, Graphics.COLOR_TRANSPARENT);
@@ -326,7 +326,7 @@ class Hyrox1_0View extends WatchUi.View {
         dc.setColor(COLOR_READY_FILL, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
             cx, y,
-            fTiny, nextUp,
+            Graphics.FONT_XTINY, nextUp,
             Graphics.TEXT_JUSTIFY_CENTER
         );
     }
@@ -358,11 +358,11 @@ class Hyrox1_0View extends WatchUi.View {
         }
 
         if (running) {
-            return "NEXT: STN " + stationNum;
+            return "> " + app.getStationName(stationNum);
         }
 
         if (stationNum < totalStation) {
-            return "NEXT: RUN " + (stationNum + 1).format("%d");
+            return "> RUN " + (stationNum + 1).format("%d");
         }
 
         return "FINISH";
