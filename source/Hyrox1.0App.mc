@@ -17,6 +17,8 @@ class Hyrox1_0App extends Application.AppBase {
     var activityStarted = false;
     var indoorMode = false;
     var waitingForGps = false;
+    var gpsWaitStartTime = 0;
+    var gpsWaitTimeoutMs = 30000;
     var endMenuOpen = false;
     var endMenuSelection = 0;
     var summaryPage = 0;
@@ -253,7 +255,8 @@ class Hyrox1_0App extends Application.AppBase {
 
         if (!indoorMode) {
             waitingForGps = true;
-            Position.enableLocationEvents(Position.LOCATION_ONE_SHOT, method(:onPosition));
+            gpsWaitStartTime = System.getTimer();
+            Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, method(:onPosition));
             System.println("HYROX waiting for GPS");
             WatchUi.requestUpdate();
             return;
@@ -263,22 +266,35 @@ class Hyrox1_0App extends Application.AppBase {
     }
 
     function onPosition(info as Position.Info) as Void {
-        if (!waitingForGps || info == null || info.position == null) {
+        if (!waitingForGps) {
             return;
         }
 
-        waitingForGps = false;
-        System.println("HYROX GPS ready");
-        beginActivity();
+        if (info.position != null) {
+            waitingForGps = false;
+            Position.enableLocationEvents(Position.LOCATION_DISABLE, null);
+            System.println("HYROX GPS ready");
+            beginActivity();
+            return;
+        }
+
+        if ((System.getTimer() - gpsWaitStartTime) > gpsWaitTimeoutMs) {
+            waitingForGps = false;
+            Position.enableLocationEvents(Position.LOCATION_DISABLE, null);
+            System.println("HYROX GPS timeout - continuing without fix");
+            beginActivity();
+        }
     }
 
     function beginActivity() {
 
         try {
 
+            Position.enableLocationEvents(Position.LOCATION_DISABLE, null);
+
             var sessionOptions = {
-                :sport => Activity.SPORT_GENERIC,
-                :subSport => Activity.SUB_SPORT_GENERIC,
+                :sport => Activity.SPORT_RUNNING,
+                :subSport => indoorMode ? Activity.SUB_SPORT_TREADMILL : Activity.SUB_SPORT_GENERIC,
                 :name => "HYROX"
             };
 
@@ -326,11 +342,13 @@ class Hyrox1_0App extends Application.AppBase {
 
         if (waitingForGps) {
             waitingForGps = false;
+            Position.enableLocationEvents(Position.LOCATION_DISABLE, null);
             WatchUi.requestUpdate();
             return;
         }
 
         if (!activityStarted || session == null) {
+            Position.enableLocationEvents(Position.LOCATION_DISABLE, null);
             return;
         }
 
