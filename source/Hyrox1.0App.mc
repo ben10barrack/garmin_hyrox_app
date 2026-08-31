@@ -371,6 +371,7 @@ class Hyrox1_0App extends Application.AppBase {
                 session.save();
                 System.println("HYROX activity saved");
             } else {
+                session.discard();
                 System.println("HYROX activity discarded");
             }
 
