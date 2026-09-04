@@ -1,6 +1,7 @@
 using Toybox.Application;
 using Toybox.Activity;
 using Toybox.ActivityRecording;
+using Toybox.Application.Storage;
 using Toybox.Lang;
 using Toybox.Position;
 using Toybox.System;
@@ -19,9 +20,13 @@ class Hyrox1_0App extends Application.AppBase {
     var waitingForGps = false;
     var gpsWaitStartTime = 0;
     var gpsWaitTimeoutMs = 30000;
+    var startSelection = 0;
     var endMenuOpen = false;
     var endMenuSelection = 0;
     var summaryPage = 0;
+    var historyPage = 0;
+    var historyActivity = 0;
+    var historyPreview = false;
 
     // Timing
     var activityStartTime = 0;
@@ -72,6 +77,291 @@ class Hyrox1_0App extends Application.AppBase {
 
     function getSession() {
         return session;
+    }
+
+    function getStartSelection() {
+        return startSelection;
+    }
+
+    function moveStartSelection(direction) {
+        startSelection += direction;
+
+        if (startSelection < 0) {
+            startSelection = 2;
+        } else if (startSelection > 2) {
+            startSelection = 0;
+        }
+
+        if (startSelection < 2) {
+            indoorMode = startSelection == 1;
+        }
+
+        WatchUi.requestUpdate();
+    }
+
+    function showHistory() {
+        historyPage = -1;
+        historyActivity = 0;
+        WatchUi.pushView(
+            new Hyrox1_0HistoryView(),
+            new Hyrox1_0HistoryDelegate(),
+            WatchUi.SLIDE_UP
+        );
+    }
+
+    function getHistoryPage() {
+        return historyPage;
+    }
+
+    function getHistoryActivity() {
+        return historyActivity;
+    }
+
+    function getHistoryCount() {
+        var count = Storage.getValue("historyCount");
+        if (count != null) {
+            return count;
+        }
+
+        return Storage.getValue("summaryRunCount") != null ? 1 : 0;
+    }
+
+    function selectHistoryActivity(direction) {
+        var count = getHistoryCount();
+        if (count == 0) {
+            return;
+        }
+
+        historyActivity += direction;
+        if (historyActivity < 0) {
+            historyActivity = count - 1;
+        } else if (historyActivity >= count) {
+            historyActivity = 0;
+        }
+
+        WatchUi.requestUpdate();
+    }
+
+    function openHistoryActivity() {
+        if (getHistoryCount() > 0) {
+            loadHistoryActivity();
+            historyPreview = true;
+            summaryPage = 0;
+            WatchUi.switchToView(
+                new Hyrox1_0SummaryView(),
+                new Hyrox1_0SummaryDelegate(),
+                WatchUi.SLIDE_UP
+            );
+        }
+    }
+
+    function loadHistoryActivity() {
+        runRecords = [];
+        stationRecords = [];
+        completedWorkoutSeconds = getHistoryNumber("summaryTime");
+        completedWorkoutDistance = getHistoryNumber("summaryDistance");
+        completedWorkoutCalories = getHistoryNumber("summaryCalories");
+
+        var runCount = getHistoryNumber("summaryRunCount");
+        for (var i = 0; i < runCount; i++) {
+            runRecords.add(getSavedRun(i, historyActivity));
+        }
+
+        var stationCount = getHistoryNumber("summaryStationCount");
+        for (var j = 0; j < stationCount; j++) {
+            stationRecords.add(getSavedStation(j, historyActivity));
+        }
+    }
+
+    function moveHistoryPage(direction) {
+        if (historyPage < 0 || getHistoryCount() == 0) {
+            return;
+        }
+
+        var runCount = getHistoryValue("summaryRunCount");
+        var stationCount = getHistoryValue("summaryStationCount");
+        var pageCount = 1 + runCount + stationCount;
+
+        historyPage += direction;
+        if (historyPage < 0) {
+            historyPage = pageCount - 1;
+        } else if (historyPage >= pageCount) {
+            historyPage = 0;
+        }
+
+        WatchUi.requestUpdate();
+    }
+
+    function closeHistory() {
+        WatchUi.popView(WatchUi.SLIDE_DOWN);
+        WatchUi.requestUpdate();
+    }
+
+    function backHistory() {
+        if (historyPage >= 0) {
+            historyPage = -1;
+            WatchUi.requestUpdate();
+        } else {
+            closeHistory();
+        }
+    }
+
+    function hasSavedSummary() {
+        return getHistoryCount() > 0;
+    }
+
+    function getHistoryValue(key as Lang.String) {
+        var count = Storage.getValue("historyCount");
+        if (count == null) {
+            return Storage.getValue(key);
+        }
+
+        return Storage.getValue("history" + historyActivity + key);
+    }
+
+    function getHistoryValueFor(activityIndex, key as Lang.String) {
+        var count = Storage.getValue("historyCount");
+        if (count == null) {
+            return Storage.getValue(key);
+        }
+
+        return Storage.getValue("history" + activityIndex + key);
+    }
+
+    function getHistoryNumber(key as Lang.String) as Lang.Number {
+        var value = getHistoryValue(key);
+        return value == null ? 0 : value.toNumber();
+    }
+
+    function getHistoryNumberFor(activityIndex, key as Lang.String) as Lang.Number {
+        var value = getHistoryValueFor(activityIndex, key);
+        return value == null ? 0 : value.toNumber();
+    }
+
+    function getSavedRun(index, activityIndex) as Lang.Dictionary {
+        var prefix = "summaryRun" + index.format("%d");
+        if (Storage.getValue("historyCount") != null) {
+            prefix = "history" + activityIndex + "Run" + index.format("%d");
+        }
+
+        return {
+            :number => Storage.getValue(prefix + "Number"),
+            :distance => Storage.getValue(prefix + "Distance"),
+            :time => Storage.getValue(prefix + "Time"),
+            :speed => Storage.getValue(prefix + "Speed"),
+            :heartRate => Storage.getValue(prefix + "HeartRate")
+        };
+    }
+
+    function getSavedStation(index, activityIndex) as Lang.Dictionary {
+        var prefix = "summaryStation" + index.format("%d");
+        if (Storage.getValue("historyCount") != null) {
+            prefix = "history" + activityIndex + "Station" + index.format("%d");
+        }
+        return {
+            :number => Storage.getValue(prefix + "Number"),
+            :time => Storage.getValue(prefix + "Time"),
+            :heartRate => Storage.getValue(prefix + "HeartRate")
+        };
+    }
+
+    function saveSummary() {
+        var historyCount = Storage.getValue("historyCount");
+        if (historyCount == null) {
+            historyCount = 0;
+        }
+
+        var maxActivities = historyCount < 5 ? historyCount : 4;
+        for (var activity = maxActivities; activity > 0; activity--) {
+            copyHistoryActivity(activity - 1, activity);
+        }
+
+        historyCount += 1;
+        if (historyCount > 5) {
+            historyCount = 5;
+        }
+        Storage.setValue("historyCount", historyCount);
+        saveHistoryActivity(0);
+
+        Storage.setValue("summaryTime", completedWorkoutSeconds);
+        Storage.setValue("summaryDistance", completedWorkoutDistance);
+        Storage.setValue("summaryCalories", completedWorkoutCalories);
+        Storage.setValue("summaryRunCount", runRecords.size());
+        Storage.setValue("summaryStationCount", stationRecords.size());
+
+        for (var i = 0; i < runRecords.size(); i++) {
+            var run = runRecords[i];
+            var prefix = "summaryRun" + i.format("%d");
+            Storage.setValue(prefix + "Number", run[:number]);
+            Storage.setValue(prefix + "Distance", run[:distance]);
+            Storage.setValue(prefix + "Time", run[:time]);
+            Storage.setValue(prefix + "Speed", run[:speed]);
+            Storage.setValue(prefix + "HeartRate", run[:heartRate]);
+        }
+
+        for (var j = 0; j < stationRecords.size(); j++) {
+            var station = stationRecords[j];
+            var prefix = "summaryStation" + j.format("%d");
+            Storage.setValue(prefix + "Number", station[:number]);
+            Storage.setValue(prefix + "Time", station[:time]);
+            Storage.setValue(prefix + "HeartRate", station[:heartRate]);
+        }
+    }
+
+    function copyHistoryActivity(fromIndex, toIndex) {
+        var from = "history" + fromIndex;
+        var to = "history" + toIndex;
+        Storage.setValue(to + "summaryTime", Storage.getValue(from + "summaryTime"));
+        Storage.setValue(to + "summaryDistance", Storage.getValue(from + "summaryDistance"));
+        Storage.setValue(to + "summaryCalories", Storage.getValue(from + "summaryCalories"));
+        Storage.setValue(to + "summaryRunCount", Storage.getValue(from + "summaryRunCount"));
+        Storage.setValue(to + "summaryStationCount", Storage.getValue(from + "summaryStationCount"));
+
+        var runCount = Storage.getValue(from + "summaryRunCount");
+        for (var i = 0; i < runCount; i++) {
+            copyHistorySegment(from + "Run" + i.format("%d"), to + "Run" + i.format("%d"), true);
+        }
+
+        var stationCount = Storage.getValue(from + "summaryStationCount");
+        for (var j = 0; j < stationCount; j++) {
+            copyHistorySegment(from + "Station" + j.format("%d"), to + "Station" + j.format("%d"), false);
+        }
+    }
+
+    function saveHistoryActivity(index) {
+        var prefix = "history" + index;
+        Storage.setValue(prefix + "summaryTime", completedWorkoutSeconds);
+        Storage.setValue(prefix + "summaryDistance", completedWorkoutDistance);
+        Storage.setValue(prefix + "summaryCalories", completedWorkoutCalories);
+        Storage.setValue(prefix + "summaryRunCount", runRecords.size());
+        Storage.setValue(prefix + "summaryStationCount", stationRecords.size());
+
+        for (var i = 0; i < runRecords.size(); i++) {
+            saveHistorySegment(prefix + "Run" + i.format("%d"), runRecords[i], true);
+        }
+        for (var j = 0; j < stationRecords.size(); j++) {
+            saveHistorySegment(prefix + "Station" + j.format("%d"), stationRecords[j], false);
+        }
+    }
+
+    function copyHistorySegment(from, to, isRun) {
+        Storage.setValue(to + "Number", Storage.getValue(from + "Number"));
+        Storage.setValue(to + "Time", Storage.getValue(from + "Time"));
+        Storage.setValue(to + "HeartRate", Storage.getValue(from + "HeartRate"));
+        if (isRun) {
+            Storage.setValue(to + "Distance", Storage.getValue(from + "Distance"));
+            Storage.setValue(to + "Speed", Storage.getValue(from + "Speed"));
+        }
+    }
+
+    function saveHistorySegment(prefix, segment as Lang.Dictionary, isRun) {
+        Storage.setValue(prefix + "Number", segment[:number]);
+        Storage.setValue(prefix + "Time", segment[:time]);
+        Storage.setValue(prefix + "HeartRate", segment[:heartRate]);
+        if (isRun) {
+            Storage.setValue(prefix + "Distance", segment[:distance]);
+            Storage.setValue(prefix + "Speed", segment[:speed]);
+        }
     }
 
     function getRunRecords() as Lang.Array<Lang.Dictionary> {
@@ -226,6 +516,7 @@ class Hyrox1_0App extends Application.AppBase {
     }
 
     function closeSummary() {
+        historyPreview = false;
         WatchUi.popView(WatchUi.SLIDE_DOWN);
         WatchUi.requestUpdate();
     }
@@ -369,6 +660,7 @@ class Hyrox1_0App extends Application.AppBase {
 
             if (saveActivity) {
                 session.save();
+                saveSummary();
                 System.println("HYROX activity saved");
             } else {
                 session.discard();

@@ -12,21 +12,25 @@ class Hyrox1_0StartDelegate extends WatchUi.BehaviorDelegate {
 
     function onNextPage() {
         if (!app.isWaitingForGps()) {
-            app.toggleIndoorMode();
+            app.moveStartSelection(1);
         }
         return true;
     }
 
     function onPreviousPage() {
         if (!app.isWaitingForGps()) {
-            app.toggleIndoorMode();
+            app.moveStartSelection(-1);
         }
         return true;
     }
 
     function onSelect() {
         if (!app.isWaitingForGps()) {
-            app.startActivity();
+            if (app.getStartSelection() == 2) {
+                app.showHistory();
+            } else {
+                app.startActivity();
+            }
         }
         return true;
     }

@@ -23,7 +23,7 @@ class Hyrox1_0StartView extends WatchUi.View {
         var width = dc.getWidth();
         var height = dc.getHeight();
         var centerX = width / 2;
-        var selected = app.isIndoorMode() ? 1 : 0;
+        var selected = app.getStartSelection();
 
         dc.setColor(COLOR_BG, COLOR_BG);
         dc.clear();
@@ -36,12 +36,12 @@ class Hyrox1_0StartView extends WatchUi.View {
         dc.drawText(centerX, height * 0.20, Graphics.FONT_XTINY,
             "SELECT ACTIVITY TYPE", Graphics.TEXT_JUSTIFY_CENTER);
 
-        var options = ["GPS RUN", "TREADMILL"];
-        var colors = [COLOR_GPS, COLOR_TREADMILL];
+        var options = ["GPS RUN", "TREADMILL", "HISTORY"];
+        var colors = [COLOR_GPS, COLOR_TREADMILL, COLOR_PRIMARY];
         var buttonFont = Graphics.FONT_SMALL;
         var buttonTextHeight = dc.getFontHeight(buttonFont);
         var rowHeight = height * 0.13;
-        var rowTop = height * 0.34;
+        var rowTop = height * 0.27;
 
         for (var i = 0; i < options.size(); i++) {
             var y = rowTop + i * (rowHeight + height * 0.03);
