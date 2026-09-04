@@ -177,6 +177,14 @@ class Hyrox1_0SummaryView extends WatchUi.View {
             dc, left, right, rowCenter, y, rowH, pad, fTiny, fSmall,
             "CALORIES", formatCalories(app.getCompletedWorkoutCalories()), COLOR_SECOND
         );
+        y += rowH;
+        drawTotalRow(
+            dc, left, right, rowCenter, y, rowH, pad, fTiny, fSmall,
+            "PACE", formatPace(
+                app.getCompletedWorkoutDistance(),
+                app.getRunElapsedSeconds()
+            ), COLOR_SECOND
+        );
     }
 
     function drawTotalRow(dc, left, right, cx, y, rowH, pad, fTiny, fSmall, label, value, valueColor) {
@@ -460,15 +468,8 @@ class Hyrox1_0SummaryView extends WatchUi.View {
         if (meters == null || meters <= 10 ||
             secs   == null || secs   <= 0)  { return "--:--"; }
 
-        var settings = System.getDeviceSettings();
         var unitM  = 1000.0;
-        var label  = "/k";
-
-        if (settings != null &&
-            settings.distanceUnits == System.UNIT_STATUTE) {
-            unitM = 1609.34;
-            label = "/m";
-        }
+        var label  = "/km";
 
         var spu = (secs.toFloat() / meters.toFloat()) * unitM;
         var m   = spu.toNumber() / 60;

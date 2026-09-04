@@ -37,8 +37,8 @@ class Hyrox1_0App extends Application.AppBase {
     var completedWorkoutCalories = 0;
 
     // Analysis data shown after the workout. FIT laps are also created below.
-    var runRecords = [];
-    var stationRecords = [];
+    var runRecords as Lang.Array<Lang.Dictionary> = [];
+    var stationRecords as Lang.Array<Lang.Dictionary> = [];
 
     // HYROX has 8 stations
     const TOTAL_STATIONS = 8;
@@ -433,6 +433,20 @@ class Hyrox1_0App extends Application.AppBase {
         return (elapsed / 1000).toNumber();
     }
 
+    function getRunElapsedSeconds() {
+        var totalSeconds = 0;
+
+        for (var i = 0; i < runRecords.size(); i++) {
+            totalSeconds += runRecords[i][:time];
+        }
+
+        if (activityStarted && isRunningSegment && !currentSummaryRecorded) {
+            totalSeconds += ((System.getTimer() - segmentStartTime) / 1000).toNumber();
+        }
+
+        return totalSeconds;
+    }
+
     // ---------------------------------------------------------
     // RUN <-> STATION transition
     // ---------------------------------------------------------
@@ -532,6 +546,10 @@ class Hyrox1_0App extends Application.AppBase {
         return segmentDistanceStart;
     }
 
+    function getRunDistanceBeforeCurrentSegment() {
+        return segmentDistanceStart;
+    }
+
     function recordSegmentSummary() {
         if (currentSummaryRecorded) {
             return;
@@ -583,6 +601,19 @@ class Hyrox1_0App extends Application.AppBase {
     }
 
     function getTotalRunDistance() {
-        return completedWorkoutDistance;
+        var totalDistance = 0.0;
+
+        for (var i = 0; i < runRecords.size(); i++) {
+            totalDistance += runRecords[i][:distance];
+        }
+
+        if (activityStarted && isRunningSegment && !currentSummaryRecorded) {
+            var currentDistance = getCurrentDistanceMeters() - segmentDistanceStart;
+            if (currentDistance > 0) {
+                totalDistance += currentDistance;
+            }
+        }
+
+        return totalDistance;
     }
 }

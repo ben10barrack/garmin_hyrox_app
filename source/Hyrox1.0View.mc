@@ -152,7 +152,7 @@ class Hyrox1_0View extends WatchUi.View {
 
         // -- LEFT CELL: total time --
 
-        var totalSecs   = app.getActivityElapsedSeconds();
+        var totalSecs   = app.getRunElapsedSeconds();
         var totalStr    = formatTime(totalSecs);
 
         dc.setColor(COLOR_TEXT_PRIMARY, Graphics.COLOR_TRANSPARENT);
@@ -429,24 +429,10 @@ class Hyrox1_0View extends WatchUi.View {
     // =========================================================
 
     function getUnitMeters() {
-
-        var s = System.getDeviceSettings();
-
-        if (s != null && s.distanceUnits == System.UNIT_STATUTE) {
-            return 1609.34;
-        }
-
         return 1000.0;
     }
 
     function getPaceLabel() {
-
-        var s = System.getDeviceSettings();
-
-        if (s != null && s.distanceUnits == System.UNIT_STATUTE) {
-            return "/mi";
-        }
-
         return "/km";
     }
 
