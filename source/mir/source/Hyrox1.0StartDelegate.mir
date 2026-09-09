@@ -49,15 +49,16 @@ C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_14_36_16_8_sta
 [ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc" 15 12 ]
         symbol [ app %tmp.7 15 12 15 ];
         %tmp.7 = getv ? :app;
-        symbol [ toggleIndoorMode %tmp.8 15 16 32 ];
-        %tmp.8 = getv function %tmp.7 :toggleIndoorMode;
-        invoke %tmp.7 %tmp.8();
+        symbol [ moveStartSelection %tmp.8 15 16 34 ];
+        %tmp.8 = getv function %tmp.7 :moveStartSelection;
+        %tmp.9 = 1;
+        invoke %tmp.7 %tmp.8(%tmp.9);
 C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_14_36_16_8_stop:
         goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_14_8_16_8_if_end;
 C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_14_8_16_8_if_end:
 [ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc" 17 8 ]
-        %tmp.9 = true;
-        ret %tmp.9;
+        %tmp.10 = true;
+        ret %tmp.10;
 C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_13_26_18_4_stop:
     }
     [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc"; @line = 20; @symbol_functiondef = [onPreviousPage,20,13,27]; ]
@@ -77,55 +78,80 @@ C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_21_36_23_8_sta
 [ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc" 22 12 ]
         symbol [ app %tmp.7 22 12 15 ];
         %tmp.7 = getv ? :app;
-        symbol [ toggleIndoorMode %tmp.8 22 16 32 ];
-        %tmp.8 = getv function %tmp.7 :toggleIndoorMode;
-        invoke %tmp.7 %tmp.8();
+        symbol [ moveStartSelection %tmp.8 22 16 34 ];
+        %tmp.8 = getv function %tmp.7 :moveStartSelection;
+        %tmp.9 = -1;
+        invoke %tmp.7 %tmp.8(%tmp.9);
 C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_21_36_23_8_stop:
         goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_21_8_23_8_if_end;
 C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_21_8_23_8_if_end:
 [ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc" 24 8 ]
-        %tmp.9 = true;
-        ret %tmp.9;
+        %tmp.10 = true;
+        ret %tmp.10;
 C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_20_30_25_4_stop:
     }
     [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc"; @line = 27; @symbol_functiondef = [onSelect,27,13,21]; ]
     function onSelect() {
-C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_27_24_32_4_start:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_27_24_36_4_start:
 [ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc" 28 8 ]
-C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_28_8_30_8_if_stmt:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_28_8_34_8_if_stmt:
         symbol [ app %tmp.2 28 13 16 ];
         %tmp.2 = getv ? :app;
         symbol [ isWaitingForGps %tmp.3 28 17 32 ];
         %tmp.3 = getv function %tmp.2 :isWaitingForGps;
         %tmp.4 = invoke %tmp.2 %tmp.3();
         %tmp.5 = not %tmp.4;
-        bf %tmp.5 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_28_8_30_8_if_end;
-C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_28_8_30_8_if_true:
-C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_28_36_30_8_start:
+        bf %tmp.5 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_28_8_34_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_28_8_34_8_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_28_36_34_8_start:
 [ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc" 29 12 ]
-        symbol [ app %tmp.7 29 12 15 ];
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_29_12_33_12_if_stmt:
+        symbol [ app %tmp.7 29 16 19 ];
         %tmp.7 = getv ? :app;
-        symbol [ startActivity %tmp.8 29 16 29 ];
-        %tmp.8 = getv function %tmp.7 :startActivity;
-        invoke %tmp.7 %tmp.8();
-C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_28_36_30_8_stop:
-        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_28_8_30_8_if_end;
-C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_28_8_30_8_if_end:
-[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc" 31 8 ]
-        %tmp.9 = true;
-        ret %tmp.9;
-C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_27_24_32_4_stop:
-    }
-    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc"; @line = 34; @symbol_functiondef = [onBack,34,13,19]; ]
-    function onBack() {
-C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_34_22_36_4_start:
+        symbol [ getStartSelection %tmp.8 29 20 37 ];
+        %tmp.8 = getv function %tmp.7 :getStartSelection;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        %tmp.10 = 2;
+        %tmp.11 = eq %tmp.9 %tmp.10;
+        bf %tmp.11 @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_29_12_33_12_if_else_false;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_29_12_33_12_if_true:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_29_46_31_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc" 30 16 ]
+        symbol [ app %tmp.13 30 16 19 ];
+        %tmp.13 = getv ? :app;
+        symbol [ showHistory %tmp.14 30 20 31 ];
+        %tmp.14 = getv function %tmp.13 :showHistory;
+        invoke %tmp.13 %tmp.14();
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_29_46_31_12_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_29_12_33_12_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_29_12_33_12_if_else_false:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_31_19_33_12_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc" 32 16 ]
+        symbol [ app %tmp.16 32 16 19 ];
+        %tmp.16 = getv ? :app;
+        symbol [ startActivity %tmp.17 32 20 33 ];
+        %tmp.17 = getv function %tmp.16 :startActivity;
+        invoke %tmp.16 %tmp.17();
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_31_19_33_12_stop:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_29_12_33_12_if_end:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_28_36_34_8_stop:
+        goto @C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_28_8_34_8_if_end;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_28_8_34_8_if_end:
 [ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc" 35 8 ]
-        symbol [ System %tmp.1 35 8 14 ];
+        %tmp.18 = true;
+        ret %tmp.18;
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_27_24_36_4_stop:
+    }
+    [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc"; @line = 38; @symbol_functiondef = [onBack,38,13,19]; ]
+    function onBack() {
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_38_22_40_4_start:
+[ "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc" 39 8 ]
+        symbol [ System %tmp.1 39 8 14 ];
         %tmp.1 = getm $.Toybox.System;
-        symbol [ exit %tmp.2 35 15 19 ];
+        symbol [ exit %tmp.2 39 15 19 ];
         %tmp.2 = getv function %tmp.1 :exit;
         invoke %tmp.1 %tmp.2();
-C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_34_22_36_4_stop:
+C__Users_benso_Downloads_Hyrox1_0_source_Hyrox1_0StartDelegate_mc_38_22_40_4_stop:
     }
 }
 [ @file = "C:\Users\benso\Downloads\Hyrox1.0\source\Hyrox1.0StartDelegate.mc"; @line = 1; ]

@@ -62,10 +62,6 @@ class Hyrox1_0HistoryView extends WatchUi.View {
                 Graphics.FONT_XTINY,
                 formatTime(app.getHistoryNumberFor(i, "summaryTime")),
                 Graphics.TEXT_JUSTIFY_RIGHT);
-            dc.drawText(width / 2, y + rowHeight * 0.52,
-                Graphics.FONT_XTINY,
-                formatDistance(app.getHistoryNumberFor(i, "summaryDistance")),
-                Graphics.TEXT_JUSTIFY_CENTER);
         }
 
         dc.setColor(COLOR_MUTED, Graphics.COLOR_TRANSPARENT);
@@ -79,11 +75,4 @@ class Hyrox1_0HistoryView extends WatchUi.View {
             (total % 60).format("%02d");
     }
 
-    function formatDistance(meters) {
-        if (meters <= 0) { return "--"; }
-        if (meters >= 1000) {
-            return (meters / 1000.0).format("%.2f") + "km";
-        }
-        return meters.format("%.0f") + "m";
-    }
 }

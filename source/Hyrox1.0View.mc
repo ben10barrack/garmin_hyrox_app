@@ -146,7 +146,7 @@ class Hyrox1_0View extends WatchUi.View {
         // This mirrors the reference exactly: one of the two
         // top fields gets the solid accent-color background.
         // =====================================================
-
+ 
         var row1H    = hTiny + hTiny + pad;  // label + number + inner pad
         var halfW    = W / 2;
 
